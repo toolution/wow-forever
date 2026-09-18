@@ -1,0 +1,80 @@
+---
+import { defaultLocale, locales, type Locale } from '~/i18n/routing';
+import { BROWSER_LOCALE_RULES, LOCALE_STORAGE_KEY } from '~/lib/browser-locale';
+
+interface Props {
+  currentLocale: string;
+  availableLocales: readonly Locale[];
+}
+
+const { currentLocale, availableLocales } = Astro.props;
+---
+
+<script
+  is:inline
+  define:vars={{
+    browserLocaleRules: BROWSER_LOCALE_RULES,
+    currentLocale,
+    defaultRouteLocale: defaultLocale,
+    routeLocales: locales,
+    availableLocales,
+    localeStorageKey: LOCALE_STORAGE_KEY,
+  }}
+>
+  (() => {
+    if (currentLocale !== defaultRouteLocale) return;
+
+    const firstSegment = location.pathname.split('/').filter(Boolean)[0];
+    if (firstSegment && routeLocales.includes(firstSegment)) return;
+
+    // Search crawlers should see the stable default URL and its static
+    // canonical/hreflang graph, never a user-agent-dependent redirect.
+    if (/bot|crawler|spider|crawl|slurp|bingpreview|lighthouse/i.test(navigator.userAgent)) {
+      return;
+    }
+
+    let storedLocale = null;
+    try {
+      storedLocale = localStorage.getItem(localeStorageKey);
+    } catch {
+      /* Storage may be unavailable in privacy-restricted contexts. */
+    }
+
+    let targetLocale = null;
+    if (storedLocale && routeLocales.includes(storedLocale)) {
+      // A manual choice wins. If this page lacks that translation, stay
+      // here instead of falling through to a different browser locale.
+      if (!availableLocales.includes(storedLocale)) return;
+      targetLocale = storedLocale;
+    } else {
+      const browserLanguages =
+        Array.isArray(navigator.languages) && navigator.languages.length > 0
+          ? navigator.languages
+          : [navigator.language];
+
+      for (const language of browserLanguages) {
+        const normalized = String(language || '')
+          .trim()
+          .toLowerCase()
+          .replaceAll('_', '-');
+        if (!normalized) continue;
+
+        for (const rule of browserLocaleRules) {
+          const matches = rule.prefixes.some(
+            (prefix) => normalized === prefix || normalized.startsWith(`${prefix}-`),
+          );
+          if (matches && availableLocales.includes(rule.locale)) {
+            targetLocale = rule.locale;
+            break;
+          }
+        }
+        if (targetLocale) break;
+      }
+    }
+
+    if (!targetLocale || targetLocale === defaultRouteLocale) return;
+
+    const path = location.pathname.startsWith('/') ? location.pathname : `/${location.pathname}`;
+    location.replace(`/${targetLocale}${path}${location.search}${location.hash}`);
+  })();
+</script>

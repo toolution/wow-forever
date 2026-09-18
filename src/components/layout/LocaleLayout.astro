@@ -37,7 +37,12 @@ const currentPath = Astro.url.pathname;
 const shared = getUi(locale).shared as unknown as Record<string, any>;
 ---
 
-<BaseLayout locale={locale} {...rest}>
+<BaseLayout
+  locale={locale}
+  autoDetectLocale={true}
+  localeDetectionLocales={availableLocales}
+  {...rest}
+>
   {/* Skip-to-content — first focusable element (WCAG 2.4.1). */}
   <a
     href="#main"

@@ -16,6 +16,7 @@ import { defaultLocale, hreflangFor, HTML_LANG_MAP, locales, OG_LOCALE_MAP, type
 import { organizationJsonLd } from '~/lib/seo';
 import JsonLd from '~/components/seo/JsonLd.astro';
 import CookieConsent from './CookieConsent.astro';
+import BrowserLocaleRedirect from './BrowserLocaleRedirect.astro';
 import { getUi } from '~/i18n/ui';
 
 interface Props {
@@ -55,6 +56,10 @@ interface Props {
    * the site.name is the demo game, not the project itself).
    */
   titleSuffix?: string;
+  /** Detect a visitor's browser locale on unprefixed game-wiki URLs. */
+  autoDetectLocale?: boolean;
+  /** Locales that the current page can safely switch to. */
+  localeDetectionLocales?: readonly Locale[];
 }
 
 const {
@@ -72,6 +77,8 @@ const {
   articlePublished,
   articleModified,
   contentLocale,
+  autoDetectLocale = false,
+  localeDetectionLocales = locales,
 } = Astro.props;
 
 // Language of the main content (falls back to the UI locale).
@@ -134,6 +141,12 @@ const privacyLabel = footerStrings.privacyPolicy ?? 'Privacy Policy';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {autoDetectLocale && (
+      <BrowserLocaleRedirect
+        currentLocale={locale}
+        availableLocales={localeDetectionLocales}
+      />
+    )}
     {/* pnpm gen-assets regenerates these in place with the live brand color.
         SVG first (sharp modern browsers), 32px PNG fallback; the legacy
         favicon.ico stays in public/ but is never referenced (sharp can't

@@ -6,6 +6,7 @@
 import { Icon } from 'astro-icon/components';
 import { locales, LOCALE_LABELS, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
+import { LOCALE_STORAGE_KEY } from '~/lib/browser-locale';
 
 interface Props {
   locale: Locale;
@@ -37,6 +38,7 @@ const languageLabel = (getUi(locale).nav as Record<string, string>).language;
       switchLocales.map((loc) => (
         <a
           href={pathFor(loc)}
+          data-forever-locale={loc}
           class:list={[
             'block px-3 py-2 text-sm transition hover:bg-muted',
             loc === locale && 'font-semibold text-nav',
@@ -48,3 +50,23 @@ const languageLabel = (getUi(locale).nav as Record<string, string>).language;
     }
   </div>
 </details>
+
+<script is:inline define:vars={{ localeStorageKey: LOCALE_STORAGE_KEY }}>
+  (() => {
+    if (document.documentElement.dataset.foreverLocaleListener === 'true') return;
+    document.documentElement.dataset.foreverLocaleListener = 'true';
+
+    document.addEventListener('click', (event) => {
+      if (!(event.target instanceof Element)) return;
+      const link = event.target.closest('a[data-forever-locale]');
+      const selectedLocale = link?.getAttribute('data-forever-locale');
+      if (!selectedLocale) return;
+
+      try {
+        localStorage.setItem(localeStorageKey, selectedLocale);
+      } catch {
+        /* Navigation still works when storage is unavailable. */
+      }
+    });
+  })();
+</script>
