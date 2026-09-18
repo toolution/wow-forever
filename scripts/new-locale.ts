@@ -75,8 +75,8 @@ async function main() {
     .toLowerCase();
   rl.close();
 
-  if (!/^[a-z]{2,3}$/.test(locale)) {
-    console.error(`❌ "${locale}" doesn't look like a locale code (2-3 letters).`);
+  if (!/^[a-z]{2,3}(?:-[a-z]{2})?$/.test(locale)) {
+    console.error(`❌ "${locale}" doesn't look like a locale code (examples: de, pt-br).`);
     process.exit(1);
   }
 
@@ -107,21 +107,26 @@ async function main() {
   // --- 2. ui.ts: import + messages entry ------------------------------------
   const uiPath = 'src/i18n/ui.ts';
   let ui = read(uiPath);
-  ui = mustReplace(
-    ui,
-    /(import \w+ from '~\/locales\/\w+\.json';\n)(?!(?:import \w+ from '~\/locales\/\w+\.json';\n)+)/,
-    `$1import ${locale} from '~/locales/${locale}.json';\n`,
-    'ui.ts locale import',
-  );
-  ui = mustReplace(
-    ui,
-    /const messages: Record<Locale, Record<string, unknown>> = \{([\s\S]*?)\n\};/,
-    (_m: string, inner: string) =>
-      `const messages: Record<Locale, Record<string, unknown>> = {${inner.replace(/\s*$/, '')}\n  ${locale}: ${locale} as Record<string, unknown>,\n};`,
-    'ui.ts messages map',
-  );
-  write(uiPath, ui);
-  console.log(`✅ ${uiPath} — import + messages entry added`);
+  if (ui.includes("import.meta.glob('../locales/*.json'")) {
+    console.log(`✅ ${uiPath} — glob loader will discover ${locale}.json automatically`);
+  } else {
+    const variable = locale.replace(/-([a-z])/g, (_, letter: string) => letter.toUpperCase());
+    ui = mustReplace(
+      ui,
+      /(import \w+ from '~\/locales\/[\w-]+\.json';\n)(?!(?:import \w+ from '~\/locales\/[\w-]+\.json';\n)+)/,
+      `$1import ${variable} from '~/locales/${locale}.json';\n`,
+      'ui.ts locale import',
+    );
+    ui = mustReplace(
+      ui,
+      /const messages: Record<Locale, Record<string, unknown>> = \{([\s\S]*?)\n\};/,
+      (_m: string, inner: string) =>
+        `const messages: Record<Locale, Record<string, unknown>> = {${inner.replace(/\s*$/, '')}\n  '${locale}': ${variable} as Record<string, unknown>,\n};`,
+      'ui.ts messages map',
+    );
+    write(uiPath, ui);
+    console.log(`✅ ${uiPath} — import + messages entry added`);
+  }
 
   // --- 3. locales/<locale>.json — clone of en.json (translate from here) ----
   const jsonPath = `src/locales/${locale}.json`;

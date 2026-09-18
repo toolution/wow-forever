@@ -25,7 +25,7 @@ describe('i18n: no hardcoded locale arrays', () => {
     it(`${rel} derives locales from routing.ts (no inline ['xx'] arrays)`, () => {
       const src = fs.readFileSync(path.resolve(ROOT, rel), 'utf8');
       // Matches ['ja'], ['en'], ['ja','zh'] etc. — but NOT `locales` identifiers.
-      const hardcoded = src.match(/\[\s*['"][a-z]{2}['"]\s*(,\s*['"][a-z]{2}['"]\s*)*\]/g);
+      const hardcoded = src.match(/\[\s*['"][a-z]{2}(?:-[a-z]{2})?['"]\s*(,\s*['"][a-z]{2}(?:-[a-z]{2})?['"]\s*)*\]/g);
       expect(hardcoded ?? [], `found hardcoded locale array in ${rel}: ${hardcoded?.join(', ')}`).toHaveLength(0);
     });
   }
@@ -37,5 +37,6 @@ describe('i18n: no hardcoded locale arrays', () => {
     const list = Array.from(m![1].matchAll(/['"]([^'"]+)['"]/g)).map((x) => x[1]);
     expect(list.length).toBeGreaterThan(0);
     expect(list).toContain('en');
+    expect(list).toHaveLength(15);
   });
 });

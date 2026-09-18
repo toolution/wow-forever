@@ -12,7 +12,7 @@
  */
 import '~/styles/globals.css';
 import { site, siteUrl } from '~/config/site';
-import { defaultLocale, HTML_LANG_MAP, locales, OG_LOCALE_MAP, type Locale } from '~/i18n/routing';
+import { defaultLocale, hreflangFor, HTML_LANG_MAP, locales, OG_LOCALE_MAP, type Locale } from '~/i18n/routing';
 import { organizationJsonLd } from '~/lib/seo';
 import JsonLd from '~/components/seo/JsonLd.astro';
 import CookieConsent from './CookieConsent.astro';
@@ -101,7 +101,7 @@ const localePrefixRe = new RegExp(`^/(${locales.join('|')})(?=/|$)`);
 // When the caller passes alternates we derive it from them instead of blind
 // prefix-stripping — that way a page whose default-locale URL was never built
 // (e.g. a ja-only article, or /zh/landing) never emits a dead x-default.
-const defaultAlt = alternates.find((a) => a.hreflang === defaultLocale);
+const defaultAlt = alternates.find((a) => a.hreflang === hreflangFor(defaultLocale));
 const xDefaultHref = defaultAlt
   ? defaultAlt.href
   : alternates.length > 0
@@ -186,9 +186,9 @@ const privacyLabel = footerStrings.privacyPolicy ?? 'Privacy Policy';
     {/* OG wants language_TERRITORY (en_US / ja_JP), not a bare ISO code. */}
     <meta property="og:locale" content={ogLocale} />
     {alternates
-      .filter((alt) => alt.hreflang !== mainLocale && alt.hreflang !== 'x-default')
+      .filter((alt) => alt.hreflang !== hreflangFor(mainLocale as Locale) && alt.hreflang !== 'x-default')
       .map((alt) => (
-        <meta property="og:locale:alternate" content={ogLocaleMap[alt.hreflang] ?? alt.hreflang} />
+        <meta property="og:locale:alternate" content={alt.hreflang.replace('-', '_')} />
       ))}
     {article && articlePublished && (
       <meta property="article:published_time" content={articlePublished.toISOString()} />

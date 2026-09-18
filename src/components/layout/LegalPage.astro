@@ -2,12 +2,13 @@
 /**
  * LegalPage layout — wraps legal pages (About/Privacy/Terms/Copyright).
  *
- * Per PRD, legal page body text is hardcoded English (not translated) but
- * the surrounding chrome (nav, footer, theme) respects the current locale.
+ * Legal content and chrome both come from the active locale pack.
  */
 import LocaleLayout from './LocaleLayout.astro';
 import { locales, type Locale } from '~/i18n/routing';
 import { site } from '~/config/site';
+import { getUi } from '~/i18n/ui';
+import { languageAlternates, switchLocalePath } from '~/lib/url';
 
 interface Props {
   locale: Locale;
@@ -17,12 +18,17 @@ interface Props {
   lastUpdated?: string;
 }
 const { locale, title, description = `${site.name} 的${title}。`, lastUpdated } = Astro.props;
+const shared = getUi(locale).shared as unknown as Record<string, string>;
+const alternates = languageAlternates(
+  (targetLocale) => switchLocalePath(Astro.url.pathname, targetLocale),
+  locales,
+);
 ---
 
-<LocaleLayout locale={locale} title={title} description={description} availableLocales={locales}>
+<LocaleLayout locale={locale} title={title} description={description} alternates={alternates} availableLocales={locales}>
   <article class="forever-shell max-w-3xl py-12 sm:py-16">
     <h1 class="forever-display text-3xl font-bold md:text-4xl">{title}</h1>
-    {lastUpdated && <p class="mt-2 text-sm text-muted-foreground">最后更新：{lastUpdated}</p>}
+    {lastUpdated && <p class="mt-2 text-sm text-muted-foreground">{shared.lastUpdated}: {lastUpdated}</p>}
     <div
       class="prose prose-lg mt-8 max-w-none dark:prose-invert prose-headings:scroll-mt-20 prose-a:text-nav"
     >

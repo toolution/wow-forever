@@ -24,9 +24,9 @@ describe('tag/recent URL helpers', () => {
     expect(recentPath('zh')).toBe('/recent/');
   });
   it('prefixes non-default locales', () => {
-    expect(tagsPath('ja')).toBe('/ja/tags/');
-    expect(tagPath('fire-boss', 'ja')).toBe('/ja/tags/fire-boss/');
-    expect(recentPath('ja')).toBe('/ja/recent/');
+    expect(tagsPath('ja-jp')).toBe('/ja-jp/tags/');
+    expect(tagPath('fire-boss', 'ja-jp')).toBe('/ja-jp/tags/fire-boss/');
+    expect(recentPath('ja-jp')).toBe('/ja-jp/recent/');
   });
 });
 

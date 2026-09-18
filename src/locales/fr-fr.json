@@ -1,0 +1,738 @@
+{
+  "site": {
+    "name": "Forever Guide",
+    "shortName": "Forever",
+    "description": "Un guide de décision non officiel WoW Forever pour l'accès bêta, les éditions et les dates régionales.",
+    "tagline": "N'achetez que ce dont vous avez besoin. Ne manquez pas les dates qui comptent.",
+    "legalNotice": "Ceci est une ressource non officielle pour les joueurs et n'est pas affiliée à Blizzard Entertainment ni approuvée par celui-ci. World of Warcraft et les actifs associés appartiennent à leurs propriétaires respectifs."
+  },
+  "nav": {
+    "home": "Accueil",
+    "guides": "Guides",
+    "toggleTheme": "Changer le thème",
+    "menu": "Menu",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "language": "Langue",
+    "mainNavigation": "Navigation principale",
+    "mobileNavigation": "Navigation mobile"
+  },
+  "search": {
+    "placeholder": "Rechercher des règles et des dates...",
+    "noResults": "Aucun résultat correspondant"
+  },
+  "shared": {
+    "lastUpdated": "Dernière vérification",
+    "publishedOn": "Publié",
+    "noArticles": "Pas encore d'articles",
+    "defaultListDescription": "Parcourir tout {title}.",
+    "relatedArticles": "Pages liées",
+    "onThisPage": "Sur cette page",
+    "browseAll": "Parcourir tout",
+    "viewAll": "Voir tout",
+    "commentsHeading": "Commentaires",
+    "share": "Partager",
+    "copyLink": "Copier le lien",
+    "copied": "Copié",
+    "consentText": "Nous ne chargeons les services d’analyse ou de publicité qu’après votre consentement.",
+    "accept": "Accepter",
+    "decline": "Refuser",
+    "consentTitle": "Paramètres des cookies",
+    "bossCard": {
+      "title": "概览",
+      "hp": "生命值",
+      "weakness": "弱点",
+      "resistant": "抗性",
+      "location": "位置",
+      "level": "建议等级"
+    },
+    "codesTable": {
+      "active": "有效",
+      "expired": "已失效",
+      "reward": "奖励",
+      "expires": "到期",
+      "source": "来源",
+      "code": "代码"
+    },
+    "codesFaq": [],
+    "possiblyOutdated": "Cette page a été vérifiée pour la dernière fois le",
+    "outdatedNote": "; les règles ont peut-être changé depuis lors.",
+    "prevArticle": "Précédent",
+    "nextArticle": "Suivant",
+    "minuteRead": "lecture min",
+    "wasThisHelpful": "C'était utile ?",
+    "feedbackThanks": "Merci pour le retour",
+    "sponsoredLabel": "Sponsorisé",
+    "relatedVideos": "Vidéos associées",
+    "gallery": "Galerie",
+    "gameVersion": "Version du jeu",
+    "allTags": "Tous les tags",
+    "tagsIndexDescription": "Parcourir le contenu par sujet.",
+    "articlesCount": "articles",
+    "recentTitle": "Récemment mis à jour",
+    "recentDescription": "Règles et dates vérifiées le plus récemment.",
+    "sponsorTitle": "Soutenez ce site",
+    "sponsorText": "Aidez à maintenir cette ressource indépendante.",
+    "sponsorButton": "Support",
+    "notFoundSearchHint": "Redémarrez à partir de l'une des principales options ci-dessus.",
+    "notFoundPopular": "Liens populaires",
+    "galleryLabels": {
+      "close": "关闭",
+      "prev": "上一张",
+      "next": "下一张"
+    },
+    "quickAnswer": "Réponse rapide",
+    "skipToContent": "Aller au contenu",
+    "tapToCopy": "Appuyez pour copier",
+    "open": "Ouvrir",
+    "playVideo": "Lire la vidéo",
+    "closeAd": "Fermer la publicité",
+    "adLabel": "Publicité",
+    "codesFaqTitle": "Questions fréquemment posées",
+    "faqTitle": "Questions fréquemment posées",
+    "toggleTheme": "Changer le thème",
+    "fallbackNotice": "Contenu de secours",
+    "copyQuickAnswer": "Copier la réponse",
+    "feedbackYes": "Oui",
+    "feedbackNo": "Non",
+    "breadcrumbAria": "Chapitre",
+    "paginationAria": "Pagination"
+  },
+  "overview": {
+    "guides": {
+      "overviewTitle": "规则说明",
+      "overviewDescription": "WoW Forever 资格、版本与日期说明。"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "WoW Forever 回归玩家开服工具",
+      "description": "快速判断 WoW Forever Beta 资格、最低必要礼包、地区日期，以及它与 Modern、Classic 的区别。"
+    },
+    "faq": {
+      "title": "Questions fréquemment posées",
+      "description": "Réponses rapides sur l'accès et les achats WoW Forever.",
+      "items": [
+        {
+          "question": "Dois-je acheter Forever si je suis déjà abonné à WoW ?",
+          "answer": "Le jeu de base est inclus avec un abonnement WoW actif ou du temps de jeu. Achetez un pack uniquement si vous voulez Skyborne, l'accès bêta inclus, ou d'autres extras."
+        },
+        {
+          "question": "S'inscrire garantit-il l'accès à la bêta ?",
+          "answer": "Non. L'inscription officielle offre une chance de participer. Epic Pack et Collection indiquent Beta Access comme un avantage du pack."
+        },
+        {
+          "question": "Est-ce que Heroic Pack inclut un accès bêta ?",
+          "answer": "Non. Heroic inclut Skyborne, son expérience de départ, et la réservation précoce du nom, mais la comparaison officielle ne mentionne pas Beta Access."
+        },
+        {
+          "question": "La date de lancement en Chine continentale est-elle confirmée ?",
+          "answer": "Aucun calendrier vérifiable pour le continent n'est disponible. La page officielle en anglais et les dates du magasin de Taïwan n'établissent pas de date pour le serveur du continent."
+        }
+      ]
+    }
+  },
+  "footer": {
+    "playGame": "Visitez la page officielle de Forever",
+    "officialDiscord": "官方 Discord",
+    "officialYoutube": "官方 YouTube",
+    "officialTwitter": "官方 X",
+    "officialReddit": "Reddit",
+    "about": "À propos",
+    "faq": "FAQ",
+    "privacyPolicy": "Politique de confidentialité",
+    "termsOfService": "Conditions d'utilisation",
+    "copyright": "Droits d'auteur",
+    "contact": "Contact",
+    "copyrightText": "© 2026 Forever Guide",
+    "community": "Liens officiels",
+    "legal": "Informations sur le site"
+  },
+  "forever": {
+    "brandLabel": "Guide du joueur de retour",
+    "verified": "Règles vérifiées le 18 septembre 2026",
+    "nav": [
+      {
+        "label": "Accueil",
+        "href": "/",
+        "icon": "lucide:home"
+      },
+      {
+        "label": "accès Beta",
+        "href": "/beta/",
+        "icon": "lucide:key-round"
+      },
+      {
+        "label": "Choisissez une édition",
+        "href": "/editions/",
+        "icon": "lucide:package-check"
+      },
+      {
+        "label": "Dates régionales",
+        "href": "/release-date/",
+        "icon": "lucide:calendar-clock"
+      }
+    ],
+    "home": {
+      "metaTitle": "Guide de lancement WoW Forever pour les joueurs revenants",
+      "metaDescription": "Vérifiez l'accès bêta WoW Forever, l'édition minimale dont vous avez besoin, les dates régionales et comment elle diffère de Modern et Classic.",
+      "eyebrow": "Guide non officiel pour les joueurs de retour",
+      "title": "WoW Forever",
+      "lede": "Pas besoin de lire dix articles avant de décider. Vérifiez votre accès à la bêta, l’intérêt d’un pack, la date applicable à votre région et les différences entre Forever et le WoW que vous connaissez.",
+      "primary": "Vérifier l'accès bêta",
+      "secondary": "Choisissez le pack minimum",
+      "status": "Jalon actuel",
+      "statusValue": "L'emploi du temps officiel est dans la fenêtre bêta",
+      "statusNote": "Ce site n'a pas vérifié la disponibilité du serveur en direct",
+      "launch": "Lancement officiel",
+      "launchValue": "4 novembre 2026",
+      "access": "Exigence de base",
+      "accessValue": "Abonnement WoW actif ou temps de jeu",
+      "tasksTitle": "Commencez par la question à laquelle vous avez besoin de réponse",
+      "tasks": [
+        {
+          "title": "Puis-je entrer dans la bêta ?",
+          "description": "Sélection d'inscription séparée, Heroic, et accès bêta inclus dans le pack.",
+          "href": "/beta/",
+          "icon": "lucide:key-round",
+          "action": "Vérifier l'accès"
+        },
+        {
+          "title": "Quel est le pack minimum ?",
+          "description": "Choisissez par Skyborne, bêta, 30 jours de temps de jeu, et Warcraft III a besoin.",
+          "href": "/editions/",
+          "icon": "lucide:package-check",
+          "action": "Comparer les packs"
+        },
+        {
+          "title": "Quelle date me concerne ?",
+          "description": "Gardez séparés le calendrier anglais, le magasin de Taïwan et le statut de la Chine continentale.",
+          "href": "/release-date/",
+          "icon": "lucide:calendar-clock",
+          "action": "Vérifier les régions"
+        },
+        {
+          "title": "Qu'est-ce que Forever ?",
+          "description": "Une explication directe des lignes de version pour les joueurs revenants.",
+          "href": "#returning",
+          "icon": "lucide:route",
+          "action": "Obtenir l'aperçu"
+        }
+      ],
+      "confusionEyebrow": "Trois points à régler d'abord",
+      "confusionTitle": "Là où les joueurs sont les plus susceptibles de trop dépenser ou de mal interpréter l'accès",
+      "facts": [
+        {
+          "title": "Le jeu de base n'est pas un achat séparé",
+          "body": "Le jeu de base Forever est inclus avec un abonnement actif WoW ou du temps de jeu. Vous n'avez pas besoin d'un pack simplement pour posséder la version de base.",
+          "icon": "lucide:badge-check"
+        },
+        {
+          "title": "S'inscrire ne garantit pas une invitation",
+          "body": "L'inscription officielle offre une chance de tester. Le pack le plus bas qui inclut explicitement Beta Access est Skyborne Epic Pack.",
+          "icon": "lucide:circle-alert"
+        },
+        {
+          "title": "Skyborne nécessite un paquet",
+          "body": "Skyborne et son démarrage Zephras Isle nécessitent Heroic Pack ou supérieur. Un abonnement seul couvre l'accès de base.",
+          "icon": "lucide:wind"
+        }
+      ],
+      "returningEyebrow": "Pour les joueurs de retour",
+      "returningTitle": "Considérez Forever comme une autre ligne WoW de longue durée",
+      "returningBody": "Cela commence à partir des fondations de la première époque de WoW, mais ce n'est pas une simple réédition. Les descriptions officielles incluent des zones étendues, 1 000 nouvelles quêtes, de nouveaux donjons, des refontes de classes et de spécialisations, la progression Legacy et des changements de système.",
+      "versions": [
+        {
+          "name": "Modern",
+          "label": "Ligne d'expansion actuelle",
+          "body": "Continue les personnages, systèmes et progrès d'expansion de la vente au détail existants."
+        },
+        {
+          "name": "Classic",
+          "label": "Ligne de version historique",
+          "body": "Se concentre sur la recréation des versions passées et la progression mise en scène. Les objets du pack Forever ne s'appliquent pas automatiquement."
+        },
+        {
+          "name": "Forever",
+          "label": "Un monde durable renouvelé",
+          "body": "S'appuie sur l'Azeroth initial avec de nouvelles zones, quêtes, visuels et systèmes, avec des mises à jour continues prévues."
+        }
+      ],
+      "timelineTitle": "Trois fenêtres clés avant le lancement",
+      "timeline": [
+        {
+          "date": "2026-09-17 - 2026-10-21",
+          "title": "Calendrier bêta officiel anglais",
+          "body": "La sélection de l'inscription et l'accès au pack sont des voies séparées."
+        },
+        {
+          "date": "2026-10-27 - 2026-11-03",
+          "title": "Réservation anticipée de nom",
+          "body": "Les trois packs mentionnent ce avantage ; les noms sont attribués selon le principe du premier arrivé, premier servi."
+        },
+        {
+          "date": "2026-11-04",
+          "title": "Date de lancement officielle en anglais",
+          "body": "Le magasin de Taïwan affiche le 5 novembre en raison de la différence de calendrier régional."
+        }
+      ],
+      "closingTitle": "Prenez une décision sans tout lire",
+      "closingBody": "Obtenez une réponse claire sur l'accès, les forfaits ou les dates en environ une minute.",
+      "closingAction": "Commencez avec l'accès bêta"
+    },
+    "beta": {
+      "metaTitle": "WoW Forever vérificateur d'accès bêta",
+      "metaDescription": "Séparer la sélection d'inscription bêta de l'accès Héroïque, Épique et Collection.",
+      "eyebrow": "accès Beta",
+      "title": "Comment pouvez-vous accéder à la bêta ?",
+      "lede": "S'inscrire peut permettre d'obtenir une invitation, mais ce n'est pas garanti. Epic Pack et Collection incluent explicitement Beta Access ; Heroic Pack ne l'inclut pas.",
+      "answerLabel": "Réponse rapide",
+      "answer": "Vous pouvez vous inscrire pour une chance sans payer. Pour Beta Access en tant qu'avantage de pack répertorié, le minimum est Skyborne Epic Pack.",
+      "toolTitle": "Vérificateur d'accès",
+      "toolDescription": "Choisissez ce que vous possédez et ce que vous voulez. Cet outil ne lit ni ne stocke jamais votre compte Battle.net.",
+      "ownershipQuestion": "Qu'est-ce que vous possédez déjà ?",
+      "ownership": [
+        {
+          "id": "none",
+          "label": "Pas encore de paquet"
+        },
+        {
+          "id": "heroic",
+          "label": "Skyborne Heroic"
+        },
+        {
+          "id": "epic",
+          "label": "Skyborne Epic"
+        },
+        {
+          "id": "collection",
+          "label": "Forever Collection"
+        }
+      ],
+      "goalQuestion": "Comment voulez-vous obtenir l'accès ?",
+      "goals": [
+        {
+          "id": "chance",
+          "label": "Je peux attendre la sélection"
+        },
+        {
+          "id": "included",
+          "label": "J'ai besoin qu'il soit inclus dans un pack"
+        }
+      ],
+      "resultTitle": "Votre prochaine étape",
+      "calculate": "Afficher mon résultat",
+      "results": {
+        "none-chance": {
+          "status": "Utilisez la voie d'inscription gratuite",
+          "body": "Inscrivez votre intérêt sur la page officielle et attendez une éventuelle invitation. S'inscrire ne garantit rien.",
+          "action": "Ouvrez l'inscription officielle"
+        },
+        "none-included": {
+          "status": "Epic Pack est le minimum",
+          "body": "Epic Pack et Collection incluent Beta Access ; Heroic Pack ne l’inclut pas.",
+          "action": "Comparer les packs"
+        },
+        "heroic-chance": {
+          "status": "Héroïque n'inclut pas bêta",
+          "body": "Gardez Heroic et utilisez la voie d'inscription officielle séparément. Blizzard décide toujours qui est invité.",
+          "action": "Ouvrez l'inscription officielle"
+        },
+        "heroic-included": {
+          "status": "Passez à Epic ou Collection",
+          "body": "Les avantages officiels Héroïques ne répertorient pas Beta Access.",
+          "action": "Voir les différences de mise à niveau"
+        },
+        "epic-chance": {
+          "status": "Votre pack comprend un accès bêta",
+          "body": "Epic répertorie Beta Access, donc la sélection aléatoire n’est pas votre seule option.",
+          "action": "Vérifier les dates de la bêta"
+        },
+        "epic-included": {
+          "status": "Votre pack comprend un accès bêta",
+          "body": "Épique est le niveau de pack le plus bas qui inclut Beta Access.",
+          "action": "Vérifier les dates de la bêta"
+        },
+        "collection-chance": {
+          "status": "Votre pack comprend un accès bêta",
+          "body": "Collection inclut Beta Access, des avantages épiques, et du contenu de Warcraft III.",
+          "action": "Vérifier les dates de la bêta"
+        },
+        "collection-included": {
+          "status": "Votre pack comprend un accès bêta",
+          "body": "Collection inclut explicitement Beta Access.",
+          "action": "Vérifier les dates de la bêta"
+        }
+      },
+      "routesTitle": "Ne confondez pas les deux voies d'accès",
+      "routes": [
+        {
+          "title": "Inscription officielle",
+          "badge": "Chance",
+          "body": "Les joueurs éligibles peuvent s'inscrire pour manifester leur intérêt, mais la page ne promet pas d'invitation."
+        },
+        {
+          "title": "Épique ou Collection",
+          "badge": "Inclus",
+          "body": "La comparaison officielle liste Beta Access pour ces niveaux."
+        },
+        {
+          "title": "Heroic Pack",
+          "badge": "Pas de bêta",
+          "body": "Il inclut Skyborne et la réservation de nom, mais pas Beta Access."
+        }
+      ],
+      "checklistTitle": "Avant d'entrer dans le test",
+      "checklist": [
+        "Confirmez que l'achat est sur le compte WoW correct",
+        "Mettre à jour Battle.net et le client WoW",
+        "Activez l'authentification à deux facteurs et conservez l'accès de récupération",
+        "Ne considérez pas les codes d'activation tiers comme un accès officiel"
+      ],
+      "save": "Enregistrer la liste de contrôle",
+      "saved": "Enregistré dans ce navigateur",
+      "official": "Ouvrez la page officielle Forever",
+      "editions": "Comparer les packs"
+    },
+    "editions": {
+      "metaTitle": "Sélecteur d'édition WoW Forever",
+      "metaDescription": "Choisissez le pack minimum pour Skyborne, l'accès bêta, le temps de jeu et le contenu de Warcraft III.",
+      "eyebrow": "Choisissez une édition",
+      "title": "Achetez seulement le niveau dont vous avez réellement besoin",
+      "lede": "L'accès à la base Forever nécessite un abonnement actif ou du temps de jeu. Les packs ajoutent principalement Skyborne, l'accès bêta, du temps de jeu et des objets de collection.",
+      "answerLabel": "Règle du coût le plus bas",
+      "answer": "Jeu de base uniquement : aucun pack. Skyborne : Heroic Pack. Beta Access et 30 jours de jeu : Epic Pack. Contenu Warcraft III : Collection.",
+      "toolTitle": "Sélecteur d'édition minimale",
+      "toolDescription": "Sélectionnez uniquement les avantages dont vous avez besoin. Le résultat recommande le niveau correspondant le plus bas.",
+      "needsQuestion": "Quels avantages avez-vous absolument besoin ?",
+      "questions": [
+        {
+          "id": "skyborne",
+          "label": "Skyborne et l'expérience de démarrage Zephras Isle"
+        },
+        {
+          "id": "beta",
+          "label": "Beta Access inclus dans le pack"
+        },
+        {
+          "id": "warcraft3",
+          "label": "Warcraft III: Reforged et Forsaken Kingdom"
+        }
+      ],
+      "subscription": "Aurez-vous un abonnement WoW actif ou du temps de jeu au lancement ?",
+      "subscriptionOptions": [
+        {
+          "id": "yes",
+          "label": "Oui"
+        },
+        {
+          "id": "no",
+          "label": "Pas encore"
+        }
+      ],
+      "resultTitle": "Option minimale",
+      "calculate": "Trouve mon minimum",
+      "results": {
+        "base": {
+          "name": "Aucun pack requis",
+          "body": "Un abonnement actif ou du temps de jeu couvre l'accès de base Forever."
+        },
+        "base-nosub": {
+          "name": "Obtenez d'abord un abonnement ou du temps de jeu",
+          "body": "La base Forever n'est pas un achat séparé ; un abonnement actif ou du temps de jeu est toujours nécessaire."
+        },
+        "heroic": {
+          "name": "Skyborne Heroic Pack",
+          "body": "Le pack le plus bas pour Skyborne et la réservation de nom, mais il n'inclut pas l'accès bêta."
+        },
+        "epic": {
+          "name": "Skyborne Epic Pack",
+          "body": "Le pack le plus bas combinant Skyborne, Beta Access et 30 jours de temps de jeu."
+        },
+        "collection": {
+          "name": "Warcraft Forever Collection",
+          "body": "Choisissez ceci seulement si vous avez également besoin de contenu pour Warcraft III ou d'articles exclusifs à Collection."
+        }
+      },
+      "compareTitle": "Avantages par niveau",
+      "columns": [
+        "Heroic",
+        "Epic",
+        "Collection"
+      ],
+      "rows": [
+        {
+          "label": "Skyborne et expérience de départ",
+          "values": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "Réservation anticipée de nom",
+          "values": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "Beta Access",
+          "values": [
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "30 jours de temps de jeu WoW",
+          "values": [
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "Warcraft III: Reforged",
+          "values": [
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "label": "campagne Forsaken Kingdom",
+          "values": [
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "label": "Invitations de lancement pour amis",
+          "values": [
+            1,
+            3,
+            3
+          ]
+        }
+      ],
+      "packs": [
+        {
+          "name": "Heroic",
+          "tag": "Skyborne seulement",
+          "image": "/images/forever/heroic.webp",
+          "body": "Skyborne, expérience de départ, objets et réservation de nom. Pas de Beta Access ni de temps de jeu."
+        },
+        {
+          "name": "Epic",
+          "tag": "Niveau bêta le plus bas",
+          "image": "/images/forever/epic.webp",
+          "body": "Tout dans Héroïque, plus Beta Access, 30 jours de temps de jeu et des objets supplémentaires."
+        },
+        {
+          "name": "Collection",
+          "tag": "Collection Warcraft de niveau",
+          "image": "/images/forever/collection.webp",
+          "body": "Tout dans Epic, plus le contenu de Warcraft III et les cosmétiques de collection."
+        }
+      ],
+      "finePrint": "Le temps de jeu Epic et Collection est ajouté au lancement. Continuer par la suite nécessite toujours un abonnement ou du temps de jeu. Collection est répertorié jusqu'au 11 janvier 2027.",
+      "official": "Voir la page officielle du pack",
+      "beta": "Vérifier l'accès bêta",
+      "benefitHeader": "Avantage",
+      "included": "Inclus",
+      "notIncluded": "Non inclus",
+      "packAltSuffix": "contenu de l'emballage"
+    },
+    "dates": {
+      "metaTitle": "Dates de lancement et de version bêta par région de WoW Forever",
+      "metaDescription": "Comparez les dates officielles en anglais, celles des magasins de Taïwan et celles non confirmées de Chine continentale.",
+      "eyebrow": "Dates régionales",
+      "title": "Choisissez d’abord votre région",
+      "lede": "Le même événement mondial peut apparaître à des dates différentes selon les fuseaux horaires. Ce guide ne montre que les dates publiées explicitement.",
+      "answerLabel": "Statut actuel",
+      "answer": "Le calendrier anglais est dans sa fenêtre bêta, mais ce site n'a pas vérifié de manière indépendante la disponibilité du serveur ou la maintenance.",
+      "regionTitle": "Choisissez la source régionale",
+      "regions": [
+        {
+          "id": "global",
+          "label": "Site officiel anglais"
+        },
+        {
+          "id": "taiwan",
+          "label": "Magasin de Taïwan"
+        },
+        {
+          "id": "china",
+          "label": "Chine continentale"
+        }
+      ],
+      "regionData": {
+        "global": {
+          "status": "Dates officielles en anglais",
+          "note": "Utilisez ceux-ci pour la référence des États-Unis et de l'Europe ; vérifiez le lanceur pour les heures exactes.",
+          "events": [
+            {
+              "label": "Beta",
+              "date": "2026-09-17 - 2026-10-21",
+              "state": "Fenêtre programmée"
+            },
+            {
+              "label": "Réservation de nom",
+              "date": "2026-10-27 - 2026-11-03",
+              "state": "Avantage du pack"
+            },
+            {
+              "label": "Lancer",
+              "date": "2026-11-04",
+              "state": "Date officielle"
+            }
+          ]
+        },
+        "taiwan": {
+          "status": "Dates du magasin Taiwan Battle.net",
+          "note": "Le magasin affiche un jour de calendrier plus tard en raison de la présentation horaire régionale.",
+          "events": [
+            {
+              "label": "Beta",
+              "date": "2026-09-18 - 2026-10-22",
+              "state": "Date de stockage"
+            },
+            {
+              "label": "Réservation de nom",
+              "date": "Non déduit",
+              "state": "Non déduit"
+            },
+            {
+              "label": "Lancer",
+              "date": "2026-11-05",
+              "state": "Date de stockage"
+            }
+          ]
+        },
+        "china": {
+          "status": "Pas encore d'emploi du temps principal vérifiable",
+          "note": "Les dates anglaises ou taïwanaises ne peuvent pas être présentées comme des dates de serveur de Chine continentale.",
+          "events": [
+            {
+              "label": "Beta",
+              "date": "Non confirmé",
+              "state": "Non confirmé"
+            },
+            {
+              "label": "Réservation de nom",
+              "date": "Non confirmé",
+              "state": "Non confirmé"
+            },
+            {
+              "label": "Lancer",
+              "date": "Non confirmé",
+              "state": "Non confirmé"
+            }
+          ]
+        }
+      },
+      "timezoneTitle": "Pourquoi la date peut-elle différer d'un jour ?",
+      "timezoneBody": "Un événement mondial peut se produire à un moment donné tandis que les magasins le convertissent en un jour de calendrier local. Sans heure et fuseau horaire publiés, un compte à rebours crée une fausse précision.",
+      "prepareTitle": "Liste de contrôle avant lancement",
+      "prepare": [
+        "Confirmez que la région de votre compte Battle.net correspond au compte d'achat",
+        "Mettez à jour Battle.net et le client de jeu à l'avance",
+        "Préparez plusieurs noms ; la réservation reste selon le principe du premier arrivé, premier servi",
+        "Vérifiez les avis du lanceur le jour du lancement"
+      ],
+      "save": "Enregistrer la liste de contrôle",
+      "saved": "Enregistré dans ce navigateur",
+      "official": "Ouvrez la page officielle Forever",
+      "share": "Partagez cette page"
+    }
+  },
+  "legal": {
+    "about": {
+      "title": "À propos",
+      "intro": "Forever Guide est un outil non officiel destiné aux joueurs qui reviennent sur WoW Forever.",
+      "sections": [
+        {
+          "title": "Comment nous traitons l'information",
+          "body": "Nous utilisons les pages publiques officielles comme référence, nous gardons les horaires régionaux séparés et nous affichons la dernière date de vérification. Nous ne présentons pas les fuites ou les spéculations comme des faits confirmés."
+        },
+        {
+          "title": "Ce que ce site ne fait pas",
+          "items": [
+            "Collecter des informations sur le compte, le personnage ou le paiement Battle.net",
+            "Vendre des packs, un accès test ou des codes d'activation",
+            "Revendiquer une relation officielle avec Blizzard Entertainment",
+            "Traiter les dates d'une autre région comme un calendrier de la Chine continentale"
+          ]
+        }
+      ]
+    },
+    "privacy-policy": {
+      "title": "Politique de confidentialité",
+      "intro": "Ce site est conçu pour fonctionner sans collecter d'informations personnelles sur le compte.",
+      "sections": [
+        {
+          "title": "Stockage local",
+          "body": "Les choix de thème, de consentement aux cookies et de liste de contrôle peuvent être enregistrés dans votre navigateur. Ils ne sont pas envoyés à ce site."
+        },
+        {
+          "title": "Analyse et publicité",
+          "body": "Google Analytics et les services de publicité ne se chargent qu'après consentement lorsque l'opérateur du site les a activés. Ces fournisseurs peuvent traiter les données de l'appareil ou d'utilisation selon leurs propres politiques."
+        },
+        {
+          "title": "Liens externes",
+          "body": "Les liens officiels vers le jeu, la boutique et le support sont gérés par Blizzard ou d'autres tiers. Leurs politiques de confidentialité s'appliquent après votre départ de ce site."
+        }
+      ]
+    },
+    "terms-of-service": {
+      "title": "Conditions d'utilisation",
+      "intro": "Ce site fournit des informations de référence non officielles, et non un achat, un test ou une promesse de serveur de la part de Blizzard.",
+      "sections": [
+        {
+          "title": "Précision",
+          "body": "Les horaires, les avantages des packs et le statut des tests peuvent changer. Vérifiez à nouveau la page officielle avant un achat ou une action sur votre compte."
+        },
+        {
+          "title": "Sites externes",
+          "body": "Ce site renvoie vers des pages officielles de jeux et de magasins mais ne contrôle pas leur contenu, leur disponibilité ou leurs transactions."
+        },
+        {
+          "title": "Limitation de responsabilité",
+          "body": "Vous êtes responsable des décisions d'achat, d'abonnement ou de participation à un test. L'opérateur du site n'est pas responsable des achats, des problèmes de compte ou des pertes en jeu résultant de la confiance accordée à ce guide."
+        }
+      ]
+    },
+    "copyright": {
+      "title": "Droits d'auteur",
+      "intro": "Les explications originales, les outils interactifs et les écrits du site sont protégés par le droit d'auteur.",
+      "sections": [
+        {
+          "title": "Actifs et marques de jeu",
+          "body": "World of Warcraft, WoW, Forever, et les logos, personnages et œuvres d'art associés appartiennent à Blizzard Entertainment ou à leurs titulaires de droits respectifs. Ce site ne revendique aucune propriété sur la propriété intellectuelle du jeu."
+        },
+        {
+          "title": "Demandes de suppression",
+          "body": "Les titulaires de droits peuvent identifier la page et le matériel via la page de contact. Nous examinerons rapidement les demandes valides."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Forever Guide n'accepte pas les demandes de compte, de paiement ou d'accès de test. Pour une correction, fournissez le chemin de la page, la phrase exacte et des informations vérifiables à l'appui.",
+      "sections": [
+        {
+          "title": "Soutien officiel",
+          "body": "Pour les problèmes de compte, d'achat, de remboursement ou d'accès de test, utilisez le site officiel World of Warcraft ou Blizzard Support.",
+          "officialLink": "Ouvrez le site officiel World of Warcraft"
+        },
+        {
+          "title": "Droits d'auteur et corrections",
+          "body": "L'opérateur du site peut configurer une adresse e-mail publique. Tant qu'une adresse n'est pas indiquée, n'envoyez pas d'informations de compte ni de paiements à quiconque prétendant représenter ce site."
+        }
+      ]
+    }
+  }
+}

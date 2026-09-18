@@ -4,7 +4,7 @@
     "tagline": "Buy only what you need. Do not miss the dates that matter.",
     "legalNotice": "This is an unofficial player resource and is not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft and related assets belong to their respective owners."
   },
-  "nav": { "home": "Home", "guides": "Guides", "toggleTheme": "Toggle theme", "menu": "Menu", "close": "Close", "search": "Search", "language": "Language" },
+  "nav": { "home": "Home", "guides": "Guides", "toggleTheme": "Toggle theme", "menu": "Menu", "close": "Close", "search": "Search", "language": "Language", "mainNavigation": "Main navigation", "mobileNavigation": "Mobile navigation" },
   "search": { "placeholder": "Search rules and dates...", "noResults": "No matching results" },
   "home": {
     "faq": {
@@ -35,6 +35,50 @@
   "footer": {
     "playGame": "Visit the official Forever page", "about": "About", "faq": "FAQ", "privacyPolicy": "Privacy policy", "termsOfService": "Terms of service",
     "copyright": "Copyright", "contact": "Contact", "community": "Official links", "legal": "Site information"
+  },
+  "legal": {
+    "about": {
+      "title": "About",
+      "intro": "Forever Guide is an unofficial rules and decision tool for players returning to WoW for Forever.",
+      "sections": [
+        { "title": "How we handle information", "body": "We use official public pages as the baseline, keep regional schedules separate, and show the last verification date. We do not present leaks or speculation as confirmed facts." },
+        { "title": "What this site does not do", "items": ["Collect Battle.net account, character, or payment information", "Sell packs, test access, or activation codes", "Claim an official relationship with Blizzard Entertainment", "Treat another region's dates as a mainland China schedule"] }
+      ]
+    },
+    "privacy-policy": {
+      "title": "Privacy policy",
+      "intro": "This site is designed to work without collecting personal account information.",
+      "sections": [
+        { "title": "Local storage", "body": "Theme, cookie consent, and checklist choices may be stored in your browser. They are not sent to this site." },
+        { "title": "Analytics and advertising", "body": "Google Analytics and advertising services load only after consent when the site operator has enabled them. These providers may process device or usage data under their own policies." },
+        { "title": "External links", "body": "Official game, store, and support links are operated by Blizzard or other third parties. Their privacy policies apply after you leave this site." }
+      ]
+    },
+    "terms-of-service": {
+      "title": "Terms of service",
+      "intro": "This site provides unofficial reference information, not a purchase, testing, or server promise from Blizzard.",
+      "sections": [
+        { "title": "Accuracy", "body": "Schedules, pack benefits, and test status can change. Check the official page again before a purchase or account action." },
+        { "title": "External sites", "body": "This site links to official game and store pages but does not control their content, availability, or transactions." },
+        { "title": "Limitation of liability", "body": "You are responsible for decisions to purchase, subscribe, or join a test. The site operator is not responsible for purchases, account issues, or in-game losses resulting from reliance on this guide." }
+      ]
+    },
+    "copyright": {
+      "title": "Copyright",
+      "intro": "The site's original explanations, interactive tools, and writing are protected by copyright.",
+      "sections": [
+        { "title": "Game assets and trademarks", "body": "World of Warcraft, WoW, Forever, and related logos, characters, and artwork belong to Blizzard Entertainment or their respective rights holders. This site claims no ownership of the game's intellectual property." },
+        { "title": "Removal requests", "body": "Rights holders may identify the page and material through the contact page. We will review valid requests promptly." }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "intro": "Forever Guide does not accept account, payment, or test-access applications. For a correction, provide the page path, exact sentence, and verifiable supporting information.",
+      "sections": [
+        { "title": "Official support", "body": "For account, purchase, refund, or test-access issues, use the official World of Warcraft site or Blizzard Support.", "officialLink": "Open the official World of Warcraft site" },
+        { "title": "Copyright and corrections", "body": "The site operator can configure a public email address. Until one is listed, do not send account information or payments to anyone claiming to represent this site." }
+      ]
+    }
   },
   "forever": {
     "brandLabel": "Returning player guide",
@@ -123,7 +167,7 @@
         "epic": { "name": "Skyborne Epic Pack", "body": "The lowest pack combining Skyborne, Beta Access, and 30 days of game time." },
         "collection": { "name": "Warcraft Forever Collection", "body": "Choose this only if you also need Warcraft III content or Collection-exclusive items." }
       },
-      "compareTitle": "Benefits by tier",
+      "compareTitle": "Benefits by tier", "benefitHeader": "Benefit", "included": "Included", "notIncluded": "Not included", "packAltSuffix": "pack contents",
       "rows": [{ "label": "Skyborne and starting experience", "values": [true, true, true] }, { "label": "Early name reservation", "values": [true, true, true] }, { "label": "Beta Access", "values": [false, true, true] }, { "label": "30 days of WoW game time", "values": [false, true, true] }, { "label": "Warcraft III: Reforged", "values": [false, false, true] }, { "label": "Forsaken Kingdom campaign", "values": [false, false, true] }, { "label": "Friend launch invitations", "values": [1, 3, 3] }],
       "packs": [{ "name": "Heroic", "tag": "Skyborne only", "image": "/images/forever/heroic.webp", "body": "Skyborne, starting experience, items, and name reservation. No Beta Access or game time." }, { "name": "Epic", "tag": "Lowest beta tier", "image": "/images/forever/epic.webp", "body": "Everything in Heroic, plus Beta Access, 30 days of game time, and extra items." }, { "name": "Collection", "tag": "Warcraft collection tier", "image": "/images/forever/collection.webp", "body": "Everything in Epic, plus Warcraft III content and collection cosmetics." }],
       "finePrint": "Epic and Collection game time is added at launch. Continuing afterward still requires subscription or game time. Collection is listed through January 11, 2027.",

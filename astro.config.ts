@@ -6,7 +6,7 @@ import icon from 'astro-icon';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 
-import { locales, defaultLocale } from './src/i18n/routing';
+import { locales, defaultLocale, hreflangFor } from './src/i18n/routing';
 import { CONTENT_TYPES } from './src/config/navigation';
 
 /**
@@ -165,17 +165,17 @@ const lastmodMap = buildLastmodMap(noindexPaths, localeCoverage, categoryCoverag
  * Article/list hreflang alternates that match the page-level <head> truth.
  * Returns sitemap `links` items ({ lang, url }); undefined = no alternates.
  * The locale segment is anchored by its trailing slash — a bare optional
- * ([a-z]{2,3})? would greedily eat the first 3 letters of a category
+ * A loose optional language expression would greedily eat the first letters of a category
  * ("bosses" → locale "bos" + category "ses") and silently drop alternates.
  */
 function alternatesFor(pagePath: string): Array<{ lang: string; url: string }> | undefined {
   // Article: /<cat>/<slug…> or /<locale>/<cat>/<slug…>
-  const art = pagePath.match(/^\/(?:([a-z]{2,3})\/)?([a-z-]+)\/(.+)$/);
+  const art = pagePath.match(/^\/(?:([a-z]{2,3}(?:-[a-z]{2})?)\/)?([a-z-]+)\/(.+)$/);
   if (art && (locales as readonly string[]).includes(art[1] ?? defaultLocale)) {
     const cov = localeCoverage.get(`${art[2]}/${art[3]}`);
     if (cov) {
       return Array.from(cov).map((l) => ({
-        lang: l,
+        lang: hreflangFor(l as (typeof locales)[number]),
         url: new URL(
           l === defaultLocale ? `/${art[2]}/${art[3]}/` : `/${l}/${art[2]}/${art[3]}/`,
           siteOrigin,
@@ -186,7 +186,7 @@ function alternatesFor(pagePath: string): Array<{ lang: string; url: string }> |
   // Category list: only locales that actually have an article in the
   // category (empty-state lists are noindex and excluded from the sitemap —
   // advertising them as alternates would invite crawling thin content).
-  const list = pagePath.match(/^\/(?:([a-z]{2,3})\/)?([a-z-]+)$/);
+  const list = pagePath.match(/^\/(?:([a-z]{2,3}(?:-[a-z]{2})?)\/)?([a-z-]+)$/);
   if (
     list &&
     (locales as readonly string[]).includes(list[1] ?? defaultLocale) &&
@@ -195,7 +195,7 @@ function alternatesFor(pagePath: string): Array<{ lang: string; url: string }> |
     const catCov = categoryCoverage.get(list[2]);
     if (!catCov) return undefined;
     return Array.from(catCov).map((l) => ({
-      lang: l,
+      lang: hreflangFor(l as (typeof locales)[number]),
       url: new URL(l === defaultLocale ? `/${list[2]}/` : `/${l}/${list[2]}/`, siteOrigin).href,
     }));
   }

@@ -10,15 +10,22 @@
  */
 
 import zh from '~/locales/zh.json';
-import en from '~/locales/en.json';
 import enOverrides from './messages/en.json';
 
 import { defaultLocale, type Locale } from './routing';
 
-const messages: Partial<Record<Locale, Record<string, unknown>>> = {
-  zh: zh as Record<string, unknown>,
-  en: deepMerge(en as Record<string, unknown>, enOverrides as Record<string, unknown>),
-};
+const localeModules = import.meta.glob('../locales/*.json', {
+  eager: true,
+  import: 'default',
+}) as Record<string, Record<string, unknown>>;
+
+const messages = Object.fromEntries(
+  Object.entries(localeModules).map(([file, value]) => [file.match(/\/([^/]+)\.json$/)?.[1], value]),
+) as Partial<Record<Locale, Record<string, unknown>>>;
+
+if (messages.en) {
+  messages.en = deepMerge(messages.en, enOverrides as Record<string, unknown>);
+}
 
 /**
  * Deep-merge `source` over `base`. Arrays are replaced (not concatenated);

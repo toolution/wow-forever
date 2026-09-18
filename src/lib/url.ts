@@ -5,7 +5,7 @@
  * The configured default locale has no prefix; other locales are prefixed.
  */
 
-import { defaultLocale, locales, type Locale } from '~/i18n/routing';
+import { defaultLocale, hreflangFor, locales, type Locale } from '~/i18n/routing';
 import { siteUrl } from '~/config/site';
 
 /** Build a path with the locale prefix applied (or none for default locale). */
@@ -77,7 +77,7 @@ export function languageAlternates(
   locales: readonly Locale[],
 ): Array<{ hreflang: string; href: string }> {
   return locales.map((loc) => ({
-    hreflang: loc,
+    hreflang: hreflangFor(loc),
     href: `${siteUrl}${buildPath(loc)}`,
   }));
 }

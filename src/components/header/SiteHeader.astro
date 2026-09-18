@@ -33,7 +33,7 @@ const localizedNav = nav.map((item) => ({ ...item, href: localizePath(item.href,
       </span>
     </a>
 
-    <nav class="ml-4 hidden flex-1 items-center justify-center gap-1 md:flex" aria-label={locale === 'zh' ? '主导航' : 'Main navigation'}>
+    <nav class="ml-4 hidden flex-1 items-center justify-center gap-1 md:flex" aria-label={ui.nav.mainNavigation}>
       {localizedNav.map((item) => {
         const active = normalizedPath === item.href;
         return (
@@ -57,7 +57,7 @@ const localizedNav = nav.map((item) => ({ ...item, href: localizePath(item.href,
       <LanguageSwitcher
         locale={locale}
         availableLocales={availableLocales}
-        pathFor={(targetLocale) => switchLocalePath(currentPath, targetLocale)}
+        pathFor={(targetLocale: Locale) => switchLocalePath(currentPath, targetLocale)}
       />
       <ThemeToggle />
       <details class="relative md:hidden">
@@ -67,7 +67,7 @@ const localizedNav = nav.map((item) => ({ ...item, href: localizePath(item.href,
         >
           <Icon name="lucide:menu" class="h-5 w-5" />
         </summary>
-        <nav class="absolute right-0 mt-2 w-64 overflow-hidden rounded-md border border-border bg-card p-2 shadow-xl" aria-label={locale === 'zh' ? '移动端导航' : 'Mobile navigation'}>
+        <nav class="absolute right-0 mt-2 w-64 overflow-hidden rounded-md border border-border bg-card p-2 shadow-xl" aria-label={ui.nav.mobileNavigation}>
           {localizedNav.map((item) => (
             <a
               href={item.href}

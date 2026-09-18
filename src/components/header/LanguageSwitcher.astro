@@ -5,6 +5,7 @@
  */
 import { Icon } from 'astro-icon/components';
 import { locales, LOCALE_LABELS, type Locale } from '~/i18n/routing';
+import { getUi } from '~/i18n/ui';
 
 interface Props {
   locale: Locale;
@@ -17,19 +18,21 @@ interface Props {
    */
   availableLocales?: readonly Locale[];
 }
-const { locale, pathFor, availableLocales } = Astro.props;
+const { locale, pathFor, availableLocales } = Astro.props as Props;
 const switchLocales = availableLocales ?? locales;
+const languageLabel = (getUi(locale).nav as Record<string, string>).language;
 ---
 
 <details class="relative">
   <summary
+    aria-label={languageLabel}
     class="inline-flex cursor-pointer list-none items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium text-foreground transition hover:bg-muted"
   >
     <Icon name="lucide:globe" class="h-4 w-4" />
-    <span>{LOCALE_LABELS[locale]}</span>
-    <Icon name="lucide:chevron-down" class="h-3 w-3" />
+    <span class="hidden max-w-40 truncate sm:inline">{LOCALE_LABELS[locale]}</span>
+    <Icon name="lucide:chevron-down" class="hidden h-3 w-3 sm:inline-flex" />
   </summary>
-  <div class="absolute right-0 z-50 mt-2 w-40 overflow-hidden rounded-md border bg-card shadow-lg">
+  <div class="absolute right-0 z-50 mt-2 w-52 overflow-hidden rounded-md border bg-card shadow-lg">
     {
       switchLocales.map((loc) => (
         <a

@@ -1,0 +1,738 @@
+{
+  "site": {
+    "name": "Forever Guide",
+    "shortName": "Forever",
+    "description": "非官方 WoW Forever 決策指南，用於測試版訪問、版本及區域日期。",
+    "tagline": "只購買你需要的東西。不要錯過重要的日期。",
+    "legalNotice": "這是一個非官方的玩家資源，與 Blizzard Entertainment 無關，也未經其認可。World of Warcraft 及相關資產屬於其各自的所有者。"
+  },
+  "nav": {
+    "home": "家",
+    "guides": "指南",
+    "toggleTheme": "切換主題",
+    "menu": "菜單",
+    "close": "關閉",
+    "search": "搜尋",
+    "language": "語言",
+    "mainNavigation": "主要導覽",
+    "mobileNavigation": "行動導航"
+  },
+  "search": {
+    "placeholder": "搜尋規則和日期...",
+    "noResults": "沒有符合的結果"
+  },
+  "shared": {
+    "lastUpdated": "最後驗證",
+    "publishedOn": "已發表",
+    "noArticles": "尚無文章",
+    "defaultListDescription": "瀏覽所有 {title}。",
+    "relatedArticles": "相關頁面",
+    "onThisPage": "在此頁面",
+    "browseAll": "瀏覽全部",
+    "viewAll": "查看全部",
+    "commentsHeading": "評論",
+    "share": "分享",
+    "copyLink": "複製連結",
+    "copied": "已複製",
+    "consentText": "我們僅在您同意後才載入分析或廣告服務。",
+    "accept": "接受",
+    "decline": "拒絕",
+    "consentTitle": "Cookie 設定",
+    "bossCard": {
+      "title": "概览",
+      "hp": "生命值",
+      "weakness": "弱点",
+      "resistant": "抗性",
+      "location": "位置",
+      "level": "建议等级"
+    },
+    "codesTable": {
+      "active": "有效",
+      "expired": "已失效",
+      "reward": "奖励",
+      "expires": "到期",
+      "source": "来源",
+      "code": "代码"
+    },
+    "codesFaq": [],
+    "possiblyOutdated": "此頁面最後驗證於",
+    "outdatedNote": "；規則自那時以來可能已經改變。",
+    "prevArticle": "上一個",
+    "nextArticle": "下一個",
+    "minuteRead": "分鐘閱讀",
+    "wasThisHelpful": "這有幫助嗎？",
+    "feedbackThanks": "感謝你的回饋",
+    "sponsoredLabel": "贊助",
+    "relatedVideos": "相關影片",
+    "gallery": "畫廊",
+    "gameVersion": "遊戲版本",
+    "allTags": "所有標籤",
+    "tagsIndexDescription": "按主題瀏覽內容。",
+    "articlesCount": "文章",
+    "recentTitle": "最近更新",
+    "recentDescription": "規則和日期最近已經核實。",
+    "sponsorTitle": "支持此網站",
+    "sponsorText": "幫助維持這個獨立資源的運作。",
+    "sponsorButton": "支援",
+    "notFoundSearchHint": "從上方的主要選項之一重新開始。",
+    "notFoundPopular": "熱門連結",
+    "galleryLabels": {
+      "close": "关闭",
+      "prev": "上一张",
+      "next": "下一张"
+    },
+    "quickAnswer": "快速回答",
+    "skipToContent": "跳到內容",
+    "tapToCopy": "點擊複製",
+    "open": "打開",
+    "playVideo": "播放影片",
+    "closeAd": "關閉廣告",
+    "adLabel": "廣告",
+    "codesFaqTitle": "常見問題",
+    "faqTitle": "常見問題",
+    "toggleTheme": "切換主題",
+    "fallbackNotice": "後備內容",
+    "copyQuickAnswer": "複製答案",
+    "feedbackYes": "是",
+    "feedbackNo": "不",
+    "breadcrumbAria": "麵包屑",
+    "paginationAria": "分頁"
+  },
+  "overview": {
+    "guides": {
+      "overviewTitle": "规则说明",
+      "overviewDescription": "WoW Forever 资格、版本与日期说明。"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "WoW Forever 回归玩家开服工具",
+      "description": "快速判断 WoW Forever Beta 资格、最低必要礼包、地区日期，以及它与 Modern、Classic 的区别。"
+    },
+    "faq": {
+      "title": "常見問題",
+      "description": "關於 WoW Forever 存取和購買的快速答案。",
+      "items": [
+        {
+          "question": "如果我已經訂閱了 WoW，我還需要購買 Forever 嗎？",
+          "answer": "基礎遊戲包含在有效的 WoW 訂閱或遊戲時間中。僅當您想要 Skyborne、內含測試版存取或其他額外內容時才購買套裝。"
+        },
+        {
+          "question": "註冊是否保證可以獲得測試版的使用權？",
+          "answer": "不。官方註冊提供了參與的機會。Epic Pack 和 Collection 將 Beta Access 列為套裝福利。"
+        },
+        {
+          "question": "Heroic Pack 包含測試版訪問嗎？",
+          "answer": "不。Heroic 包含 Skyborne、其起始經驗和早期名稱保留，但官方比較中未列出 Beta Access。"
+        },
+        {
+          "question": "中國大陸的發佈日期已確定嗎？",
+          "answer": "沒有可驗證的大陸時間表。英文官方頁面和台灣商店的日期無法確定大陸伺服器的日期。"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "playGame": "造訪官方 Forever 頁面",
+    "officialDiscord": "官方 Discord",
+    "officialYoutube": "官方 YouTube",
+    "officialTwitter": "官方 X",
+    "officialReddit": "Reddit",
+    "about": "關於",
+    "faq": "常見問題",
+    "privacyPolicy": "隱私政策",
+    "termsOfService": "服務條款",
+    "copyright": "版權",
+    "contact": "聯絡",
+    "copyrightText": "© 2026 Forever Guide",
+    "community": "官方連結",
+    "legal": "網站資訊"
+  },
+  "forever": {
+    "brandLabel": "回歸玩家指南",
+    "verified": "規則已於2026年9月18日核實",
+    "nav": [
+      {
+        "label": "家",
+        "href": "/",
+        "icon": "lucide:home"
+      },
+      {
+        "label": "Beta 存取",
+        "href": "/beta/",
+        "icon": "lucide:key-round"
+      },
+      {
+        "label": "選擇版本",
+        "href": "/editions/",
+        "icon": "lucide:package-check"
+      },
+      {
+        "label": "地區日期",
+        "href": "/release-date/",
+        "icon": "lucide:calendar-clock"
+      }
+    ],
+    "home": {
+      "metaTitle": "WoW Forever 回歸玩家啟動指南",
+      "metaDescription": "檢查 WoW Forever 測試版存取權限、您需要的最低版本、地區日期，以及它與 Modern 和 Classic 的不同之處。",
+      "eyebrow": "非官方回歸玩家指南",
+      "title": "WoW Forever",
+      "lede": "不必先讀十篇新聞。先確認你能否參加 Beta、是否需要購買套裝、所在地區適用哪個日期，以及 Forever 與你熟悉的 WoW 有何不同。",
+      "primary": "檢查測試版訪問",
+      "secondary": "選擇最小包裝",
+      "status": "當前里程碑",
+      "statusValue": "官方時間表在測試版視窗中",
+      "statusNote": "本網站尚未驗證實時伺服器的可用性",
+      "launch": "正式啟動",
+      "launchValue": "2026年11月4日",
+      "access": "基本要求",
+      "accessValue": "活躍的 WoW 訂閱或遊戲時間",
+      "tasksTitle": "從你需要回答的問題開始",
+      "tasks": [
+        {
+          "title": "我可以進入測試版嗎？",
+          "description": "單獨註冊選擇、英雄級以及套裝附帶的測試版存取權。",
+          "href": "/beta/",
+          "icon": "lucide:key-round",
+          "action": "檢查存取權"
+        },
+        {
+          "title": "哪一個包裝是最小的？",
+          "description": "由 Skyborne 選擇，測試版，30 天遊戲時間，以及魔獸爭霸 III 的需求。",
+          "href": "/editions/",
+          "icon": "lucide:package-check",
+          "action": "比較套裝"
+        },
+        {
+          "title": "哪個日期適用於我？",
+          "description": "保持英文時間表、台灣店鋪與大陸狀態分開。",
+          "href": "/release-date/",
+          "icon": "lucide:calendar-clock",
+          "action": "檢查地區"
+        },
+        {
+          "title": "什麼是 Forever？",
+          "description": "對回歸玩家的版本線進行直接說明。",
+          "href": "#returning",
+          "icon": "lucide:route",
+          "action": "獲取概覽"
+        }
+      ],
+      "confusionEyebrow": "先解決三個問題",
+      "confusionTitle": "玩家最有可能超支或誤讀存取的地方",
+      "facts": [
+        {
+          "title": "基本遊戲不是單獨購買的",
+          "body": "只要有有效的 WoW 訂閱或遊戲時間，就包含 Base Forever 遊戲。僅擁有基本版本不需要購買額外套裝。",
+          "icon": "lucide:badge-check"
+        },
+        {
+          "title": "註冊並不保證會收到邀請",
+          "body": "官方註冊提供了一次測試的機會。明確包含 Beta Access 的最低套裝是 Skyborne Epic Pack。",
+          "icon": "lucide:circle-alert"
+        },
+        {
+          "title": "Skyborne 需要一個套件",
+          "body": "Skyborne 和它的 Zephras Isle 啟動需要 Heroic Pack 或更高版本。僅訂閱即可涵蓋基本訪問。",
+          "icon": "lucide:wind"
+        }
+      ],
+      "returningEyebrow": "給回歸玩家",
+      "returningTitle": "把 Forever 想成是另一條長期運行的 WoW 線",
+      "returningBody": "它從 WoW 第一個時代的基礎開始，但這不是簡單的重新發行。官方描述包括擴展區域、1000 個新任務、新副本、職業和專精重製、傳承進度以及系統變更。",
+      "versions": [
+        {
+          "name": "Modern",
+          "label": "當前擴展線",
+          "body": "持續存在的零售角色、系統和擴展進度。"
+        },
+        {
+          "name": "Classic",
+          "label": "歷史版本線",
+          "body": "專注於重現過去的版本和分階段進展。Forever 套件物品不會自動應用。"
+        },
+        {
+          "name": "Forever",
+          "label": "一個更新的長期世界",
+          "body": "在早期艾澤拉斯的基礎上建立，加入了新的區域、任務、視覺效果和系統，並計劃持續更新。"
+        }
+      ],
+      "timelineTitle": "啟動前的三個關鍵窗口",
+      "timeline": [
+        {
+          "date": "2026-09-17 - 2026-10-21",
+          "title": "英文官方測試版時間表",
+          "body": "註冊選擇和套裝存取是獨立的途徑。"
+        },
+        {
+          "date": "2026-10-27 - 2026-11-03",
+          "title": "預先保留名稱",
+          "body": "所有三個套裝都列出此福利；名稱仍以先到先得為準。"
+        },
+        {
+          "date": "2026-11-04",
+          "title": "英文正式發佈日期",
+          "body": "台灣商店因地區行事曆的差異顯示11月5日。"
+        }
+      ],
+      "closingTitle": "在沒有閱讀所有內容的情況下做出一個決定",
+      "closingBody": "在大約一分鐘內獲得有關訪問、套裝或日期的明確答案。",
+      "closingAction": "從測試版開始"
+    },
+    "beta": {
+      "metaTitle": "WoW Forever Beta 訪問檢查器",
+      "metaDescription": "將測試版註冊選擇與 Heroic、Epic 和 Collection 的訪問分開。",
+      "eyebrow": "Beta 存取",
+      "title": "你可以透過哪種方式參加 Beta？",
+      "lede": "註冊可能會獲得邀請，但不保證。Epic Pack 和 Collection 明確包含 Beta Access；Heroic Pack 則不包含。",
+      "answerLabel": "快速回答",
+      "answer": "你可以免費註冊獲取機會。對於列為套裝福利的 Beta Access，最低要求是 Skyborne Epic Pack。",
+      "toolTitle": "存取檢查器",
+      "toolDescription": "選擇你擁有的和你想要的。此工具絕不會讀取或儲存你的 Battle.net 帳號。",
+      "ownershipQuestion": "你已經擁有什麼？",
+      "ownership": [
+        {
+          "id": "none",
+          "label": "尚未有套裝"
+        },
+        {
+          "id": "heroic",
+          "label": "Skyborne Heroic"
+        },
+        {
+          "id": "epic",
+          "label": "Skyborne Epic"
+        },
+        {
+          "id": "collection",
+          "label": "Forever Collection"
+        }
+      ],
+      "goalQuestion": "你想如何取得存取權？",
+      "goals": [
+        {
+          "id": "chance",
+          "label": "我可以等候選擇"
+        },
+        {
+          "id": "included",
+          "label": "我需要把它包含在一個包裹裡"
+        }
+      ],
+      "resultTitle": "你的下一步",
+      "calculate": "顯示我的結果",
+      "results": {
+        "none-chance": {
+          "status": "使用免費註冊途徑",
+          "body": "在官方頁面上登記興趣，並等待可能的邀請。註冊並不保證能獲邀。",
+          "action": "開放官方註冊"
+        },
+        "none-included": {
+          "status": "Epic Pack 是最小值",
+          "body": "Epic Pack 與 Collection 均列有 Beta Access；Heroic Pack 不包含此權益。",
+          "action": "比較套裝"
+        },
+        "heroic-chance": {
+          "status": "英雄版不包括測試版",
+          "body": "保持英雄模式，並單獨使用官方報名渠道。暴雪仍然決定誰被邀請。",
+          "action": "開放官方註冊"
+        },
+        "heroic-included": {
+          "status": "升級到 Epic 或 Collection",
+          "body": "官方的英雄福利並未列出 Beta Access。",
+          "action": "查看升級差異"
+        },
+        "epic-chance": {
+          "status": "您的套裝包含測試版存取權",
+          "body": "Epic 列出了 Beta Access，所以隨機選擇並不是你唯一的途徑。",
+          "action": "檢查測試版日期"
+        },
+        "epic-included": {
+          "status": "您的套裝包含測試版存取權",
+          "body": "Epic 是包含 Beta Access 的最低包等級。",
+          "action": "檢查測試版日期"
+        },
+        "collection-chance": {
+          "status": "您的套裝包含測試版存取權",
+          "body": "Collection 包含 Beta Access、Epic 的福利以及魔獸争霸 III 的內容。",
+          "action": "檢查測試版日期"
+        },
+        "collection-included": {
+          "status": "您的套裝包含測試版存取權",
+          "body": "Collection 明確地包含 Beta Access。",
+          "action": "檢查測試版日期"
+        }
+      },
+      "routesTitle": "不要混淆這兩條通路",
+      "routes": [
+        {
+          "title": "官方註冊",
+          "badge": "機會",
+          "body": "符合資格的玩家可以登記感興趣，但該頁面不保證會發出邀請。"
+        },
+        {
+          "title": "Epic 或 Collection",
+          "badge": "包含",
+          "body": "官方比較列出了這些層級的 Beta Access。"
+        },
+        {
+          "title": "Heroic Pack",
+          "badge": "沒有測試版",
+          "body": "它包括 Skyborne 和名稱預留，但不包括 Beta Access。"
+        }
+      ],
+      "checklistTitle": "在進入考試之前",
+      "checklist": [
+        "確認購買是在正確的 WoW 帳戶上",
+        "更新 Battle.net 和 WoW 客戶端",
+        "啟用雙重驗證並保留恢復存取權",
+        "不要將第三方啟用碼視為官方授權"
+      ],
+      "save": "儲存檢查清單",
+      "saved": "已保存在此瀏覽器中",
+      "official": "打開官方 Forever 頁面",
+      "editions": "比較套裝"
+    },
+    "editions": {
+      "metaTitle": "WoW Forever 版本選擇器",
+      "metaDescription": "為 Skyborne 選擇最小套裝，包括 Beta 測試、遊戲時間和魔獸爭霸 III 內容。",
+      "eyebrow": "選擇版本",
+      "title": "只購買你實際需要的等級",
+      "lede": "基本 Forever 訪問權限需具備有效訂閱或遊戲時間。套裝主要增加 Skyborne、測試版訪問權限、遊戲時間和收藏品。",
+      "answerLabel": "最低成本規則",
+      "answer": "只玩基礎內容：不用買套裝。要 Skyborne：Heroic Pack。還要 Beta Access 與 30 天遊戲時間：Epic Pack。還要 Warcraft III 內容：Collection。",
+      "toolTitle": "最低版本選擇器",
+      "toolDescription": "只選擇您需要的福利。結果會推薦最低相符等級。",
+      "needsQuestion": "你絕對需要哪些福利？",
+      "questions": [
+        {
+          "id": "skyborne",
+          "label": "Skyborne 與 Zephras Isle 的入門體驗"
+        },
+        {
+          "id": "beta",
+          "label": "包內包含 Beta Access"
+        },
+        {
+          "id": "warcraft3",
+          "label": "Warcraft III: Reforged 和 Forsaken Kingdom"
+        }
+      ],
+      "subscription": "你在推出時會有一個有效的 WoW 訂閱或遊戲時間嗎？",
+      "subscriptionOptions": [
+        {
+          "id": "yes",
+          "label": "是"
+        },
+        {
+          "id": "no",
+          "label": "還沒有"
+        }
+      ],
+      "resultTitle": "最小選項",
+      "calculate": "找到我的最小值",
+      "results": {
+        "base": {
+          "name": "不需要包裝",
+          "body": "有效的訂閱或遊戲時間涵蓋基本 Forever 訪問權限。"
+        },
+        "base-nosub": {
+          "name": "先取得訂閱或遊戲時間",
+          "body": "Base Forever 不是單獨購買；仍然需要有效的訂閱或遊戲時間。"
+        },
+        "heroic": {
+          "name": "Skyborne Heroic Pack",
+          "body": "Skyborne 的最低套裝和名稱保留，但不包括測試版存取權。"
+        },
+        "epic": {
+          "name": "Skyborne Epic Pack",
+          "body": "最便宜的套裝結合了 Skyborne、Beta Access，以及 30 天的遊戲時間。"
+        },
+        "collection": {
+          "name": "Warcraft Forever Collection",
+          "body": "只有在你也需要《魔獸爭霸 III》的內容或 Collection 專屬物品時才選擇這個。"
+        }
+      },
+      "compareTitle": "按等級的福利",
+      "columns": [
+        "Heroic",
+        "Epic",
+        "Collection"
+      ],
+      "rows": [
+        {
+          "label": "Skyborne 和入門體驗",
+          "values": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "預先名稱保留",
+          "values": [
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "Beta Access",
+          "values": [
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "WoW 遊戲時間 30 天",
+          "values": [
+            false,
+            true,
+            true
+          ]
+        },
+        {
+          "label": "Warcraft III: Reforged",
+          "values": [
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "label": "Forsaken Kingdom 活動",
+          "values": [
+            false,
+            false,
+            true
+          ]
+        },
+        {
+          "label": "朋友啟動邀請",
+          "values": [
+            1,
+            3,
+            3
+          ]
+        }
+      ],
+      "packs": [
+        {
+          "name": "Heroic",
+          "tag": "僅限 Skyborne",
+          "image": "/images/forever/heroic.webp",
+          "body": "Skyborne，起始經驗、物品和名稱預留。沒有 Beta Access 或遊戲時間。"
+        },
+        {
+          "name": "Epic",
+          "tag": "最低貝塔等級",
+          "image": "/images/forever/epic.webp",
+          "body": "包含《英雄版》的所有內容，外加 Beta Access、30 天遊戲時間和額外物品。"
+        },
+        {
+          "name": "Collection",
+          "tag": "魔獸系列收藏等級",
+          "image": "/images/forever/collection.webp",
+          "body": "Epic 中的所有內容，外加魔獸爭霸 III 的內容和收藏用裝飾品。"
+        }
+      ],
+      "finePrint": "Epic 和 Collection 的遊戲時間在啟動時會被添加。之後繼續遊玩仍然需要訂閱或遊戲時間。Collection 的列表有效期至 2027 年 1 月 11 日。",
+      "official": "檢視官方包頁面",
+      "beta": "檢查測試版訪問",
+      "benefitHeader": "好處",
+      "included": "包含",
+      "notIncluded": "未包含",
+      "packAltSuffix": "包裝內容"
+    },
+    "dates": {
+      "metaTitle": "WoW Forever 各區域的推出及測試版日期",
+      "metaDescription": "比較官方英文、台灣商店和未確認的中國大陸日期。",
+      "eyebrow": "區域日期",
+      "title": "先選擇地區，再查看日期",
+      "lede": "由於時區的不同，同一全球事件可能出現在不同的日曆日期。本指南僅顯示明確公佈的日期。",
+      "answerLabel": "當前狀態",
+      "answer": "英文時程目前處於測試階段，但本網站尚未獨立驗證伺服器的可用性或維護情況。",
+      "regionTitle": "選擇地區來源",
+      "regions": [
+        {
+          "id": "global",
+          "label": "英語官方網站"
+        },
+        {
+          "id": "taiwan",
+          "label": "台灣商店"
+        },
+        {
+          "id": "china",
+          "label": "中國大陸"
+        }
+      ],
+      "regionData": {
+        "global": {
+          "status": "官方英文日期",
+          "note": "將這些用於美國和歐洲的參考；查看啟動器以獲取確切時間。",
+          "events": [
+            {
+              "label": "Beta",
+              "date": "2026-09-17 - 2026-10-21",
+              "state": "預定時段"
+            },
+            {
+              "label": "名稱預留",
+              "date": "2026-10-27 - 2026-11-03",
+              "state": "套裝福利"
+            },
+            {
+              "label": "啟動",
+              "date": "2026-11-04",
+              "state": "官方日期"
+            }
+          ]
+        },
+        "taiwan": {
+          "status": "台灣 Battle.net 商店日期",
+          "note": "因地區時間呈現的差異，商店顯示的日期晚了一天。",
+          "events": [
+            {
+              "label": "Beta",
+              "date": "2026-09-18 - 2026-10-22",
+              "state": "存儲日期"
+            },
+            {
+              "label": "名稱預留",
+              "date": "未推斷",
+              "state": "未推斷"
+            },
+            {
+              "label": "啟動",
+              "date": "2026-11-05",
+              "state": "存放日期"
+            }
+          ]
+        },
+        "china": {
+          "status": "尚無可驗證的中國大陸行程",
+          "note": "英國或台灣的日期不能被作為大陸伺服器的日期呈現。",
+          "events": [
+            {
+              "label": "Beta",
+              "date": "未確認",
+              "state": "未確認"
+            },
+            {
+              "label": "名稱預留",
+              "date": "未確認",
+              "state": "未確認"
+            },
+            {
+              "label": "啟動",
+              "date": "未確認",
+              "state": "未確認"
+            }
+          ]
+        }
+      },
+      "timezoneTitle": "為什麼日期會差一天？",
+      "timezoneBody": "一個全球事件可能在某一時刻發生，而商店則將其轉換為當地的日曆日期。如果沒有公佈的時間和時區，倒數計時會產生虛假的精確性。",
+      "prepareTitle": "預啟動檢查清單",
+      "prepare": [
+        "確認您的 Battle.net 帳戶地區與購買帳戶相符",
+        "提前更新 Battle.net 和遊戲客戶端",
+        "準備幾個名字；預約仍以先到先得為準",
+        "在啟動日查看啟動器通知"
+      ],
+      "save": "儲存檢查清單",
+      "saved": "已保存在此瀏覽器中",
+      "official": "打開官方 Forever 頁面",
+      "share": "分享此頁面"
+    }
+  },
+  "legal": {
+    "about": {
+      "title": "關於",
+      "intro": "Forever Guide 是為 WoW Forever 回歸玩家製作的非官方規則與決策工具。",
+      "sections": [
+        {
+          "title": "我們如何處理資訊",
+          "body": "我們使用官方公開頁面作為基準，將各地區的行程分開顯示，並標示最後一次核實日期。我們不將洩漏或推測當作已確認的事實呈現。"
+        },
+        {
+          "title": "這個網站不做的事",
+          "items": [
+            "收集 Battle.net 帳號、角色或付款資訊",
+            "販售套裝、測試存取或啟用碼",
+            "聲稱與 Blizzard Entertainment 存在正式關係",
+            "將其他地區的日期視為中國大陸的時間表"
+          ]
+        }
+      ]
+    },
+    "privacy-policy": {
+      "title": "隱私政策",
+      "intro": "本網站設計為在不收集個人帳戶資訊的情況下運作。",
+      "sections": [
+        {
+          "title": "本地儲存",
+          "body": "主題、Cookie 同意和清單選項可能會儲存在您的瀏覽器中。它們不會被傳送到此網站。"
+        },
+        {
+          "title": "分析與廣告",
+          "body": "Google Analytics 和廣告服務僅在網站運營者啟用後並獲得同意時才會加載。這些提供者可能會根據其自身的政策處理設備或使用數據。"
+        },
+        {
+          "title": "外部連結",
+          "body": "官方遊戲、商店和支援連結由暴雪或其他第三方運營。離開本網站後，將適用其隱私政策。"
+        }
+      ]
+    },
+    "terms-of-service": {
+      "title": "服務條款",
+      "intro": "本網站提供非官方的參考資訊，而非暴雪的購買、測試或伺服器承諾。",
+      "sections": [
+        {
+          "title": "準確性",
+          "body": "排程、套裝福利和測試狀態可能會變動。在購買或進行帳號操作前，請再次查看官方頁面。"
+        },
+        {
+          "title": "外部網站",
+          "body": "此網站連結至官方遊戲及商店頁面，但不控制其內容、可用性或交易。"
+        },
+        {
+          "title": "責任限制",
+          "body": "您負責作出購買、訂閱或參加測試的決定。網站運營者對因依賴本指南而造成的購買、帳號問題或遊戲內損失不承擔責任。"
+        }
+      ]
+    },
+    "copyright": {
+      "title": "版權",
+      "intro": "該網站的原始說明、互動工具和文字內容受到版權保護。",
+      "sections": [
+        {
+          "title": "遊戲資產和商標",
+          "body": "World of Warcraft、WoW、Forever 及相關的標誌、角色和藝術作品均屬於 Blizzard Entertainment 或其各自的權利持有人。本網站不聲稱擁有該遊戲的知識產權。"
+        },
+        {
+          "title": "移除請求",
+          "body": "權利持有人可以通過聯絡頁面識別頁面和材料。我們將及時審查有效的請求。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "聯絡",
+      "intro": "Forever Guide 不接受帳戶、付款或測試訪問申請。如需更正，請提供頁面路徑、精確句子及可驗證的支持資訊。",
+      "sections": [
+        {
+          "title": "官方支援",
+          "body": "如有帳號、購買、退款或試用存取問題，請使用官方 World of Warcraft 網站或 Blizzard Support。",
+          "officialLink": "打開官方 World of Warcraft 網站"
+        },
+        {
+          "title": "版權與更正",
+          "body": "網站管理員可以設定公開電子郵件地址。在列出之前，請勿將帳戶資訊或付款寄給任何聲稱代表此網站的人。"
+        }
+      ]
+    }
+  }
+}

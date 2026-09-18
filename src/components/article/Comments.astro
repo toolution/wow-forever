@@ -41,7 +41,23 @@ const enabled = Boolean(repo && repoId && category && categoryId);
 
 // Giscus data-lang uses short codes matching our locale values.
 // Whitelist is defensive (Giscus codes ≠ BCP-47 in edge cases).
-const GISCUS_LANG: Record<string, string> = { en: 'en', ja: 'ja' };
+const GISCUS_LANG: Record<string, string> = {
+  zh: 'zh-CN',
+  'zh-tw': 'zh-TW',
+  en: 'en',
+  'en-gb': 'en',
+  'de-de': 'de',
+  'es-es': 'es',
+  'es-mx': 'es',
+  'fr-fr': 'fr',
+  'it-it': 'it',
+  'ja-jp': 'ja',
+  'ko-kr': 'ko',
+  'pl-pl': 'pl',
+  'pt-br': 'pt',
+  'ru-ru': 'ru',
+  'th-th': 'th',
+};
 const lang = GISCUS_LANG[locale] ?? 'en';
 
 const ui = getUi(locale);

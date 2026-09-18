@@ -13,7 +13,9 @@
     "menu": "菜单",
     "close": "关闭",
     "search": "搜索",
-    "language": "语言"
+    "language": "语言",
+    "mainNavigation": "主导航",
+    "mobileNavigation": "移动端导航"
   },
   "search": {
     "placeholder": "搜索规则与日期...",
@@ -127,6 +129,50 @@
     "copyrightText": "© 2026 Forever Guide",
     "community": "官方入口",
     "legal": "站点信息"
+  },
+  "legal": {
+    "about": {
+      "title": "关于本站",
+      "intro": "Forever Guide 是面向 WoW Forever 回归玩家的非官方规则与决策工具。",
+      "sections": [
+        { "title": "我们如何处理信息", "body": "本站以公开官方页面为基线，分开记录各地区排期并标注最后核验日期，不把泄露或社群猜测写成已确认事实。" },
+        { "title": "本站不会做什么", "items": ["收集 Battle.net 账号、角色或付款信息", "销售礼包、测试资格或激活码", "声称与 Blizzard Entertainment 存在官方关系", "把其他地区日期当作中国大陆排期"] }
+      ]
+    },
+    "privacy-policy": {
+      "title": "隐私政策",
+      "intro": "本站无需收集个人账号信息即可使用。",
+      "sections": [
+        { "title": "本地存储", "body": "主题、Cookie 同意状态和检查清单选择可能保存在你的浏览器中，不会发送到本站。" },
+        { "title": "分析与广告", "body": "只有在你同意且站点部署者已启用时，本站才加载 Google Analytics 或广告服务。这些服务可能按各自政策处理设备或使用数据。" },
+        { "title": "外部链接", "body": "官方游戏、商店和支持链接由 Blizzard 或其他第三方运营。离开本站后适用对方的隐私政策。" }
+      ]
+    },
+    "terms-of-service": {
+      "title": "使用条款",
+      "intro": "本站提供非官方参考信息，不代表 Blizzard 对购买、测试或服务器的承诺。",
+      "sections": [
+        { "title": "准确性", "body": "日程、礼包权益和测试状态可能变化。购买或操作账号前，请再次查看官方页面。" },
+        { "title": "第三方网站", "body": "本站会链接到官方游戏与商店页面，但不控制第三方网站的内容、可用性或交易。" },
+        { "title": "责任限制", "body": "是否购买、订阅或参与测试由你自行决定。因依赖本站内容产生的购买、账号问题或游戏内损失，本站运营者不承担责任。" }
+      ]
+    },
+    "copyright": {
+      "title": "版权说明",
+      "intro": "本站原创的规则说明、交互工具与文字内容受版权保护。",
+      "sections": [
+        { "title": "游戏资产与商标", "body": "World of Warcraft、WoW、Forever 及相关标志、角色和美术属于 Blizzard Entertainment 或相应权利人。本站不主张拥有游戏知识产权。" },
+        { "title": "下架请求", "body": "权利人可通过联系页说明具体页面与材料。本站会及时审查有效请求。" }
+      ]
+    },
+    "contact": {
+      "title": "联系",
+      "intro": "Forever Guide 不接收账号、付款或测试资格申请。提交纠错时，请提供页面路径、具体句子和可核验依据。",
+      "sections": [
+        { "title": "官方支持", "body": "账号、购买、退款或测试权限问题，请使用 World of Warcraft 官方网站或 Blizzard 支持。", "officialLink": "打开 World of Warcraft 官方网站" },
+        { "title": "版权与纠错", "body": "站点运营者可以配置公开邮箱。邮箱未列出前，请勿向任何自称代表本站的人发送账号信息或付款。" }
+      ]
+    }
   },
   "forever": {
     "brandLabel": "回归玩家工具",
@@ -267,6 +313,10 @@
         "collection": { "name": "Warcraft Forever Collection", "body": "需要 Warcraft III: Reforged、Forsaken Kingdom 或收藏档独占内容时选择这一档。" }
       },
       "compareTitle": "三档权益差异",
+      "benefitHeader": "权益",
+      "included": "包含",
+      "notIncluded": "不包含",
+      "packAltSuffix": "礼包内容展示",
       "columns": ["Heroic", "Epic", "Collection"],
       "rows": [
         { "label": "Skyborne 与起始体验", "values": [true, true, true] },

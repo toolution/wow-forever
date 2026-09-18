@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { site } from '~/config/site';
-import { type Locale } from '~/i18n/routing';
+import { officialForeverUrl, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { localizePath } from '~/lib/url';
 
@@ -11,9 +11,7 @@ const ui = getUi(locale) as any;
 const footer = ui.footer as Record<string, string>;
 const forever = ui.forever;
 const localizedSite = ui.site as Record<string, string>;
-const officialUrl = locale === 'zh'
-  ? site.social.official
-  : 'https://worldofwarcraft.blizzard.com/en-us/forever';
+const officialUrl = officialForeverUrl(locale);
 const legalLinks = [
   ['about', footer.about],
   ['privacy-policy', footer.privacyPolicy],

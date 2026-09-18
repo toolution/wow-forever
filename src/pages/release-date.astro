@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolPageLayout from '~/components/forever/ToolPageLayout.astro';
-import { defaultLocale, locales, type Locale } from '~/i18n/routing';
+import { defaultLocale, locales, officialForeverUrl, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { simpleBreadcrumbJsonLd } from '~/lib/seo';
 import { languageAlternates, localizePath } from '~/lib/url';
@@ -11,9 +11,7 @@ const locale = Astro.props.locale ?? defaultLocale;
 const ui = getUi(locale) as any;
 const dates = ui.forever.dates;
 const pagePath = localizePath('/release-date', locale);
-const officialUrl = locale === 'zh'
-  ? 'https://worldofwarcraft.blizzard.com/zh-cn/forever'
-  : 'https://worldofwarcraft.blizzard.com/en-us/forever';
+const officialUrl = officialForeverUrl(locale);
 const alternates = languageAlternates((loc) => localizePath('/release-date', loc), locales);
 const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: dates.title, path: pagePath, locale, homeLabel: ui.nav.home })];
 ---

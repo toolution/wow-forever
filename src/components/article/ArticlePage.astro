@@ -99,9 +99,9 @@ const outdated = isPossiblyOutdated(category, entry.data.lastModified, entry.dat
 
 // Reading time estimate: ~200 wpm for space-separated languages,
 // ~400 chars/min for CJK (no spaces). Author-facing, purely informational.
-const CJK_LOCALES: readonly string[] = ['ja', 'zh', 'ko'];
 const bodyText = entry.body ?? '';
-const readMinutes = CJK_LOCALES.includes(servedLocale)
+const isCjkLocale = ['ja', 'zh', 'ko'].some((language) => servedLocale.startsWith(language));
+const readMinutes = isCjkLocale
   ? Math.max(1, Math.ceil(bodyText.replace(/\s+/g, '').length / 400))
   : Math.max(1, Math.ceil(bodyText.trim().split(/\s+/).filter(Boolean).length / 200));
 

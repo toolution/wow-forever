@@ -1,135 +1,49 @@
 ---
-import { site } from '~/config/site';
-import type { Locale } from '~/i18n/routing';
+import { getUi } from '~/i18n/ui';
+import { officialForeverUrl, type Locale } from '~/i18n/routing';
+
+type LegalPageKey = 'about' | 'privacy-policy' | 'terms-of-service' | 'copyright' | 'contact';
 
 interface Props {
-  page: 'about' | 'privacy-policy' | 'terms-of-service' | 'copyright' | 'contact';
+  page: LegalPageKey;
   locale?: Locale;
 }
+
+interface LegalSection {
+  title: string;
+  body?: string;
+  items?: string[];
+  officialLink?: string;
+}
+
+interface LegalCopy {
+  title: string;
+  intro: string;
+  sections: LegalSection[];
+}
+
 const { page, locale = 'zh' } = Astro.props;
-const year = new Date().getFullYear();
-const isEnglish = locale === 'en';
-const officialUrl = isEnglish
-  ? 'https://worldofwarcraft.blizzard.com/en-us/forever'
-  : site.social.official;
+const ui = getUi(locale) as any;
+const copy = ui.legal[page] as LegalCopy;
+const officialUrl = officialForeverUrl(locale);
 ---
 
-{page === 'about' && isEnglish && (
+<p>{copy.intro}</p>
+{copy.sections.map((section) => (
   <>
-    <p>{site.name} is an unofficial rules and decision tool for players returning to WoW for Forever. It covers beta access, pack selection, regional dates, and the relationship between WoW versions.</p>
-    <h2>How we handle information</h2>
-    <p>We use official public pages as the baseline, keep regional schedules separate, and show the last verification date. We do not present test values, class rankings, leaks, or community speculation as confirmed facts.</p>
-    <h2>What this site does not do</h2>
-    <ul>
-      <li>Collect Battle.net account, character, or payment information</li>
-      <li>Sell packs, test access, or activation codes</li>
-      <li>Claim an official relationship with Blizzard Entertainment</li>
-      <li>Treat another region's dates as a mainland China schedule</li>
-    </ul>
+    <h2>{section.title}</h2>
+    {section.body && <p>{section.body}</p>}
+    {section.items && (
+      <ul>
+        {section.items.map((item) => <li>{item}</li>)}
+      </ul>
+    )}
+    {section.officialLink && (
+      <p>
+        <a href={officialUrl} target="_blank" rel="noopener noreferrer">
+          {section.officialLink}
+        </a>
+      </p>
+    )}
   </>
-)}
-
-{page === 'about' && !isEnglish && (
-  <>
-    <p>{site.name} 是一个面向 WoW Forever 回归玩家的非官方规则工具。我们只处理四类容易产生错误决策的问题：Beta 资格、礼包选择、地区日期和版本关系。</p>
-    <h2>我们如何处理信息</h2>
-    <p>规则以官方公开页面为基线，按地区拆开记录，并保留最后核验日期。测试服数值、职业强度、泄露内容和社区推测不会被包装成已确认事实。</p>
-    <h2>本站不做什么</h2>
-    <ul>
-      <li>不收集 Battle.net 账号、角色或付款信息</li>
-      <li>不代售礼包、测试资格或激活码</li>
-      <li>不声称与 Blizzard Entertainment 存在官方关系</li>
-      <li>不把其他地区日期推定为中国大陆服务器安排</li>
-    </ul>
-  </>
-)}
-
-{page === 'privacy-policy' && isEnglish && (
-  <>
-    <p>{site.name} is a static site. It does not require an account or directly collect your name, Battle.net account, or character data.</p>
-    <h2>Data stored in your browser</h2>
-    <p>The access checker and launch checklists can save progress in your browser's localStorage. This data is not sent to the site. You can remove it through your browser's site-data settings.</p>
-    <h2>Analytics and advertising</h2>
-    <p>Google Analytics or AdSense loads only when the site operator configures the service and you consent. Cloudflare may process basic request data as the hosting and security provider.</p>
-    <h2>External links</h2>
-    <p>When you visit Blizzard, Battle.net, or another external site, that site's privacy policy governs its data processing.</p>
-  </>
-)}
-
-{page === 'privacy-policy' && !isEnglish && (
-  <>
-    <p>{site.name} 是静态网站，无需注册账号，也不会直接收集或保存你的姓名、Battle.net 账号或角色数据。</p>
-    <h2>浏览器本地数据</h2>
-    <p>资格检查与开服清单可保存在你的浏览器 localStorage 中。这些数据不会发送给本站，也可以随时通过浏览器站点数据设置删除。</p>
-    <h2>分析与广告</h2>
-    <p>只有在部署者配置相关服务并获得你的同意后，Google Analytics 或 AdSense 才会加载。Cloudflare 作为托管与安全服务提供商，可能处理基本请求信息。</p>
-    <h2>外部链接</h2>
-    <p>前往 Blizzard、Battle.net 或其他第三方页面后，数据处理受对应网站自己的隐私政策约束。</p>
-  </>
-)}
-
-{page === 'terms-of-service' && isEnglish && (
-  <>
-    <p>By using {site.name}, you understand that it provides unofficial reference information, not a purchase, testing, or server commitment from Blizzard.</p>
-    <h2>Accuracy</h2>
-    <p>We show verification dates and work to keep the information accurate, but schedules, pack benefits, and test status can change. Confirm purchases and account actions on the official site.</p>
-    <h2>External sites</h2>
-    <p>This site links to official game and store pages but does not control their content, availability, or transactions.</p>
-    <h2>Limitation of liability</h2>
-    <p>You are responsible for decisions to purchase, subscribe, or join a test. The site operator is not responsible for purchases, account issues, or in-game losses resulting from reliance on this guide.</p>
-  </>
-)}
-
-{page === 'terms-of-service' && !isEnglish && (
-  <>
-    <p>使用 {site.name} 即表示你理解本站提供的是非官方参考信息，而不是 Blizzard 的购买、测试或服务器承诺。</p>
-    <h2>准确性</h2>
-    <p>我们会标注核验日期并尽量保持准确，但游戏日程、礼包权益与测试状态可能随时变化。涉及购买或账号操作时，请在官方页面再次确认。</p>
-    <h2>第三方链接</h2>
-    <p>本站会链接到官方游戏与商店页面，但不控制第三方网站的内容、可用性或交易流程。</p>
-    <h2>责任限制</h2>
-    <p>你应自行判断是否购买、订阅或参与测试。因依赖本站内容产生的购买决定、账号问题或游戏内损失由使用者自行承担。</p>
-  </>
-)}
-
-{page === 'copyright' && isEnglish && (
-  <>
-    <h2>Original content</h2>
-    <p>© {year} {site.name}. The site's original explanations, interactive tools, and writing are protected by copyright.</p>
-    <h2>Game assets and trademarks</h2>
-    <p>World of Warcraft, WoW, Forever, and related logos, characters, and artwork belong to Blizzard Entertainment or their respective rights holders. This site uses related material for information and player guidance and claims no ownership of the game's intellectual property.</p>
-    <h2>Removal requests</h2>
-    <p>Rights holders may identify the page and material through the contact page. We will review valid requests promptly.</p>
-  </>
-)}
-
-{page === 'copyright' && !isEnglish && (
-  <>
-    <h2>原创内容</h2>
-    <p>© {year} {site.name}。本站原创的规则整理、交互工具与文字表达受版权保护。</p>
-    <h2>游戏资产与商标</h2>
-    <p>World of Warcraft、WoW、Forever、相关标志、角色与美术属于 Blizzard Entertainment 或其关联权利人。本站使用相关素材仅用于信息说明与玩家指引，不主张任何游戏知识产权。</p>
-    <h2>下架请求</h2>
-    <p>权利人可通过联系页提交具体页面与材料说明。收到有效请求后，我们会及时审查和处理。</p>
-  </>
-)}
-
-{page === 'contact' && isEnglish && (
-  <>
-    <p>{site.name} does not accept account, payment, or test-access applications. For a correction, provide the page path, the exact sentence, and verifiable supporting information.</p>
-    <h2>Official support</h2>
-    <p>For account, purchase, refund, or test-access issues, use the <a href={officialUrl} target="_blank" rel="noopener noreferrer">official World of Warcraft site</a> or Blizzard Support.</p>
-    <h2>Copyright and corrections</h2>
-    <p>The site operator can configure a public email address in <code>src/config/site.ts</code>. Until one is listed, do not send account information or payments to anyone claiming to represent this site.</p>
-  </>
-)}
-
-{page === 'contact' && !isEnglish && (
-  <>
-    <p>{site.name} 当前不接收账号、付款或测试资格申请。需要更正日期、礼包权益或规则时，请提供页面路径、需要修改的具体句子和可核验信息。</p>
-    <h2>官方问题</h2>
-    <p>账号、购买、退款和测试权限问题应直接通过 <a href={site.social.official} target="_blank" rel="noopener noreferrer">World of Warcraft 官方页面</a>或 Blizzard 支持渠道处理。</p>
-    <h2>版权与纠错</h2>
-    <p>本站部署者可在 <code>src/config/site.ts</code> 中配置公开邮箱。邮箱未配置前，请不要向任何自称本站人员的第三方发送账号信息或付款。</p>
-  </>
-)}
+))}

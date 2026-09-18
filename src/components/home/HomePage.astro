@@ -29,7 +29,7 @@ const home = ui.forever.home;
     <section class="home-hero relative isolate overflow-hidden bg-black text-white">
       <img
         src="/images/forever/hero.webp"
-        alt={locale === 'zh' ? 'WoW Forever 中的新艾泽拉斯景观' : 'A new Azeroth landscape in WoW Forever'}
+        alt={home.title}
         width="1800"
         height="1100"
         fetchpriority="high"
@@ -110,7 +110,7 @@ const home = ui.forever.home;
     <section id="returning" class="scroll-mt-24 border-b border-border">
       <div class="grid lg:grid-cols-2">
         <div class="min-h-80 lg:min-h-[34rem]">
-          <img src="/images/forever/overview.webp" alt={locale === 'zh' ? 'WoW Forever 电影预告中的艾泽拉斯场景' : 'Azeroth in the WoW Forever cinematic'} width="1400" height="788" loading="lazy" class="h-full w-full object-cover" />
+          <img src="/images/forever/overview.webp" alt={home.returningTitle} width="1400" height="788" loading="lazy" class="h-full w-full object-cover" />
         </div>
         <div class="flex items-center bg-background px-5 py-12 sm:px-10 lg:px-14">
           <div class="max-w-xl">
@@ -135,7 +135,7 @@ const home = ui.forever.home;
 
     <section class="forever-shell grid gap-10 py-14 sm:py-18 lg:grid-cols-[0.8fr_1.2fr]">
       <div>
-        <p class="forever-kicker">{locale === 'zh' ? '时间线' : 'Timeline'}</p>
+        <p class="forever-kicker">{home.launch}</p>
         <h2 class="forever-display mt-2 text-3xl font-bold">{home.timelineTitle}</h2>
       </div>
       <ol class="divide-y divide-border border-y border-border">

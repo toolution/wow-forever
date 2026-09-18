@@ -9,6 +9,7 @@ import BetaPage from '../beta.astro';
 import EditionsPage from '../editions.astro';
 import ReleaseDatePage from '../release-date.astro';
 import { isLocale, defaultLocale, locales, type Locale } from '~/i18n/routing';
+import { getUi } from '~/i18n/ui';
 
 export function getStaticPaths() {
   // Astro compiles getStaticPaths into its own module scope — external
@@ -26,14 +27,6 @@ export function getStaticPaths() {
 
 const LEGAL_PAGES = ['about', 'privacy-policy', 'terms-of-service', 'copyright', 'contact'];
 const TOOL_PAGES = ['beta', 'editions', 'release-date'];
-const LEGAL_TITLES: Record<string, string> = {
-  about: 'About',
-  'privacy-policy': 'Privacy Policy',
-  'terms-of-service': 'Terms of Service',
-  copyright: 'Copyright',
-  contact: 'Contact',
-};
-
 // Route params surface on Astro.params, NOT Astro.props (AGENTS.md gotcha #4).
 const { locale: localeParam, legal } = Astro.params as { locale?: string; legal?: string };
 if (!localeParam || !legal || !isLocale(localeParam) || localeParam === defaultLocale) {
@@ -41,12 +34,11 @@ if (!localeParam || !legal || !isLocale(localeParam) || localeParam === defaultL
 }
 const locale: Locale = localeParam;
 
-const titles: Record<string, string> = LEGAL_TITLES;
-
 if (![...LEGAL_PAGES, ...TOOL_PAGES].includes(legal)) {
   return new Response('Not Found', { status: 404 });
 }
 const pageKey = legal as 'about' | 'privacy-policy' | 'terms-of-service' | 'copyright' | 'contact';
+const ui = getUi(locale) as any;
 ---
 
 {legal === 'beta' ? (
@@ -56,7 +48,7 @@ const pageKey = legal as 'about' | 'privacy-policy' | 'terms-of-service' | 'copy
 ) : legal === 'release-date' ? (
   <ReleaseDatePage locale={locale} />
 ) : (
-  <LegalPage locale={locale} title={titles[pageKey]} lastUpdated="2026-08-11">
+  <LegalPage locale={locale} title={ui.legal[pageKey].title} description={ui.legal[pageKey].intro} lastUpdated="2026-09-18">
     <LegalContent page={pageKey} locale={locale} />
   </LegalPage>
 )}

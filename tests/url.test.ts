@@ -8,6 +8,7 @@ import {
   absoluteUrl,
   languageAlternates,
 } from '~/lib/url';
+import { locales, officialForeverUrl } from '~/i18n/routing';
 
 describe('url helpers', () => {
   describe('localizePath', () => {
@@ -17,13 +18,13 @@ describe('url helpers', () => {
     });
 
     it('prepends the locale prefix for non-default locales', () => {
-      expect(localizePath('/bosses', 'ja')).toBe('/ja/bosses/');
-      expect(localizePath('/bosses/emberfang', 'ja')).toBe('/ja/bosses/emberfang/');
+      expect(localizePath('/bosses', 'ja-jp')).toBe('/ja-jp/bosses/');
+      expect(localizePath('/bosses/emberfang', 'ja-jp')).toBe('/ja-jp/bosses/emberfang/');
     });
 
     it('ensures leading slash on input without one', () => {
       expect(localizePath('about', 'zh')).toBe('/about/');
-      expect(localizePath('about', 'ja')).toBe('/ja/about/');
+      expect(localizePath('about', 'ja-jp')).toBe('/ja-jp/about/');
     });
   });
 
@@ -32,14 +33,14 @@ describe('url helpers', () => {
       expect(homeUrl('zh')).toBe('/');
     });
     it('returns /ja for non-default locale', () => {
-      expect(homeUrl('ja')).toBe('/ja/');
+      expect(homeUrl('ja-jp')).toBe('/ja-jp/');
     });
   });
 
   describe('listPath', () => {
     it('builds the correct list URL for each locale', () => {
       expect(listPath('bosses', 'zh')).toBe('/bosses/');
-      expect(listPath('bosses', 'ja')).toBe('/ja/bosses/');
+      expect(listPath('bosses', 'ja-jp')).toBe('/ja-jp/bosses/');
       expect(listPath('codes', 'zh')).toBe('/codes/');
     });
   });
@@ -47,15 +48,15 @@ describe('url helpers', () => {
   describe('detailPath', () => {
     it('builds the correct article URL for each locale', () => {
       expect(detailPath('bosses', 'emberfang', 'zh')).toBe('/bosses/emberfang/');
-      expect(detailPath('bosses', 'emberfang', 'ja')).toBe('/ja/bosses/emberfang/');
+      expect(detailPath('bosses', 'emberfang', 'ja-jp')).toBe('/ja-jp/bosses/emberfang/');
     });
 
     it('handles nested slugs', () => {
       expect(detailPath('guides', 'early-game/beginner', 'zh')).toBe(
         '/guides/early-game/beginner/',
       );
-      expect(detailPath('guides', 'early-game/beginner', 'ja')).toBe(
-        '/ja/guides/early-game/beginner/',
+      expect(detailPath('guides', 'early-game/beginner', 'ja-jp')).toBe(
+        '/ja-jp/guides/early-game/beginner/',
       );
     });
   });
@@ -92,8 +93,8 @@ describe('slugifyTag (CJK / non-ASCII fallback)', () => {
 describe('absoluteUrl', () => {
   it('prefixes siteUrl and applies the locale prefix rules', () => {
     expect(absoluteUrl('/bosses', 'zh')).toMatch(/^https:\/\/[^/]+\/bosses\/$/);
-    expect(absoluteUrl('/bosses', 'ja')).toMatch(/^https:\/\/[^/]+\/ja\/bosses\/$/);
-    expect(absoluteUrl('/', 'ja')).toMatch(/^https:\/\/[^/]+\/ja\/$/);
+    expect(absoluteUrl('/bosses', 'ja-jp')).toMatch(/^https:\/\/[^/]+\/ja-jp\/bosses\/$/);
+    expect(absoluteUrl('/', 'ja-jp')).toMatch(/^https:\/\/[^/]+\/ja-jp\/$/);
   });
 });
 
@@ -101,8 +102,8 @@ describe('languageAlternates', () => {
   it('builds absolute hreflang entries for exactly the given locales', () => {
     const alts = languageAlternates((loc) => detailPath('bosses', 'x', loc), ['zh', 'en']);
     expect(alts).toHaveLength(2);
-    expect(alts[0]).toEqual({ hreflang: 'zh', href: expect.stringMatching(/\/bosses\/x\/$/) });
-    expect(alts[1]).toEqual({ hreflang: 'en', href: expect.stringMatching(/\/en\/bosses\/x\/$/) });
+    expect(alts[0]).toEqual({ hreflang: 'zh-CN', href: expect.stringMatching(/\/bosses\/x\/$/) });
+    expect(alts[1]).toEqual({ hreflang: 'en-US', href: expect.stringMatching(/\/en\/bosses\/x\/$/) });
   });
 
   it('never emits x-default (BaseLayout derives it separately)', () => {
@@ -111,8 +112,24 @@ describe('languageAlternates', () => {
   });
 
   it('honors a reduced locale list (single-language article)', () => {
-    const alts = languageAlternates((loc) => detailPath('bosses', 'x', loc), ['ja']);
+    const alts = languageAlternates((loc) => detailPath('bosses', 'x', loc), ['ja-jp']);
     expect(alts).toHaveLength(1);
-    expect(alts[0].hreflang).toBe('ja');
+    expect(alts[0].hreflang).toBe('ja-JP');
+  });
+});
+
+describe('official WoW Forever locales', () => {
+  it('covers all 15 locales exposed by Blizzard', () => {
+    expect(locales).toHaveLength(15);
+    expect(locales).toEqual(expect.arrayContaining([
+      'zh', 'zh-tw', 'en', 'en-gb', 'de-de', 'es-es', 'es-mx', 'fr-fr',
+      'it-it', 'ja-jp', 'ko-kr', 'pl-pl', 'pt-br', 'ru-ru', 'th-th',
+    ]));
+  });
+
+  it('maps legacy short routes to Blizzard region URLs', () => {
+    expect(officialForeverUrl('zh')).toContain('/zh-cn/forever');
+    expect(officialForeverUrl('en')).toContain('/en-us/forever');
+    expect(officialForeverUrl('es-mx')).toContain('/es-mx/forever');
   });
 });

@@ -26,7 +26,7 @@ describe('SEO helpers', () => {
     it('returns a valid WebSite schema with locale', () => {
       const json = websiteJsonLd('en');
       expect(json['@type']).toBe('WebSite');
-      expect(json.inLanguage).toBe('en');
+      expect(json.inLanguage).toBe('en-US');
     });
   });
 

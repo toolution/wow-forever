@@ -321,6 +321,9 @@ function rewriteRoutingTs(input: SkinInput): string {
 function rewriteUiTs(input: SkinInput): string {
   const filePath = 'src/i18n/ui.ts';
   const src = read(filePath);
+  // The glob-based loader discovers src/locales/*.json automatically, including
+  // BCP 47 filenames such as pt-br.json. No import-map rewrite is needed.
+  if (src.includes("import.meta.glob('../locales/*.json'")) return src;
   // Two separate edits:
   //   (a) the contiguous block of `import <loc> from '~/locales/<loc>.json';` lines
   //   (b) the `const messages = { ... }` map entries
