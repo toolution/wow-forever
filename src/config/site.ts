@@ -18,6 +18,8 @@ export interface SiteConfig {
   tagline: string;
   /** Copyright / legal disclaimer line shown in footer. */
   legalNotice: string;
+  /** BCP 47 language for this site's public content. */
+  language: string;
   /**
    * Optional public contact email — rendered as a mailto link on the contact
    * page when set. AdSense reviewers look for a reachable contact channel;
@@ -62,35 +64,35 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: 'Anvil Quest Wiki',
-  shortName: 'AQ Wiki',
+  name: 'Forever Guide',
+  shortName: 'Forever',
   description:
-    'Complete Anvil Quest wiki with boss guides, tier lists, codes, item locations, and beginner tips. Updated daily by the community.',
-  domain: 'anvilwiki.pages.dev',
-  tagline: 'Your forge for everything Anvil Quest',
+    'A concise, unofficial decision guide for WoW Forever beta access, editions, regional dates, and returning players.',
+  domain: 'wowforever-guide.pages.dev',
+  tagline: '少买一档，也别错过关键日期',
   legalNotice:
-    'Anvil Quest Wiki is a fan-made community site. Not affiliated with or endorsed by the game developer.',
+    '本站为非官方玩家工具，与 Blizzard Entertainment 无隶属或背书关系。World of Warcraft 及相关素材归其权利人所有。',
+  language: 'zh-CN',
   // 👉 APPLY TEMPLATE: set a real address if you run no social channels —
   // the contact page renders it as a mailto link.
   contactEmail: '',
   social: {
-    official: 'https://example.com/anvil-quest',
-    discord: 'https://discord.gg/example',
-    youtube: 'https://youtube.com/@example',
-    twitter: 'https://twitter.com/example',
-    reddit: 'https://reddit.com/r/anvilquest',
+    official: 'https://worldofwarcraft.blizzard.com/zh-cn/forever',
+    youtube: 'https://www.youtube.com/warcraft',
+    twitter: 'https://x.com/Warcraft',
+    reddit: 'https://www.reddit.com/r/wow/',
   },
   // 👉 APPLY TEMPLATE: point these at the game's real canonical pages.
   sameAs: [
-    'https://example.com/anvil-quest',
-    'https://en.wikipedia.org/wiki/Anvil_Quest',
+    'https://worldofwarcraft.blizzard.com/zh-cn/forever',
+    'https://shop.battle.net/product/world-of-warcraft-forever',
   ],
   game: {
-    name: 'Anvil Quest',
-    platform: 'Roblox',
-    developer: 'Forge Studios',
-    genre: 'Fantasy RPG',
-    releaseDate: '2026-01-15',
+    name: 'World of Warcraft: Forever',
+    platform: 'Windows / macOS · Battle.net',
+    developer: 'Blizzard Entertainment',
+    genre: 'MMORPG',
+    releaseDate: '2026-11-04',
   },
   // hero.webp is 1200×630 (the recommended OG share aspect ratio).
   ogImageWidth: 1200,

@@ -1,0 +1,147 @@
+---
+import { Icon } from 'astro-icon/components';
+import ToolPageLayout from '~/components/forever/ToolPageLayout.astro';
+import { defaultLocale } from '~/i18n/routing';
+import { getUi } from '~/i18n/ui';
+import { simpleBreadcrumbJsonLd } from '~/lib/seo';
+
+const locale = defaultLocale;
+const ui = getUi(locale) as any;
+const dates = ui.forever.dates;
+const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: dates.title, path: '/release-date/', locale, homeLabel: ui.nav.home })];
+---
+
+<ToolPageLayout
+  locale={locale}
+  title={dates.metaTitle}
+  description={dates.metaDescription}
+  eyebrow={dates.eyebrow}
+  heading={dates.title}
+  lede={dates.lede}
+  answerLabel={dates.answerLabel}
+  answer={dates.answer}
+  icon="lucide:calendar-clock"
+  jsonLd={jsonLd}
+>
+  <section class="forever-shell py-12 sm:py-16">
+    <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+      <div>
+        <h2 class="text-xl font-bold">{dates.regionTitle}</h2>
+      </div>
+      <div class="inline-flex w-full overflow-x-auto rounded-md border border-border bg-muted p-1 md:w-auto" role="tablist" aria-label={dates.regionTitle}>
+        {dates.regions.map((region: any, index: number) => (
+          <button
+            type="button"
+            role="tab"
+            aria-selected={index === 0 ? 'true' : 'false'}
+            data-region-tab={region.id}
+            data-event="tool_complete"
+            data-event-target={`dates-${region.id}`}
+            class:list={[
+              'min-h-10 min-w-max flex-1 rounded-md px-4 py-2 text-sm font-semibold transition md:flex-none',
+              index === 0 ? 'bg-background text-nav shadow-sm' : 'text-muted-foreground hover:text-foreground',
+            ]}
+          >
+            {region.label}
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-7">
+      {dates.regions.map((region: any, index: number) => {
+        const data = dates.regionData[region.id];
+        return (
+          <section data-region-panel={region.id} hidden={index !== 0} class="rounded-lg border border-border bg-card">
+            <div class="border-b border-border p-5 sm:p-6">
+              <div class="flex items-start gap-3">
+                <Icon name={region.id === 'china' ? 'lucide:circle-help' : 'lucide:map-pin'} class="mt-0.5 h-5 w-5 shrink-0 text-nav" />
+                <div>
+                  <h3 class="font-bold">{data.status}</h3>
+                  <p class="mt-1 text-sm leading-6 text-muted-foreground">{data.note}</p>
+                </div>
+              </div>
+            </div>
+            <div class="grid divide-y divide-border md:grid-cols-3 md:divide-x md:divide-y-0">
+              {data.events.map((event: any) => (
+                <div class="p-5 sm:p-6">
+                  <div class="flex items-center justify-between gap-3">
+                    <p class="text-sm font-semibold">{event.label}</p>
+                    <span class="rounded-md bg-muted px-2 py-1 text-xs text-nav">{event.state}</span>
+                  </div>
+                  <p class="mt-5 text-xl font-bold">{event.date}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="border-y border-border bg-muted/35">
+    <div class="forever-shell grid gap-8 py-12 sm:py-16 lg:grid-cols-[auto_1fr] lg:items-start lg:gap-12">
+      <span class="grid h-14 w-14 place-items-center rounded-md border border-nav/30 bg-background text-nav"><Icon name="lucide:globe-2" class="h-6 w-6" /></span>
+      <div class="max-w-3xl">
+        <h2 class="forever-display text-3xl font-bold">{dates.timezoneTitle}</h2>
+        <p class="mt-4 text-base leading-7 text-muted-foreground">{dates.timezoneBody}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="forever-shell grid gap-10 py-12 sm:py-16 lg:grid-cols-[1fr_auto]">
+    <div>
+      <h2 class="forever-display text-3xl font-bold">{dates.prepareTitle}</h2>
+      <div id="date-checklist" class="mt-6 space-y-2">
+        {dates.prepare.map((item: string, index: number) => (
+          <label class="flex min-h-12 cursor-pointer items-start gap-3 rounded-md border border-border px-4 py-3 text-sm leading-6">
+            <input type="checkbox" value={String(index)} class="mt-1 h-4 w-4" />
+            <span>{item}</span>
+          </label>
+        ))}
+      </div>
+      <div class="mt-4 flex flex-wrap items-center gap-3">
+        <button id="save-date-checklist" type="button" data-event="checklist_save" data-event-target="release-date" class="btn-outline min-h-11 gap-2"><Icon name="lucide:save" class="h-4 w-4" />{dates.save}</button>
+        <span id="date-saved" class="hidden text-sm text-nav">{dates.saved}</span>
+      </div>
+    </div>
+    <div class="flex flex-col gap-3 lg:pt-12">
+      <a href="https://worldofwarcraft.blizzard.com/zh-cn/forever" target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="btn-primary min-h-11 gap-2"><Icon name="lucide:external-link" class="h-4 w-4" />{dates.official}</a>
+      <button type="button" data-share-page data-event="share_click" data-done-label={ui.shared.copied} class="btn-outline min-h-11 gap-2">
+        <Icon name="lucide:share-2" class="h-4 w-4" /><span data-share-label>{dates.share}</span>
+      </button>
+    </div>
+  </section>
+</ToolPageLayout>
+
+<script>
+  const regionTabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-region-tab]'));
+  const regionPanels = Array.from(document.querySelectorAll<HTMLElement>('[data-region-panel]'));
+  regionTabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const selected = tab.dataset.regionTab;
+      regionTabs.forEach((item) => {
+        const active = item.dataset.regionTab === selected;
+        item.setAttribute('aria-selected', String(active));
+        item.classList.toggle('bg-background', active);
+        item.classList.toggle('text-nav', active);
+        item.classList.toggle('shadow-sm', active);
+        item.classList.toggle('text-muted-foreground', !active);
+      });
+      regionPanels.forEach((panel) => { panel.hidden = panel.dataset.regionPanel !== selected; });
+    });
+  });
+
+  const dateChecklist = Array.from(document.querySelectorAll<HTMLInputElement>('#date-checklist input'));
+  try {
+    const saved = JSON.parse(localStorage.getItem('forever-date-checklist') || '[]') as string[];
+    dateChecklist.forEach((input) => { input.checked = saved.includes(input.value); });
+  } catch {
+    // Storage can be disabled; the checklist still works for the session.
+  }
+  document.querySelector('#save-date-checklist')?.addEventListener('click', () => {
+    const checked = dateChecklist.filter((input) => input.checked).map((input) => input.value);
+    try { localStorage.setItem('forever-date-checklist', JSON.stringify(checked)); } catch {}
+    document.querySelector('#date-saved')?.classList.remove('hidden');
+  });
+</script>

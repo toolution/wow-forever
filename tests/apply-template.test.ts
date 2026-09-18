@@ -273,15 +273,13 @@ describe('rewriteSiteTs (quote/backslash-safe, $-expansion-proof site.ts rewriti
 });
 
 describe('demo locale deletion is content-aware (rebranded locales must survive re-runs)', () => {
-  test('the shipped demo locale files still carry the site.name marker (marker drift guard)', () => {
-    for (const locale of ['en', 'ja']) {
-      const raw = readFileSync(join(repoRoot, 'src/locales', `${locale}.json`), 'utf8');
-      expect(isDemoLocaleContent(raw)).toBe(true);
-    }
+  test('the rebranded live locale is not mistaken for demo content', () => {
+    const raw = readFileSync(join(repoRoot, 'src/locales/en.json'), 'utf8');
+    expect(isDemoLocaleContent(raw)).toBe(false);
   });
 
   test('a rewritten demo-named locale is no longer demo content', () => {
-    const demoEn = readFileSync(join(repoRoot, 'src/locales/en.json'), 'utf8');
+    const demoEn = '{"site":{"name":"Anvil Quest Wiki"}}';
     const rebranded = rewriteLocaleJson(makeInput(), 'ja', demoEn);
     expect(isDemoLocaleContent(rebranded)).toBe(false);
   });

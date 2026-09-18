@@ -10,13 +10,11 @@
  */
 
 import en from '~/locales/en.json';
-import ja from '~/locales/ja.json';
 
 import { defaultLocale, type Locale } from './routing';
 
-const messages: Record<Locale, Record<string, unknown>> = {
+const messages: Partial<Record<Locale, Record<string, unknown>>> = {
   en: en as Record<string, unknown>,
-  ja: ja as Record<string, unknown>,
 };
 
 /**
@@ -54,7 +52,7 @@ function deepMerge(
  */
 export function getUi(locale: string): typeof en {
   if (locale === defaultLocale) return en;
-  const locMessages = isLocaleSafe(locale) ? messages[locale] : {};
+  const locMessages = isLocaleSafe(locale) ? (messages[locale] ?? {}) : {};
   return deepMerge(en as Record<string, unknown>, locMessages) as typeof en;
 }
 

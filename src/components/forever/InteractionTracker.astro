@@ -1,0 +1,33 @@
+<script>
+  const track = (eventName: string, detail: Record<string, unknown> = {}) => {
+    const payload = { event: eventName, page_path: window.location.pathname, ...detail };
+    const targetWindow = window as Window & { dataLayer?: Array<Record<string, unknown>> };
+    targetWindow.dataLayer = targetWindow.dataLayer || [];
+    targetWindow.dataLayer.push(payload);
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-event]').forEach((element) => {
+    element.addEventListener('click', () => {
+      track(element.dataset.event || 'interaction', {
+        target: element.dataset.eventTarget || element.getAttribute('href') || element.id || undefined,
+      });
+    });
+  });
+
+  document.querySelectorAll<HTMLButtonElement>('[data-share-page]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const shareData = { title: document.title, url: window.location.href };
+      try {
+        if (navigator.share) await navigator.share(shareData);
+        else await navigator.clipboard.writeText(window.location.href);
+        const doneLabel = button.dataset.doneLabel;
+        if (doneLabel) {
+          const label = button.querySelector('[data-share-label]');
+          if (label) label.textContent = doneLabel;
+        }
+      } catch {
+        // A dismissed native share sheet is not an error state for the page.
+      }
+    });
+  });
+</script>

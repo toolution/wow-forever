@@ -1,111 +1,62 @@
 ---
-/**
- * Site footer — social links, legal links, copyright.
- * All text comes from locale JSON (footer.* namespace).
- */
 import { Icon } from 'astro-icon/components';
 import { site } from '~/config/site';
 import { type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
-import { localizePath, recentPath, tagsPath } from '~/lib/url';
+import { localizePath } from '~/lib/url';
 
-interface Props {
-  locale: Locale;
-}
+interface Props { locale: Locale }
 const { locale } = Astro.props;
-const ui = getUi(locale);
+const ui = getUi(locale) as any;
 const footer = ui.footer as Record<string, string>;
-// Reuse the shared labels (recentTitle / allTags exist in every locale) —
-// /recent and /tags used to be orphan pages with zero internal inbound links.
-const shared = ui.shared as unknown as Record<string, string>;
-
-const socials = [
-  { key: 'playGame', href: site.social.official, icon: 'lucide:external-link' },
-  { key: 'officialDiscord', href: site.social.discord, icon: 'lucide:message-circle' },
-  { key: 'officialYoutube', href: site.social.youtube, icon: 'lucide:youtube' },
-  { key: 'officialTwitter', href: site.social.twitter, icon: 'lucide:twitter' },
-  { key: 'officialReddit', href: site.social.reddit, icon: 'lucide:globe' },
-].filter((s) => s.href);
-
-const legalLinks = ['about', 'faq', 'privacyPolicy', 'termsOfService', 'copyright', 'contact'];
+const forever = ui.forever;
+const legalLinks = [
+  ['about', footer.about],
+  ['privacy-policy', footer.privacyPolicy],
+  ['terms-of-service', footer.termsOfService],
+  ['copyright', footer.copyright],
+  ['contact', footer.contact],
+];
 ---
 
-<footer class="mt-16 border-t border-border bg-muted/30">
-  <div class="mx-auto max-w-7xl px-4 py-10">
-    <div class="grid gap-8 md:grid-cols-3">
-      {/* Brand */}
-      <div>
-        <div class="flex items-center gap-2 font-bold">
-          <Icon name="lucide:hammer" class="h-6 w-6 text-nav" />
-          <span>{site.name}</span>
-        </div>
-        <p class="mt-2 text-sm text-muted-foreground">{site.tagline}</p>
-        <p class="mt-3 text-xs">
-          <a href={recentPath(locale)} class="text-foreground/70 transition hover:text-nav">
-            {shared.recentTitle}
-          </a>
-          <span class="mx-1 text-muted-foreground">·</span>
-          <a href={tagsPath(locale)} class="text-foreground/70 transition hover:text-nav">
-            {shared.allTags}
-          </a>
-        </p>
+<footer class="border-t border-border bg-muted/40">
+  <div class="forever-shell grid gap-8 py-10 md:grid-cols-[1.3fr_1fr_1fr]">
+    <div>
+      <div class="flex items-center gap-2 font-bold">
+        <img src="/logo-mark.svg" alt="" width="28" height="28" class="h-7 w-7" />
+        <span>{site.name}</span>
       </div>
-
-      {/* Socials */}
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-          {footer.community ?? 'Community'}
-        </h2>
-        <ul class="mt-3 space-y-2">
-          {
-            socials.map((s) => (
-              <li>
-                <a
-                  href={s.href}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  class="inline-flex items-center gap-2 text-sm text-foreground/80 transition hover:text-nav"
-                >
-                  <Icon name={s.icon} class="h-4 w-4" />
-                  {footer[s.key]}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-
-      {/* Legal */}
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wider text-muted-foreground">{footer.legal ?? 'Legal'}</h2>
-        <ul class="mt-3 space-y-2">
-          {
-            legalLinks.map((key) => (
-              <li>
-                <a
-                  href={localizePath(
-                    `/${key === 'privacyPolicy' ? 'privacy-policy' : key === 'termsOfService' ? 'terms-of-service' : key}`,
-                    locale,
-                  )}
-                  class="text-sm text-foreground/80 transition hover:text-nav"
-                >
-                  {footer[key]}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <p class="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">{site.tagline}</p>
+      <p class="mt-3 text-xs text-muted-foreground">{forever.verified}</p>
     </div>
 
-    <div class="mt-8 space-y-1 border-t border-border pt-6">
-      {/* Copyright line and the fan-site legal notice are SEPARATE lines —
-          a `copyrightText ?? legalNotice` short-circuit left forks (whose
-          CLI rewrites copyrightText without the disclaimer) with no notice. */}
-      {footer.copyrightText && (
-        <p class="text-xs text-muted-foreground">{footer.copyrightText}</p>
-      )}
-      {site.legalNotice && <p class="text-xs text-muted-foreground">{site.legalNotice}</p>}
+    <div>
+      <h2 class="text-sm font-semibold">{footer.community}</h2>
+      <a
+        href={site.social.official}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-event="official_link_click"
+        class="mt-3 inline-flex items-center gap-2 text-sm text-foreground/80 transition hover:text-nav"
+      >
+        <Icon name="lucide:external-link" class="h-4 w-4" />
+        {footer.playGame}
+      </a>
+    </div>
+
+    <div>
+      <h2 class="text-sm font-semibold">{footer.legal}</h2>
+      <ul class="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 md:grid-cols-1">
+        {legalLinks.map(([path, label]) => (
+          <li><a href={localizePath(`/${path}`, locale)} class="text-sm text-foreground/70 transition hover:text-nav">{label}</a></li>
+        ))}
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-border">
+    <div class="forever-shell space-y-1 py-5 text-xs text-muted-foreground">
+      <p>{footer.copyrightText}</p>
+      <p>{site.legalNotice}</p>
     </div>
   </div>
 </footer>

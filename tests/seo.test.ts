@@ -26,7 +26,7 @@ describe('SEO helpers', () => {
     it('returns a valid WebSite schema with locale', () => {
       const json = websiteJsonLd('en');
       expect(json['@type']).toBe('WebSite');
-      expect(json.inLanguage).toBe('en');
+      expect(json.inLanguage).toBe('zh-CN');
     });
   });
 
@@ -127,8 +127,8 @@ describe('SEO helpers', () => {
     });
 
     it('skips the suffix when the title already carries the game name', () => {
-      const t = pageTitle('Anvil Quest Boss Guide');
-      expect(t).toBe('Anvil Quest Boss Guide');
+      const t = pageTitle('World of Warcraft: Forever 礼包指南');
+      expect(t).toBe('World of Warcraft: Forever 礼包指南');
     });
 
     it('switches to the short suffix for long titles (>50 chars)', () => {

@@ -76,6 +76,7 @@ const {
 
 // Language of the main content (falls back to the UI locale).
 const mainLocale = contentLocale ?? locale;
+const documentLocale = site.language || mainLocale;
 const ogLocaleMap = OG_LOCALE_MAP as Record<string, string>;
 const ogLocale = ogLocaleMap[mainLocale] ?? mainLocale;
 
@@ -129,7 +130,7 @@ const privacyLabel = footerStrings.privacyPolicy ?? 'Privacy Policy';
 ---
 
 <!doctype html>
-<html lang={mainLocale} class="scroll-smooth">
+<html lang={documentLocale} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -141,7 +142,6 @@ const privacyLabel = footerStrings.privacyPolicy ?? 'Privacy Policy';
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.json" />
-    <link rel="alternate" type="application/rss+xml" title={site.name} href="/rss.xml" />
     <meta name="generator" content={Astro.generator} />
 
     <title>{fullTitle}</title>

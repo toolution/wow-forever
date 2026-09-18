@@ -11,12 +11,12 @@
  */
 @layer base {
   :root {
-    /* Light mode theme color — Anvil orange (forge fire). */
-    --brand: 22 90% 52%;
-    --brand-light: 22 90% 62%;
+    /* Light mode theme color — expedition teal. */
+    --brand: 175 70% 34%;
+    --brand-light: 175 58% 48%;
     /* Split H/S for derived shades (e.g. darker button backgrounds). */
-    --brand-h: 22;
-    --brand-s: 90%;
+    --brand-h: 175;
+    --brand-s: 70%;
     /* Text-safe shade of the brand: --brand at 52% lightness is only 3.1:1
        on white (WCAG AA needs 4.5:1 for text). Derived from the H/S splits,
        so fork themes that only edit --brand/--brand-light stay consistent. */
@@ -24,11 +24,11 @@
   }
 
   .dark {
-    /* Dark mode theme color — slightly deeper. */
-    --brand: 22 85% 48%;
-    --brand-light: 22 85% 58%;
-    --brand-h: 22;
-    --brand-s: 85%;
+    /* Dark mode theme color — brighter against ink surfaces. */
+    --brand: 175 58% 44%;
+    --brand-light: 175 56% 56%;
+    --brand-h: 175;
+    --brand-s: 58%;
     --brand-text: var(--brand-h) var(--brand-s) 52%;
   }
 }
@@ -85,6 +85,38 @@
   }
   html.dark {
     color-scheme: dark;
+  }
+
+  body {
+    min-width: 320px;
+  }
+}
+
+@layer components {
+  .forever-display {
+    font-family: Georgia, 'Times New Roman', serif;
+    letter-spacing: 0;
+  }
+
+  .forever-kicker {
+    @apply text-xs font-semibold uppercase text-nav;
+    letter-spacing: 0;
+  }
+
+  .forever-shell {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .tool-choice {
+    @apply relative flex min-h-12 cursor-pointer items-center gap-3 rounded-md border border-border bg-card px-4 py-3 text-sm font-medium transition hover:border-nav focus-within:border-nav;
+  }
+
+  .tool-choice:has(input:checked) {
+    @apply border-nav bg-muted text-foreground;
+  }
+
+  .tool-choice input {
+    accent-color: hsl(var(--brand));
   }
 }
 

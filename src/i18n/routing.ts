@@ -13,15 +13,17 @@
  * This is configured in astro.config.ts via `i18n.routing.prefixDefaultLocale: false`.
  */
 
-export const locales = ['en', 'ja'] as const;
+export const locales = ['en'] as const;
 
-export type Locale = (typeof locales)[number];
+// Keep the broader Locale type for framework helpers and their upstream tests;
+// `locales` remains the authoritative list of routes generated for this site.
+export type Locale = 'en' | 'ja';
 
-export const defaultLocale: Locale = 'en';
+export const defaultLocale = 'en' as const;
 
 /** English label for each locale (used in language switcher). */
 export const LOCALE_LABELS: Record<Locale, string> = {
-  en: 'English',
+  en: '简体中文',
   ja: '日本語',
 };
 
@@ -34,7 +36,7 @@ export const LOCALE_LABELS: Record<Locale, string> = {
  * call site.
  */
 export const OG_LOCALE_MAP: Record<string, string> = {
-  en: 'en_US',
+  en: 'zh_CN',
   ja: 'ja_JP',
   zh: 'zh_CN',
 };

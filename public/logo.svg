@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 64" role="img" aria-labelledby="title desc">
+  <title id="title">Forever Guide</title>
+  <desc id="desc">A compass-shaped F beside the Forever Guide wordmark.</desc>
+  <g transform="translate(2 2)">
+    <circle cx="30" cy="30" r="28" fill="#07111f"/>
+    <circle cx="30" cy="30" r="25" fill="none" stroke="#2dd4bf" stroke-width="3"/>
+    <path d="M30 1.5 33 8h-6zM58.5 30 52 33v-6zM30 58.5 27 52h6zM1.5 30 8 27v6z" fill="#2dd4bf"/>
+    <path d="M20 45V15h24l-5 7H28v7h11l-5 7h-6v9z" fill="#f8fafc"/>
+    <circle cx="30" cy="30" r="3" fill="#2dd4bf"/>
+  </g>
+  <text x="78" y="31" fill="#07111f" font-family="Georgia, 'Times New Roman', serif" font-size="27" font-weight="700">Forever</text>
+  <text x="79" y="51" fill="#64748b" font-family="system-ui, sans-serif" font-size="12">RETURNING PLAYER GUIDE</text>
+</svg>

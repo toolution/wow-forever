@@ -34,7 +34,7 @@ export function websiteJsonLd(locale: Locale = defaultLocale) {
     name: site.name,
     url: siteUrl,
     description: site.description,
-    inLanguage: locale,
+    inLanguage: site.language || locale,
   };
 }
 
