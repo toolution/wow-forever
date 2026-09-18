@@ -2,10 +2,10 @@
  * URL construction utilities.
  *
  * Centralizes all locale-prefix logic so components never hand-build URLs.
- * English (default locale) has no prefix; other locales are prefixed.
+ * The configured default locale has no prefix; other locales are prefixed.
  */
 
-import { defaultLocale, type Locale } from '~/i18n/routing';
+import { defaultLocale, locales, type Locale } from '~/i18n/routing';
 import { siteUrl } from '~/config/site';
 
 /** Build a path with the locale prefix applied (or none for default locale). */
@@ -19,6 +19,14 @@ export function localizePath(path: string, locale: Locale): string {
   if (locale === defaultLocale) return slashed;
   if (cleanPath === '/') return `/${locale}/`;
   return `/${locale}${slashed}`;
+}
+
+/** Switch a localized URL to another locale while preserving the page path. */
+export function switchLocalePath(path: string, locale: Locale): string {
+  const normalized = path.startsWith('/') ? path : `/${path}`;
+  const localePattern = locales.map((item) => item.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const withoutLocale = normalized.replace(new RegExp(`^/(?:${localePattern})(?=/|$)`), '') || '/';
+  return localizePath(withoutLocale, locale);
 }
 
 /** Build an absolute URL (with domain) for a path + locale. */

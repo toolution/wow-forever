@@ -1,17 +1,26 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolPageLayout from '~/components/forever/ToolPageLayout.astro';
-import { defaultLocale } from '~/i18n/routing';
+import { defaultLocale, locales, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { faqPageJsonLd, simpleBreadcrumbJsonLd } from '~/lib/seo';
+import { languageAlternates, localizePath } from '~/lib/url';
 
-const locale = defaultLocale;
+interface Props { locale?: Locale }
+const locale = Astro.props.locale ?? defaultLocale;
 const ui = getUi(locale) as any;
 const beta = ui.forever.beta;
+const pagePath = localizePath('/beta', locale);
+const editionsPath = localizePath('/editions', locale);
+const datesPath = localizePath('/release-date', locale);
+const officialUrl = locale === 'zh'
+  ? 'https://worldofwarcraft.blizzard.com/zh-cn/forever'
+  : 'https://worldofwarcraft.blizzard.com/en-us/forever';
+const alternates = languageAlternates((loc) => localizePath('/beta', loc), locales);
 const faqItems = (ui.home.faq.items as Array<{ question: string; answer: string }>).slice(1, 3);
 const jsonLd = [
   faqPageJsonLd(faqItems),
-  simpleBreadcrumbJsonLd({ pageLabel: beta.title, path: '/beta/', locale, homeLabel: ui.nav.home }),
+  simpleBreadcrumbJsonLd({ pageLabel: beta.title, path: pagePath, locale, homeLabel: ui.nav.home }),
 ];
 ---
 
@@ -26,10 +35,11 @@ const jsonLd = [
   answer={beta.answer}
   icon="lucide:key-round"
   jsonLd={jsonLd}
+  alternates={alternates}
 >
   <section class="forever-shell py-12 sm:py-16">
     <div class="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)]">
-      <form id="beta-tool" class="rounded-lg border border-border bg-card p-5 sm:p-7">
+      <form id="beta-tool" data-editions-path={editionsPath} data-dates-path={datesPath} data-official-url={officialUrl} class="rounded-lg border border-border bg-card p-5 sm:p-7">
         <div class="flex items-start gap-3">
           <span class="grid h-10 w-10 shrink-0 place-items-center rounded-md bg-muted text-nav"><Icon name="lucide:list-checks" class="h-5 w-5" /></span>
           <div>
@@ -71,7 +81,7 @@ const jsonLd = [
         <p class="text-xs font-semibold text-nav">{beta.resultTitle}</p>
         <h2 data-result-status class="mt-2 text-xl font-bold">{beta.results['none-chance'].status}</h2>
         <p data-result-body class="mt-3 text-sm leading-6 text-muted-foreground">{beta.results['none-chance'].body}</p>
-        <a data-result-link href="https://worldofwarcraft.blizzard.com/zh-cn/forever" target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="mt-6 inline-flex min-h-11 items-center gap-2 rounded-md bg-background px-4 py-2 text-sm font-semibold text-nav shadow-sm">
+        <a data-result-link href={officialUrl} target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="mt-6 inline-flex min-h-11 items-center gap-2 rounded-md bg-background px-4 py-2 text-sm font-semibold text-nav shadow-sm">
           <span data-result-action>{beta.results['none-chance'].action}</span><Icon name="lucide:arrow-up-right" class="h-4 w-4" />
         </a>
       </aside>
@@ -112,8 +122,8 @@ const jsonLd = [
       </div>
     </div>
     <div class="flex flex-col gap-3 lg:pt-12">
-      <a href="https://worldofwarcraft.blizzard.com/zh-cn/forever" target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="btn-primary min-h-11 gap-2"><Icon name="lucide:external-link" class="h-4 w-4" />{beta.official}</a>
-      <a href="/editions/" class="btn-outline min-h-11 gap-2"><Icon name="lucide:package-check" class="h-4 w-4" />{beta.editions}</a>
+      <a href={officialUrl} target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="btn-primary min-h-11 gap-2"><Icon name="lucide:external-link" class="h-4 w-4" />{beta.official}</a>
+      <a href={editionsPath} class="btn-outline min-h-11 gap-2"><Icon name="lucide:package-check" class="h-4 w-4" />{beta.editions}</a>
     </div>
   </section>
 </ToolPageLayout>
@@ -138,9 +148,9 @@ const jsonLd = [
     betaStatus.textContent = result.status;
     betaBody.textContent = result.body;
     betaAction.textContent = result.action;
-    if (ownership === 'epic' || ownership === 'collection') betaLink.href = '/release-date/';
-    else if (goal === 'included') betaLink.href = '/editions/';
-    else betaLink.href = 'https://worldofwarcraft.blizzard.com/zh-cn/forever';
+    if (ownership === 'epic' || ownership === 'collection') betaLink.href = betaForm.dataset.datesPath || '/release-date/';
+    else if (goal === 'included') betaLink.href = betaForm.dataset.editionsPath || '/editions/';
+    else betaLink.href = betaForm.dataset.officialUrl || 'https://worldofwarcraft.blizzard.com/en-us/forever';
     if (betaLink.origin === window.location.origin) {
       betaLink.removeAttribute('target');
       betaLink.removeAttribute('rel');

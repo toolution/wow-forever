@@ -9,12 +9,15 @@
  * is handled by src/i18n/content.ts (MDX file-based, per-article fallback).
  */
 
+import zh from '~/locales/zh.json';
 import en from '~/locales/en.json';
+import enOverrides from './messages/en.json';
 
 import { defaultLocale, type Locale } from './routing';
 
 const messages: Partial<Record<Locale, Record<string, unknown>>> = {
-  en: en as Record<string, unknown>,
+  zh: zh as Record<string, unknown>,
+  en: deepMerge(en as Record<string, unknown>, enOverrides as Record<string, unknown>),
 };
 
 /**
@@ -50,10 +53,10 @@ function deepMerge(
  * Get the full UI messages object for a locale, with English fallback.
  * Never throws — unknown locales return English.
  */
-export function getUi(locale: string): typeof en {
-  if (locale === defaultLocale) return en;
+export function getUi(locale: string): typeof zh {
+  if (locale === defaultLocale) return zh;
   const locMessages = isLocaleSafe(locale) ? (messages[locale] ?? {}) : {};
-  return deepMerge(en as Record<string, unknown>, locMessages) as typeof en;
+  return deepMerge(zh as Record<string, unknown>, locMessages) as typeof zh;
 }
 
 /** Translation function: t('nav.bosses') → localized string. */
@@ -69,5 +72,5 @@ export function t(locale: string, key: string): unknown {
 }
 
 function isLocaleSafe(value: string): value is Locale {
-  return value in messages;
+  return Object.hasOwn(messages, value);
 }

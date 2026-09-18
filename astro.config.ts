@@ -225,7 +225,7 @@ export default defineConfig({
   i18n: {
     // Spread to convert readonly tuple to mutable array (Astro's Locales type).
     locales: [...locales],
-    defaultLocale,
+    defaultLocale: defaultLocale as (typeof locales)[number],
     routing: {
       prefixDefaultLocale: false,
     },

@@ -1,14 +1,19 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolPageLayout from '~/components/forever/ToolPageLayout.astro';
-import { defaultLocale } from '~/i18n/routing';
+import { defaultLocale, locales, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { simpleBreadcrumbJsonLd } from '~/lib/seo';
+import { languageAlternates, localizePath } from '~/lib/url';
 
-const locale = defaultLocale;
+interface Props { locale?: Locale }
+const locale = Astro.props.locale ?? defaultLocale;
 const ui = getUi(locale) as any;
 const editions = ui.forever.editions;
-const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: '/editions/', locale, homeLabel: ui.nav.home })];
+const pagePath = localizePath('/editions', locale);
+const betaPath = localizePath('/beta', locale);
+const alternates = languageAlternates((loc) => localizePath('/editions', loc), locales);
+const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: pagePath, locale, homeLabel: ui.nav.home })];
 ---
 
 <ToolPageLayout
@@ -22,6 +27,7 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: '/edit
   answer={editions.answer}
   icon="lucide:package-check"
   jsonLd={jsonLd}
+  alternates={alternates}
 >
   <section class="forever-shell py-12 sm:py-16">
     <div class="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(18rem,0.75fr)]">
@@ -71,7 +77,7 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: '/edit
           <a href="https://shop.battle.net/product/world-of-warcraft-forever" target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="btn-primary min-h-11 gap-2">
             <Icon name="lucide:external-link" class="h-4 w-4" />{editions.official}
           </a>
-          <a href="/beta/" class="btn-outline min-h-11 gap-2"><Icon name="lucide:key-round" class="h-4 w-4" />{editions.beta}</a>
+          <a href={betaPath} class="btn-outline min-h-11 gap-2"><Icon name="lucide:key-round" class="h-4 w-4" />{editions.beta}</a>
         </div>
       </aside>
     </div>
@@ -84,7 +90,7 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: '/edit
         <table class="w-full min-w-[42rem] border-collapse text-left text-sm">
           <thead>
             <tr class="border-b border-border bg-muted/50">
-              <th class="w-[38%] p-4 font-semibold">权益</th>
+              <th class="w-[38%] p-4 font-semibold">{locale === 'zh' ? '权益' : 'Benefit'}</th>
               {editions.columns.map((column: string) => <th class="p-4 text-center font-semibold">{column}</th>)}
             </tr>
           </thead>
@@ -97,9 +103,9 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: '/edit
                     {typeof value === 'number' ? (
                       <span class="font-semibold text-nav">{value}</span>
                     ) : value ? (
-                      <Icon name="lucide:check" class="mx-auto h-5 w-5 text-nav" aria-label="包含" />
+                      <Icon name="lucide:check" class="mx-auto h-5 w-5 text-nav" aria-label={locale === 'zh' ? '包含' : 'Included'} />
                     ) : (
-                      <Icon name="lucide:minus" class="mx-auto h-5 w-5 text-muted-foreground" aria-label="不包含" />
+                      <Icon name="lucide:minus" class="mx-auto h-5 w-5 text-muted-foreground" aria-label={locale === 'zh' ? '不包含' : 'Not included'} />
                     )}
                   </td>
                 ))}
@@ -116,7 +122,7 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: editions.title, path: '/edit
     <div class="grid gap-4 lg:grid-cols-3">
       {editions.packs.map((pack: any) => (
         <article class="overflow-hidden rounded-lg border border-border bg-card">
-          <img src={pack.image} alt={`${pack.name} 礼包内容展示`} width="960" height="540" loading="lazy" class="aspect-video w-full object-cover" />
+          <img src={pack.image} alt={locale === 'zh' ? `${pack.name} 礼包内容展示` : `${pack.name} pack contents`} width="960" height="540" loading="lazy" class="aspect-video w-full object-cover" />
           <div class="p-5">
             <p class="text-xs font-semibold text-nav">{pack.tag}</p>
             <h2 class="mt-2 text-xl font-bold">{pack.name}</h2>

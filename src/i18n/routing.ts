@@ -7,23 +7,23 @@
  *   3. src/content/wiki/<locale>/ — directory must exist (can be empty)
  *
  * URL strategy (as-needed prefix):
- *   - English (default) has NO prefix: /bosses/emberfang
- *   - Other locales ARE prefixed:     /ja/bosses/emberfang
+ *   - Simplified Chinese (default) has NO prefix: /beta/
+ *   - Other locales ARE prefixed:                 /en/beta/
  *
  * This is configured in astro.config.ts via `i18n.routing.prefixDefaultLocale: false`.
  */
 
-export const locales = ['en'] as const;
-
-// Keep the broader Locale type for framework helpers and their upstream tests;
+export const locales = ['zh', 'en'] as const;
+// Keep a broader framework type for helpers and reusable template tests;
 // `locales` remains the authoritative list of routes generated for this site.
-export type Locale = 'en' | 'ja';
+export type Locale = 'zh' | 'en' | 'ja';
 
-export const defaultLocale = 'en' as const;
+export const defaultLocale: Locale = 'zh';
 
 /** English label for each locale (used in language switcher). */
 export const LOCALE_LABELS: Record<Locale, string> = {
-  en: '简体中文',
+  zh: '简体中文',
+  en: 'English',
   ja: '日本語',
 };
 
@@ -36,12 +36,18 @@ export const LOCALE_LABELS: Record<Locale, string> = {
  * call site.
  */
 export const OG_LOCALE_MAP: Record<string, string> = {
-  en: 'zh_CN',
-  ja: 'ja_JP',
   zh: 'zh_CN',
+  en: 'en_US',
 };
 
-/** Whether the given locale is the default (English, no URL prefix). */
+/** Valid BCP 47 values for the document language. */
+export const HTML_LANG_MAP: Record<Locale, string> = {
+  zh: 'zh-CN',
+  en: 'en',
+  ja: 'ja',
+};
+
+/** Whether the given locale is the default (Simplified Chinese, no URL prefix). */
 export function isDefaultLocale(locale: string): boolean {
   return locale === defaultLocale;
 }

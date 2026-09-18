@@ -5,6 +5,9 @@
  */
 import LegalPage from '~/components/layout/LegalPage.astro';
 import LegalContent from '~/components/layout/LegalContent.astro';
+import BetaPage from '../beta.astro';
+import EditionsPage from '../editions.astro';
+import ReleaseDatePage from '../release-date.astro';
 import { isLocale, defaultLocale, locales, type Locale } from '~/i18n/routing';
 
 export function getStaticPaths() {
@@ -12,15 +15,17 @@ export function getStaticPaths() {
   // top-level consts are NOT visible here. But module-level imports ARE.
   // `locales` comes from routing.ts, so it's safe to use here.
   const legalPages = ['about', 'privacy-policy', 'terms-of-service', 'copyright', 'contact'];
+  const toolPages = ['beta', 'editions', 'release-date'];
   const nonDefault = locales.filter((l) => l !== defaultLocale);
   return nonDefault.flatMap((locale) =>
-    legalPages.map((page) => ({
+    [...legalPages, ...toolPages].map((page) => ({
       params: { locale, legal: page },
     })),
   );
 }
 
 const LEGAL_PAGES = ['about', 'privacy-policy', 'terms-of-service', 'copyright', 'contact'];
+const TOOL_PAGES = ['beta', 'editions', 'release-date'];
 const LEGAL_TITLES: Record<string, string> = {
   about: 'About',
   'privacy-policy': 'Privacy Policy',
@@ -38,12 +43,20 @@ const locale: Locale = localeParam;
 
 const titles: Record<string, string> = LEGAL_TITLES;
 
-if (!LEGAL_PAGES.includes(legal)) {
+if (![...LEGAL_PAGES, ...TOOL_PAGES].includes(legal)) {
   return new Response('Not Found', { status: 404 });
 }
 const pageKey = legal as 'about' | 'privacy-policy' | 'terms-of-service' | 'copyright' | 'contact';
 ---
 
-<LegalPage locale={locale} title={titles[pageKey]} lastUpdated="2026-08-11">
-  <LegalContent page={pageKey} />
-</LegalPage>
+{legal === 'beta' ? (
+  <BetaPage locale={locale} />
+) : legal === 'editions' ? (
+  <EditionsPage locale={locale} />
+) : legal === 'release-date' ? (
+  <ReleaseDatePage locale={locale} />
+) : (
+  <LegalPage locale={locale} title={titles[pageKey]} lastUpdated="2026-08-11">
+    <LegalContent page={pageKey} locale={locale} />
+  </LegalPage>
+)}

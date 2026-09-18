@@ -1,14 +1,21 @@
 ---
 import { Icon } from 'astro-icon/components';
 import ToolPageLayout from '~/components/forever/ToolPageLayout.astro';
-import { defaultLocale } from '~/i18n/routing';
+import { defaultLocale, locales, type Locale } from '~/i18n/routing';
 import { getUi } from '~/i18n/ui';
 import { simpleBreadcrumbJsonLd } from '~/lib/seo';
+import { languageAlternates, localizePath } from '~/lib/url';
 
-const locale = defaultLocale;
+interface Props { locale?: Locale }
+const locale = Astro.props.locale ?? defaultLocale;
 const ui = getUi(locale) as any;
 const dates = ui.forever.dates;
-const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: dates.title, path: '/release-date/', locale, homeLabel: ui.nav.home })];
+const pagePath = localizePath('/release-date', locale);
+const officialUrl = locale === 'zh'
+  ? 'https://worldofwarcraft.blizzard.com/zh-cn/forever'
+  : 'https://worldofwarcraft.blizzard.com/en-us/forever';
+const alternates = languageAlternates((loc) => localizePath('/release-date', loc), locales);
+const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: dates.title, path: pagePath, locale, homeLabel: ui.nav.home })];
 ---
 
 <ToolPageLayout
@@ -22,6 +29,7 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: dates.title, path: '/release
   answer={dates.answer}
   icon="lucide:calendar-clock"
   jsonLd={jsonLd}
+  alternates={alternates}
 >
   <section class="forever-shell py-12 sm:py-16">
     <div class="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
@@ -106,7 +114,7 @@ const jsonLd = [simpleBreadcrumbJsonLd({ pageLabel: dates.title, path: '/release
       </div>
     </div>
     <div class="flex flex-col gap-3 lg:pt-12">
-      <a href="https://worldofwarcraft.blizzard.com/zh-cn/forever" target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="btn-primary min-h-11 gap-2"><Icon name="lucide:external-link" class="h-4 w-4" />{dates.official}</a>
+      <a href={officialUrl} target="_blank" rel="noopener noreferrer" data-event="official_link_click" class="btn-primary min-h-11 gap-2"><Icon name="lucide:external-link" class="h-4 w-4" />{dates.official}</a>
       <button type="button" data-share-page data-event="share_click" data-done-label={ui.shared.copied} class="btn-outline min-h-11 gap-2">
         <Icon name="lucide:share-2" class="h-4 w-4" /><span data-share-label>{dates.share}</span>
       </button>

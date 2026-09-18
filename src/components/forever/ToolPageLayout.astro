@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import LocaleLayout from '~/components/layout/LocaleLayout.astro';
 import InteractionTracker from './InteractionTracker.astro';
-import { type Locale } from '~/i18n/routing';
+import { locales, type Locale } from '~/i18n/routing';
 
 interface Props {
   locale: Locale;
@@ -15,12 +15,13 @@ interface Props {
   answer: string;
   icon: string;
   jsonLd?: Record<string, unknown>[];
+  alternates?: Array<{ hreflang: string; href: string }>;
 }
 
-const { locale, title, description, eyebrow, heading, lede, answerLabel, answer, icon, jsonLd = [] } = Astro.props;
+const { locale, title, description, eyebrow, heading, lede, answerLabel, answer, icon, jsonLd = [], alternates = [] } = Astro.props;
 ---
 
-<LocaleLayout locale={locale} title={title} description={description} jsonLd={jsonLd}>
+<LocaleLayout locale={locale} title={title} description={description} jsonLd={jsonLd} alternates={alternates} availableLocales={locales}>
   <article data-pagefind-body>
     <header class="border-b border-border bg-muted/35">
       <div class="forever-shell grid gap-8 py-12 md:grid-cols-[1fr_auto] md:items-end md:py-16">

@@ -12,7 +12,7 @@
  */
 import '~/styles/globals.css';
 import { site, siteUrl } from '~/config/site';
-import { defaultLocale, locales, OG_LOCALE_MAP, type Locale } from '~/i18n/routing';
+import { defaultLocale, HTML_LANG_MAP, locales, OG_LOCALE_MAP, type Locale } from '~/i18n/routing';
 import { organizationJsonLd } from '~/lib/seo';
 import JsonLd from '~/components/seo/JsonLd.astro';
 import CookieConsent from './CookieConsent.astro';
@@ -76,7 +76,7 @@ const {
 
 // Language of the main content (falls back to the UI locale).
 const mainLocale = contentLocale ?? locale;
-const documentLocale = site.language || mainLocale;
+const documentLocale = HTML_LANG_MAP[mainLocale as Locale] ?? mainLocale;
 const ogLocaleMap = OG_LOCALE_MAP as Record<string, string>;
 const ogLocale = ogLocaleMap[mainLocale] ?? mainLocale;
 

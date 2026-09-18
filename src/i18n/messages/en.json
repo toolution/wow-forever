@@ -1,0 +1,148 @@
+{
+  "site": {
+    "description": "An unofficial WoW Forever decision guide for beta access, editions, and regional dates.",
+    "tagline": "Buy only what you need. Do not miss the dates that matter.",
+    "legalNotice": "This is an unofficial player resource and is not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft and related assets belong to their respective owners."
+  },
+  "nav": { "home": "Home", "guides": "Guides", "toggleTheme": "Toggle theme", "menu": "Menu", "close": "Close", "search": "Search", "language": "Language" },
+  "search": { "placeholder": "Search rules and dates...", "noResults": "No matching results" },
+  "home": {
+    "faq": {
+      "title": "Frequently asked questions",
+      "description": "Quick answers about WoW Forever access and purchases.",
+      "items": [
+        { "question": "Do I need to buy Forever if I already subscribe to WoW?", "answer": "The base game is included with an active WoW subscription or game time. Buy a pack only if you want Skyborne, included beta access, or other extras." },
+        { "question": "Does signing up guarantee beta access?", "answer": "No. The official sign-up offers a chance to participate. Epic Pack and Collection list Beta Access as a pack benefit." },
+        { "question": "Does Heroic Pack include beta access?", "answer": "No. Heroic includes Skyborne, its starting experience, and early name reservation, but the official comparison does not list Beta Access." },
+        { "question": "Is the mainland China launch date confirmed?", "answer": "No verifiable mainland schedule is available. The English official page and Taiwan store dates do not establish a mainland server date." }
+      ]
+    }
+  },
+  "shared": {
+    "lastUpdated": "Last verified", "publishedOn": "Published", "noArticles": "No articles yet", "defaultListDescription": "Browse all {title}.",
+    "relatedArticles": "Related pages", "onThisPage": "On this page", "browseAll": "Browse all", "viewAll": "View all", "commentsHeading": "Comments",
+    "share": "Share", "copyLink": "Copy link", "copied": "Copied", "consentText": "We load analytics or advertising services only after you consent.",
+    "accept": "Accept", "decline": "Decline", "consentTitle": "Cookie settings", "possiblyOutdated": "This page was last verified on", "outdatedNote": "; the rules may have changed since then.",
+    "prevArticle": "Previous", "nextArticle": "Next", "minuteRead": "min read", "wasThisHelpful": "Was this helpful?", "feedbackThanks": "Thanks for the feedback",
+    "sponsoredLabel": "Sponsored", "relatedVideos": "Related videos", "gallery": "Gallery", "gameVersion": "Game version", "allTags": "All tags",
+    "tagsIndexDescription": "Browse content by topic.", "articlesCount": "articles", "recentTitle": "Recently updated", "recentDescription": "Rules and dates verified most recently.",
+    "sponsorTitle": "Support this site", "sponsorText": "Help keep this independent resource maintained.", "sponsorButton": "Support",
+    "notFoundSearchHint": "Restart from one of the main options above.", "notFoundPopular": "Popular links", "quickAnswer": "Quick answer", "skipToContent": "Skip to content",
+    "tapToCopy": "Tap to copy", "open": "Open", "playVideo": "Play video", "closeAd": "Close ad", "adLabel": "Advertisement",
+    "codesFaqTitle": "Frequently asked questions", "faqTitle": "Frequently asked questions", "toggleTheme": "Toggle theme", "fallbackNotice": "Fallback content",
+    "copyQuickAnswer": "Copy answer", "feedbackYes": "Yes", "feedbackNo": "No", "breadcrumbAria": "Breadcrumb", "paginationAria": "Pagination"
+  },
+  "footer": {
+    "playGame": "Visit the official Forever page", "about": "About", "faq": "FAQ", "privacyPolicy": "Privacy policy", "termsOfService": "Terms of service",
+    "copyright": "Copyright", "contact": "Contact", "community": "Official links", "legal": "Site information"
+  },
+  "forever": {
+    "brandLabel": "Returning player guide",
+    "verified": "Rules verified September 18, 2026",
+    "nav": [
+      { "label": "Home", "href": "/", "icon": "lucide:home" },
+      { "label": "Beta access", "href": "/beta/", "icon": "lucide:key-round" },
+      { "label": "Choose an edition", "href": "/editions/", "icon": "lucide:package-check" },
+      { "label": "Regional dates", "href": "/release-date/", "icon": "lucide:calendar-clock" }
+    ],
+    "home": {
+      "metaTitle": "WoW Forever launch guide for returning players",
+      "metaDescription": "Check WoW Forever beta access, the minimum edition you need, regional dates, and how it differs from Modern and Classic.",
+      "eyebrow": "Unofficial returning player guide", "title": "WoW Forever",
+      "lede": "You should not need ten news articles to make one decision. Check your beta route, whether a pack is worth buying, which regional date applies, and how this version differs from the WoW you know.",
+      "primary": "Check beta access", "secondary": "Choose the minimum pack", "status": "Current milestone",
+      "statusValue": "The official schedule is in the beta window", "statusNote": "This site has not verified live server availability",
+      "launch": "Official launch", "launchValue": "November 4, 2026", "access": "Base requirement", "accessValue": "Active WoW subscription or game time",
+      "tasksTitle": "Start with the question you need answered",
+      "tasks": [
+        { "title": "Can I enter the beta?", "description": "Separate sign-up selection, Heroic, and pack-included beta access.", "href": "/beta/", "icon": "lucide:key-round", "action": "Check access" },
+        { "title": "Which pack is the minimum?", "description": "Choose by Skyborne, beta, 30 days of game time, and Warcraft III needs.", "href": "/editions/", "icon": "lucide:package-check", "action": "Compare packs" },
+        { "title": "Which date applies to me?", "description": "Keep the English schedule, Taiwan store, and mainland status separate.", "href": "/release-date/", "icon": "lucide:calendar-clock", "action": "Check regions" },
+        { "title": "What is Forever?", "description": "A direct explanation of the version lines for returning players.", "href": "#returning", "icon": "lucide:route", "action": "Get the overview" }
+      ],
+      "confusionEyebrow": "Three points to settle first", "confusionTitle": "Where players are most likely to overspend or misread access",
+      "facts": [
+        { "title": "The base game is not a separate purchase", "body": "Base Forever play is included with an active WoW subscription or game time. You do not need a pack merely to own the base version.", "icon": "lucide:badge-check" },
+        { "title": "Signing up does not guarantee an invite", "body": "The official sign-up offers a chance to test. The lowest pack that explicitly includes Beta Access is Skyborne Epic Pack.", "icon": "lucide:circle-alert" },
+        { "title": "Skyborne requires a pack", "body": "Skyborne and its Zephras Isle start require Heroic Pack or higher. A subscription alone covers base access.", "icon": "lucide:wind" }
+      ],
+      "returningEyebrow": "For returning players", "returningTitle": "Think of Forever as another long-running WoW line",
+      "returningBody": "It begins from the foundations of WoW's first era, but it is not a simple re-release. Official descriptions include expanded zones, 1,000+ new quests, new dungeons, class and specialization reworks, Legacy progression, and system changes.",
+      "versions": [
+        { "name": "Modern", "label": "Current expansion line", "body": "Continues existing retail characters, systems, and expansion progress." },
+        { "name": "Classic", "label": "Historic version line", "body": "Focuses on recreating past versions and staged progression. Forever pack items do not automatically apply." },
+        { "name": "Forever", "label": "A renewed long-term world", "body": "Builds on early Azeroth with new zones, quests, visuals, and systems, with ongoing updates planned." }
+      ],
+      "timelineTitle": "Three key windows before launch",
+      "timeline": [
+        { "date": "Sep 17 - Oct 21", "title": "English official beta schedule", "body": "Sign-up selection and pack access are separate routes." },
+        { "date": "Oct 27 - Nov 3", "title": "Early name reservation", "body": "All three packs list this benefit; names remain first come, first served." },
+        { "date": "11.04", "title": "English official launch date", "body": "The Taiwan store displays November 5 because of the regional calendar difference." }
+      ],
+      "closingTitle": "Make one decision without reading everything", "closingBody": "Get a clear answer on access, packs, or dates in about a minute.", "closingAction": "Start with beta access"
+    },
+    "beta": {
+      "metaTitle": "WoW Forever beta access checker", "metaDescription": "Separate beta sign-up selection from Heroic, Epic, and Collection access.",
+      "eyebrow": "Beta access", "title": "Which beta route do you have?",
+      "lede": "Signing up may earn an invitation, but it is not guaranteed. Epic Pack and Collection explicitly include Beta Access; Heroic Pack does not.",
+      "answerLabel": "Quick answer", "answer": "You can sign up for a chance without paying. For Beta Access as a listed pack benefit, the minimum is Skyborne Epic Pack.",
+      "toolTitle": "Access checker", "toolDescription": "Choose what you own and what you want. This tool never reads or stores your Battle.net account.",
+      "ownershipQuestion": "What do you already own?",
+      "ownership": [{ "id": "none", "label": "No pack yet" }, { "id": "heroic", "label": "Skyborne Heroic" }, { "id": "epic", "label": "Skyborne Epic" }, { "id": "collection", "label": "Forever Collection" }],
+      "goalQuestion": "How do you want to get access?", "goals": [{ "id": "chance", "label": "I can wait for selection" }, { "id": "included", "label": "I need it included in a pack" }],
+      "resultTitle": "Your next step", "calculate": "Show my result",
+      "results": {
+        "none-chance": { "status": "Use the free sign-up route", "body": "Register interest on the official page and wait for a possible invitation. Signing up is not a guarantee.", "action": "Open the official sign-up" },
+        "none-included": { "status": "Epic Pack is the minimum", "body": "Epic Pack and Collection list Beta Access; Heroic Pack does not.", "action": "Compare packs" },
+        "heroic-chance": { "status": "Heroic does not include beta", "body": "Keep Heroic and use the official sign-up route separately. Blizzard still decides who is invited.", "action": "Open the official sign-up" },
+        "heroic-included": { "status": "Upgrade to Epic or Collection", "body": "The official Heroic benefits do not list Beta Access.", "action": "See upgrade differences" },
+        "epic-chance": { "status": "Your pack includes beta access", "body": "Epic lists Beta Access, so random selection is not your only route.", "action": "Check beta dates" },
+        "epic-included": { "status": "Your pack includes beta access", "body": "Epic is the lowest pack tier that includes Beta Access.", "action": "Check beta dates" },
+        "collection-chance": { "status": "Your pack includes beta access", "body": "Collection includes Beta Access, Epic benefits, and Warcraft III content.", "action": "Check beta dates" },
+        "collection-included": { "status": "Your pack includes beta access", "body": "Collection explicitly includes Beta Access.", "action": "Check beta dates" }
+      },
+      "routesTitle": "Do not confuse the two access routes",
+      "routes": [{ "title": "Official sign-up", "badge": "Chance", "body": "Eligible players can register interest, but the page does not promise an invitation." }, { "title": "Epic or Collection", "badge": "Included", "body": "The official comparison lists Beta Access for these tiers." }, { "title": "Heroic Pack", "badge": "No beta", "body": "It includes Skyborne and name reservation, but not Beta Access." }],
+      "checklistTitle": "Before entering the test", "checklist": ["Confirm the purchase is on the correct WoW account", "Update Battle.net and the WoW client", "Enable two-factor authentication and retain recovery access", "Do not treat third-party activation codes as official access"],
+      "save": "Save checklist", "saved": "Saved in this browser", "official": "Open the official Forever page", "editions": "Compare packs"
+    },
+    "editions": {
+      "metaTitle": "WoW Forever edition selector", "metaDescription": "Choose the minimum pack for Skyborne, beta access, game time, and Warcraft III content.",
+      "eyebrow": "Choose an edition", "title": "Buy only the tier you actually need",
+      "lede": "Base Forever access comes with an active subscription or game time. Packs mainly add Skyborne, beta access, game time, and collectibles.",
+      "answerLabel": "Lowest-cost rule", "answer": "Base only: no pack. Skyborne: Heroic. Add beta and 30 days: Epic. Add Warcraft III content: Collection.",
+      "toolTitle": "Minimum edition selector", "toolDescription": "Select only the benefits you need. The result recommends the lowest matching tier.",
+      "needsQuestion": "Which benefits do you definitely need?",
+      "questions": [{ "id": "skyborne", "label": "Skyborne and the Zephras Isle starting experience" }, { "id": "beta", "label": "Beta Access included in the pack" }, { "id": "warcraft3", "label": "Warcraft III: Reforged and Forsaken Kingdom" }],
+      "subscription": "Will you have an active WoW subscription or game time at launch?", "subscriptionOptions": [{ "id": "yes", "label": "Yes" }, { "id": "no", "label": "Not yet" }],
+      "resultTitle": "Minimum option", "calculate": "Find my minimum",
+      "results": {
+        "base": { "name": "No pack required", "body": "An active subscription or game time covers base Forever access." },
+        "base-nosub": { "name": "Get subscription or game time first", "body": "Base Forever is not a separate purchase; active subscription or game time is still required." },
+        "heroic": { "name": "Skyborne Heroic Pack", "body": "The lowest pack for Skyborne and name reservation, but it does not include beta access." },
+        "epic": { "name": "Skyborne Epic Pack", "body": "The lowest pack combining Skyborne, Beta Access, and 30 days of game time." },
+        "collection": { "name": "Warcraft Forever Collection", "body": "Choose this only if you also need Warcraft III content or Collection-exclusive items." }
+      },
+      "compareTitle": "Benefits by tier",
+      "rows": [{ "label": "Skyborne and starting experience", "values": [true, true, true] }, { "label": "Early name reservation", "values": [true, true, true] }, { "label": "Beta Access", "values": [false, true, true] }, { "label": "30 days of WoW game time", "values": [false, true, true] }, { "label": "Warcraft III: Reforged", "values": [false, false, true] }, { "label": "Forsaken Kingdom campaign", "values": [false, false, true] }, { "label": "Friend launch invitations", "values": [1, 3, 3] }],
+      "packs": [{ "name": "Heroic", "tag": "Skyborne only", "image": "/images/forever/heroic.webp", "body": "Skyborne, starting experience, items, and name reservation. No Beta Access or game time." }, { "name": "Epic", "tag": "Lowest beta tier", "image": "/images/forever/epic.webp", "body": "Everything in Heroic, plus Beta Access, 30 days of game time, and extra items." }, { "name": "Collection", "tag": "Warcraft collection tier", "image": "/images/forever/collection.webp", "body": "Everything in Epic, plus Warcraft III content and collection cosmetics." }],
+      "finePrint": "Epic and Collection game time is added at launch. Continuing afterward still requires subscription or game time. Collection is listed through January 11, 2027.",
+      "official": "View the official pack page", "beta": "Check beta access"
+    },
+    "dates": {
+      "metaTitle": "WoW Forever launch and beta dates by region", "metaDescription": "Compare official English, Taiwan store, and unconfirmed mainland China dates.",
+      "eyebrow": "Regional dates", "title": "Choose the region before reading the date",
+      "lede": "The same global event can appear on different calendar days because of time zones. This guide shows only explicitly published dates.",
+      "answerLabel": "Current status", "answer": "The English schedule is in its beta window, but this site has not independently verified server availability or maintenance.",
+      "regionTitle": "Choose the regional source", "regions": [{ "id": "global", "label": "English official site" }, { "id": "taiwan", "label": "Taiwan store" }, { "id": "china", "label": "Mainland China" }],
+      "regionData": {
+        "global": { "status": "Official English dates", "note": "Use these for the US and European reference; check the launcher for exact times.", "events": [{ "label": "Beta", "date": "Sep 17 - Oct 21, 2026", "state": "Scheduled window" }, { "label": "Name reservation", "date": "Oct 27 - Nov 3, 2026", "state": "Pack benefit" }, { "label": "Launch", "date": "Nov 4, 2026", "state": "Official date" }] },
+        "taiwan": { "status": "Taiwan Battle.net store dates", "note": "The store displays one calendar day later because of regional time presentation.", "events": [{ "label": "Beta", "date": "Sep 18 - Oct 22, 2026", "state": "Store date" }, { "label": "Name reservation", "date": "Awaiting store confirmation", "state": "Not inferred" }, { "label": "Launch", "date": "Nov 5, 2026", "state": "Store date" }] },
+        "china": { "status": "No verifiable mainland schedule yet", "note": "English or Taiwan dates cannot be presented as mainland server dates.", "events": [{ "label": "Beta", "date": "Awaiting official confirmation", "state": "Unconfirmed" }, { "label": "Name reservation", "date": "Awaiting official confirmation", "state": "Unconfirmed" }, { "label": "Launch", "date": "Awaiting official confirmation", "state": "Unconfirmed" }] }
+      },
+      "timezoneTitle": "Why can the date differ by one day?", "timezoneBody": "A global event may happen at one moment while stores convert it to a local calendar day. Without a published hour and time zone, a countdown creates false precision.",
+      "prepareTitle": "Pre-launch checklist", "prepare": ["Confirm your Battle.net account region matches the purchasing account", "Update Battle.net and the game client in advance", "Prepare several names; reservation remains first come, first served", "Check launcher notices on launch day"],
+      "save": "Save checklist", "saved": "Saved in this browser", "official": "Open the official Forever page", "share": "Share this page"
+    }
+  }
+}

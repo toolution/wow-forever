@@ -11,9 +11,9 @@ import {
 
 describe('url helpers', () => {
   describe('localizePath', () => {
-    it('returns the path unchanged for the default locale (en)', () => {
-      expect(localizePath('/bosses', 'en')).toBe('/bosses/');
-      expect(localizePath('/bosses/emberfang', 'en')).toBe('/bosses/emberfang/');
+    it('returns the path unchanged for the default locale (zh)', () => {
+      expect(localizePath('/bosses', 'zh')).toBe('/bosses/');
+      expect(localizePath('/bosses/emberfang', 'zh')).toBe('/bosses/emberfang/');
     });
 
     it('prepends the locale prefix for non-default locales', () => {
@@ -22,14 +22,14 @@ describe('url helpers', () => {
     });
 
     it('ensures leading slash on input without one', () => {
-      expect(localizePath('about', 'en')).toBe('/about/');
+      expect(localizePath('about', 'zh')).toBe('/about/');
       expect(localizePath('about', 'ja')).toBe('/ja/about/');
     });
   });
 
   describe('homeUrl', () => {
     it('returns / for default locale', () => {
-      expect(homeUrl('en')).toBe('/');
+      expect(homeUrl('zh')).toBe('/');
     });
     it('returns /ja for non-default locale', () => {
       expect(homeUrl('ja')).toBe('/ja/');
@@ -38,20 +38,20 @@ describe('url helpers', () => {
 
   describe('listPath', () => {
     it('builds the correct list URL for each locale', () => {
-      expect(listPath('bosses', 'en')).toBe('/bosses/');
+      expect(listPath('bosses', 'zh')).toBe('/bosses/');
       expect(listPath('bosses', 'ja')).toBe('/ja/bosses/');
-      expect(listPath('codes', 'en')).toBe('/codes/');
+      expect(listPath('codes', 'zh')).toBe('/codes/');
     });
   });
 
   describe('detailPath', () => {
     it('builds the correct article URL for each locale', () => {
-      expect(detailPath('bosses', 'emberfang', 'en')).toBe('/bosses/emberfang/');
+      expect(detailPath('bosses', 'emberfang', 'zh')).toBe('/bosses/emberfang/');
       expect(detailPath('bosses', 'emberfang', 'ja')).toBe('/ja/bosses/emberfang/');
     });
 
     it('handles nested slugs', () => {
-      expect(detailPath('guides', 'early-game/beginner', 'en')).toBe(
+      expect(detailPath('guides', 'early-game/beginner', 'zh')).toBe(
         '/guides/early-game/beginner/',
       );
       expect(detailPath('guides', 'early-game/beginner', 'ja')).toBe(
@@ -91,7 +91,7 @@ describe('slugifyTag (CJK / non-ASCII fallback)', () => {
 
 describe('absoluteUrl', () => {
   it('prefixes siteUrl and applies the locale prefix rules', () => {
-    expect(absoluteUrl('/bosses', 'en')).toMatch(/^https:\/\/[^/]+\/bosses\/$/);
+    expect(absoluteUrl('/bosses', 'zh')).toMatch(/^https:\/\/[^/]+\/bosses\/$/);
     expect(absoluteUrl('/bosses', 'ja')).toMatch(/^https:\/\/[^/]+\/ja\/bosses\/$/);
     expect(absoluteUrl('/', 'ja')).toMatch(/^https:\/\/[^/]+\/ja\/$/);
   });
@@ -99,14 +99,14 @@ describe('absoluteUrl', () => {
 
 describe('languageAlternates', () => {
   it('builds absolute hreflang entries for exactly the given locales', () => {
-    const alts = languageAlternates((loc) => detailPath('bosses', 'x', loc), ['en', 'ja']);
+    const alts = languageAlternates((loc) => detailPath('bosses', 'x', loc), ['zh', 'en']);
     expect(alts).toHaveLength(2);
-    expect(alts[0]).toEqual({ hreflang: 'en', href: expect.stringMatching(/\/bosses\/x\/$/) });
-    expect(alts[1]).toEqual({ hreflang: 'ja', href: expect.stringMatching(/\/ja\/bosses\/x\/$/) });
+    expect(alts[0]).toEqual({ hreflang: 'zh', href: expect.stringMatching(/\/bosses\/x\/$/) });
+    expect(alts[1]).toEqual({ hreflang: 'en', href: expect.stringMatching(/\/en\/bosses\/x\/$/) });
   });
 
   it('never emits x-default (BaseLayout derives it separately)', () => {
-    const alts = languageAlternates((loc) => listPath('guides', loc), ['en', 'ja']);
+    const alts = languageAlternates((loc) => listPath('guides', loc), ['zh', 'en']);
     expect(alts.some((a) => a.hreflang === 'x-default')).toBe(false);
   });
 

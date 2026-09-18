@@ -18,10 +18,10 @@ describe('slugifyTag', () => {
 });
 
 describe('tag/recent URL helpers', () => {
-  it('builds unprefixed English paths', () => {
-    expect(tagsPath('en')).toBe('/tags/');
-    expect(tagPath('fire-boss', 'en')).toBe('/tags/fire-boss/');
-    expect(recentPath('en')).toBe('/recent/');
+  it('builds unprefixed default-locale paths', () => {
+    expect(tagsPath('zh')).toBe('/tags/');
+    expect(tagPath('fire-boss', 'zh')).toBe('/tags/fire-boss/');
+    expect(recentPath('zh')).toBe('/recent/');
   });
   it('prefixes non-default locales', () => {
     expect(tagsPath('ja')).toBe('/ja/tags/');

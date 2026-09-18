@@ -1,0 +1,347 @@
+{
+  "site": {
+    "name": "Forever Guide",
+    "shortName": "Forever",
+    "description": "面向回归玩家的 WoW Forever 非官方资格、礼包与地区日期决策工具。",
+    "tagline": "少买一档，也别错过关键日期",
+    "legalNotice": "本站为非官方玩家工具，与 Blizzard Entertainment 无隶属或背书关系。World of Warcraft 及相关素材归其权利人所有。"
+  },
+  "nav": {
+    "home": "首页",
+    "guides": "规则说明",
+    "toggleTheme": "切换主题",
+    "menu": "菜单",
+    "close": "关闭",
+    "search": "搜索",
+    "language": "语言"
+  },
+  "search": {
+    "placeholder": "搜索规则与日期...",
+    "noResults": "没有找到匹配内容"
+  },
+  "shared": {
+    "lastUpdated": "最后核验",
+    "publishedOn": "发布于",
+    "noArticles": "暂无文章",
+    "defaultListDescription": "浏览全部 {title}。",
+    "relatedArticles": "相关页面",
+    "onThisPage": "本页目录",
+    "browseAll": "查看全部",
+    "viewAll": "查看全部",
+    "commentsHeading": "评论",
+    "share": "分享",
+    "copyLink": "复制链接",
+    "copied": "已复制",
+    "consentText": "我们仅在你同意后加载分析或广告服务。",
+    "accept": "同意",
+    "decline": "拒绝",
+    "consentTitle": "Cookie 设置",
+    "bossCard": { "title": "概览", "hp": "生命值", "weakness": "弱点", "resistant": "抗性", "location": "位置", "level": "建议等级" },
+    "codesTable": { "active": "有效", "expired": "已失效", "reward": "奖励", "expires": "到期", "source": "来源", "code": "代码" },
+    "codesFaq": [],
+    "possiblyOutdated": "本页最后核验于",
+    "outdatedNote": "，规则之后可能已经变化。",
+    "prevArticle": "上一篇",
+    "nextArticle": "下一篇",
+    "minuteRead": "分钟阅读",
+    "wasThisHelpful": "这页有帮助吗？",
+    "feedbackThanks": "感谢反馈",
+    "sponsoredLabel": "赞助",
+    "relatedVideos": "相关视频",
+    "gallery": "图片",
+    "gameVersion": "适用版本",
+    "allTags": "全部标签",
+    "tagsIndexDescription": "按主题浏览内容。",
+    "articlesCount": "篇",
+    "recentTitle": "最近更新",
+    "recentDescription": "最近核验的规则与日期。",
+    "sponsorTitle": "支持本站",
+    "sponsorText": "支持这个独立工具继续维护。",
+    "sponsorButton": "支持",
+    "notFoundSearchHint": "也可以从上方四个入口重新开始。",
+    "notFoundPopular": "常用入口",
+    "galleryLabels": { "close": "关闭", "prev": "上一张", "next": "下一张" },
+    "quickAnswer": "直接结论",
+    "skipToContent": "跳到正文",
+    "tapToCopy": "点击复制",
+    "open": "打开",
+    "playVideo": "播放视频",
+    "closeAd": "关闭广告",
+    "adLabel": "广告",
+    "codesFaqTitle": "常见问题",
+    "faqTitle": "常见问题",
+    "toggleTheme": "切换主题",
+    "fallbackNotice": "内容回退",
+    "copyQuickAnswer": "复制结论",
+    "feedbackYes": "有",
+    "feedbackNo": "没有",
+    "breadcrumbAria": "面包屑导航",
+    "paginationAria": "翻页导航"
+  },
+  "overview": {
+    "guides": {
+      "overviewTitle": "规则说明",
+      "overviewDescription": "WoW Forever 资格、版本与日期说明。"
+    }
+  },
+  "home": {
+    "meta": {
+      "title": "WoW Forever 回归玩家开服工具",
+      "description": "快速判断 WoW Forever Beta 资格、最低必要礼包、地区日期，以及它与 Modern、Classic 的区别。"
+    },
+    "faq": {
+      "title": "常见问题",
+      "description": "关于 WoW Forever 资格与购买的快速回答。",
+      "items": [
+        {
+          "question": "有 WoW 订阅还需要买 Forever 吗？",
+          "answer": "基础 WoW Forever 游戏包含在有效 WoW 订阅或游戏时间中。只有在你需要 Skyborne、礼包 Beta 资格或其他附加内容时，才需要考虑额外礼包。"
+        },
+        {
+          "question": "报名 Beta 就一定能获得资格吗？",
+          "answer": "不一定。官方报名页写的是获得测试机会；Skyborne Epic Pack 与 Warcraft Forever Collection 则把 Beta Access 列为礼包权益。"
+        },
+        {
+          "question": "Heroic Pack 包含 Beta 吗？",
+          "answer": "不包含。Heroic Pack 含 Skyborne、起始体验与提前角色名预留，但官方对比表没有给它列出 Beta Access。"
+        },
+        {
+          "question": "中国大陆的上线日期确定了吗？",
+          "answer": "当前可核验的英文官方页与台湾商店存在一天的日历差异，不能据此推定中国大陆服务器安排。本站会把大陆状态保持为待官方确认。"
+        }
+      ]
+    }
+  },
+  "footer": {
+    "playGame": "访问官方 Forever 页面",
+    "officialDiscord": "官方 Discord",
+    "officialYoutube": "官方 YouTube",
+    "officialTwitter": "官方 X",
+    "officialReddit": "Reddit",
+    "about": "关于本站",
+    "faq": "常见问题",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "使用条款",
+    "copyright": "版权说明",
+    "contact": "联系",
+    "copyrightText": "© 2026 Forever Guide",
+    "community": "官方入口",
+    "legal": "站点信息"
+  },
+  "forever": {
+    "brandLabel": "回归玩家工具",
+    "verified": "规则核验于 2026-09-18",
+    "nav": [
+      { "label": "首页", "href": "/", "icon": "lucide:home" },
+      { "label": "Beta 资格", "href": "/beta/", "icon": "lucide:key-round" },
+      { "label": "礼包选择", "href": "/editions/", "icon": "lucide:package-check" },
+      { "label": "地区日期", "href": "/release-date/", "icon": "lucide:calendar-clock" }
+    ],
+    "home": {
+      "metaTitle": "WoW Forever 回归玩家开服工具",
+      "metaDescription": "判断 WoW Forever Beta 资格、最低必要礼包、地区日期，以及它与 Modern、Classic 的区别。",
+      "eyebrow": "非官方 · 回归玩家开服工具",
+      "title": "WoW Forever",
+      "lede": "不用先读十篇新闻。先确认你能不能进 Beta、要不要买礼包、你所在地区看哪一天，以及这个新版本和你熟悉的 WoW 到底有什么不同。",
+      "primary": "判断 Beta 资格",
+      "secondary": "选择最低礼包",
+      "status": "当前节点",
+      "statusValue": "官方排期已进入 Beta 窗口",
+      "statusNote": "本站尚未验证服务器实际开放状态",
+      "launch": "正式上线",
+      "launchValue": "2026 年 11 月 4 日",
+      "access": "基础门槛",
+      "accessValue": "有效 WoW 订阅或游戏时间",
+      "tasksTitle": "先解决你现在的问题",
+      "tasks": [
+        { "title": "我能进 Beta 吗？", "description": "区分报名抽选、Heroic 与礼包 Beta 权益。", "href": "/beta/", "icon": "lucide:key-round", "action": "开始判断" },
+        { "title": "最低该买哪一档？", "description": "按 Skyborne、Beta、30 天时间与 Warcraft III 需求给出最低选项。", "href": "/editions/", "icon": "lucide:package-check", "action": "比较礼包" },
+        { "title": "我这里是哪一天？", "description": "把英文官网、台湾商店和大陆待确认状态分开显示。", "href": "/release-date/", "icon": "lucide:calendar-clock", "action": "查看地区" },
+        { "title": "Forever 到底是什么？", "description": "给离开多年的玩家一份不绕弯的版本关系说明。", "href": "#returning", "icon": "lucide:route", "action": "快速看懂" }
+      ],
+      "confusionEyebrow": "三件事先说清",
+      "confusionTitle": "最容易多花钱或误判资格的地方",
+      "facts": [
+        { "title": "基础游戏不是单独买断", "body": "Forever 的基础玩法包含在有效 WoW 订阅或游戏时间里。只想进入基础版本，不需要为了“拥有 Forever”先买礼包。", "icon": "lucide:badge-check" },
+        { "title": "报名不是保证邀请", "body": "官方报名入口写的是获得测试机会。想把 Beta Access 作为明确礼包权益，最低要看 Skyborne Epic Pack。", "icon": "lucide:circle-alert" },
+        { "title": "Skyborne 需要礼包", "body": "Skyborne 种族与 Zephras Isle 起始体验要求 Heroic Pack 或更高档。订阅本身只解决基础游玩门槛。", "icon": "lucide:wind" }
+      ],
+      "returningEyebrow": "给回归玩家",
+      "returningTitle": "把 Forever 当成 WoW 的另一条长期版本线",
+      "returningBody": "它从 WoW 第一时代的世界根基重新出发，但不是把旧内容原样再开一次。官方描述包括扩展后的区域、1000+ 新任务、新地下城、职业与专精重做、Legacy 账号进度系统，以及 Camping、专业与荣誉系统调整。",
+      "versions": [
+        { "name": "Modern", "label": "当前资料片路线", "body": "延续现有正式服角色、系统与资料片进度。Forever 礼包里的部分装饰会注明可在 Modern 使用。" },
+        { "name": "Classic", "label": "经典版本路线", "body": "以历史版本还原和阶段推进为核心。Forever 礼包物品不会自动等同于 Classic 内容。" },
+        { "name": "Forever", "label": "重新生长的长期世界", "body": "以早期艾泽拉斯为根，加入新区域、新任务、画面与系统，并计划持续通过内容更新扩展。" }
+      ],
+      "timelineTitle": "开服前的三个关键窗口",
+      "timeline": [
+        { "date": "09.17 — 10.21", "title": "英文官方 Beta 排期", "body": "报名抽选与礼包资格是两条不同路径。" },
+        { "date": "10.27 — 11.03", "title": "提前角色名预留", "body": "三个礼包均列出此权益，名称仍按先到先得。" },
+        { "date": "11.04", "title": "英文官方上线日", "body": "台湾商店展示为 11 月 5 日，属于地区日历差异。" }
+      ],
+      "closingTitle": "先做一个决定，不用把所有资料都看完",
+      "closingBody": "资格、礼包和日期都能在一分钟内得到结论。",
+      "closingAction": "从 Beta 资格开始"
+    },
+    "beta": {
+      "metaTitle": "WoW Forever Beta 资格判断器",
+      "metaDescription": "区分 WoW Forever Beta 报名抽选、Heroic Pack 与 Epic/Collection 礼包资格。",
+      "eyebrow": "Beta 资格",
+      "title": "你有哪条 Beta 入口？",
+      "lede": "报名可以争取邀请，但不保证获得；Epic Pack 与 Collection 把 Beta Access 明确列为权益，Heroic Pack 没有。",
+      "answerLabel": "直接结论",
+      "answer": "不付费也可以报名等抽选。需要把 Beta Access 作为明确权益时，最低选择是 Skyborne Epic Pack。",
+      "toolTitle": "资格判断器",
+      "toolDescription": "选择你现在的状态与目标。不会读取或保存 Battle.net 账号。",
+      "ownershipQuestion": "你现在已经有什么？",
+      "ownership": [
+        { "id": "none", "label": "还没买礼包" },
+        { "id": "heroic", "label": "Skyborne Heroic" },
+        { "id": "epic", "label": "Skyborne Epic" },
+        { "id": "collection", "label": "Forever Collection" }
+      ],
+      "goalQuestion": "你希望怎样获得资格？",
+      "goals": [
+        { "id": "chance", "label": "可以等抽选" },
+        { "id": "included", "label": "要礼包明确包含" }
+      ],
+      "resultTitle": "你的下一步",
+      "calculate": "查看结论",
+      "results": {
+        "none-chance": { "status": "可走免费报名", "body": "在官方页面登记 Beta 意向，等待是否收到邀请。报名不等于保证获邀。", "action": "打开官方报名页" },
+        "none-included": { "status": "最低需要 Epic Pack", "body": "Skyborne Epic Pack 与 Forever Collection 都列有 Beta Access；Heroic Pack 没有。", "action": "比较礼包" },
+        "heroic-chance": { "status": "Heroic 不含 Beta", "body": "保留 Heroic 也可以另走官方报名抽选；是否获邀仍由官方决定。", "action": "打开官方报名页" },
+        "heroic-included": { "status": "需要升级到 Epic 或 Collection", "body": "Heroic 的权益止于 Skyborne、道具与角色名预留，官方表格没有列 Beta Access。", "action": "查看升级差异" },
+        "epic-chance": { "status": "你已有礼包 Beta 权益", "body": "Epic 已列出 Beta Access，无需把官方抽选当成唯一入口。", "action": "查看测试日期" },
+        "epic-included": { "status": "你已有礼包 Beta 权益", "body": "Epic 是包含 Beta Access 的最低礼包档位。", "action": "查看测试日期" },
+        "collection-chance": { "status": "你已有礼包 Beta 权益", "body": "Collection 已列出 Beta Access，同时包含 Epic 档权益与 Warcraft III 附加内容。", "action": "查看测试日期" },
+        "collection-included": { "status": "你已有礼包 Beta 权益", "body": "Collection 已明确包含 Beta Access。", "action": "查看测试日期" }
+      },
+      "routesTitle": "两条入口不要混在一起",
+      "routes": [
+        { "title": "官方报名抽选", "badge": "机会", "body": "任何符合官方账号条件的玩家都可登记意向，但页面措辞是 chance，不承诺一定邀请。" },
+        { "title": "Epic / Collection 权益", "badge": "礼包包含", "body": "官方礼包对比表在这两档列出 WoW: Forever Beta Access。" },
+        { "title": "Heroic Pack", "badge": "不含 Beta", "body": "它包含 Skyborne、起始体验、道具和提前角色名预留，但没有 Beta Access。" }
+      ],
+      "checklistTitle": "进入测试前检查",
+      "checklist": [
+        "确认购买发生在正确的 WoW 账号上",
+        "更新 Battle.net 桌面应用与 WoW 客户端",
+        "为账号启用双重验证并保留恢复方式",
+        "不要把第三方“激活码”当作官方资格"
+      ],
+      "save": "保存检查进度",
+      "saved": "已保存在此浏览器",
+      "official": "打开官方 Forever 页面",
+      "editions": "比较礼包"
+    },
+    "editions": {
+      "metaTitle": "WoW Forever 礼包选择器",
+      "metaDescription": "按 Skyborne、Beta、游戏时间与 Warcraft III 需求选择 WoW Forever 最低必要礼包。",
+      "eyebrow": "礼包选择",
+      "title": "只买你真正需要的那一档",
+      "lede": "基础 Forever 随有效订阅或游戏时间提供。礼包主要解决 Skyborne、Beta、30 天时间与额外收藏内容。",
+      "answerLabel": "最省钱原则",
+      "answer": "只玩基础 Forever：不买礼包。要 Skyborne：Heroic。还要礼包 Beta 与 30 天时间：Epic。还要 Warcraft III 内容：Collection。",
+      "toolTitle": "最低必要选择器",
+      "toolDescription": "勾选你确定需要的内容，结果只推荐满足条件的最低档。",
+      "needsQuestion": "你明确需要哪些内容？",
+      "questions": [
+        { "id": "skyborne", "label": "想玩 Skyborne 与 Zephras Isle 起始体验" },
+        { "id": "beta", "label": "需要礼包明确包含 Beta Access" },
+        { "id": "warcraft3", "label": "需要 Warcraft III: Reforged 与 Forsaken Kingdom" }
+      ],
+      "subscription": "上线后是否会保持有效 WoW 订阅或游戏时间？",
+      "subscriptionOptions": [
+        { "id": "yes", "label": "会" },
+        { "id": "no", "label": "还没有" }
+      ],
+      "resultTitle": "最低必要选项",
+      "calculate": "生成最低选项",
+      "results": {
+        "base": { "name": "无需礼包", "body": "有效 WoW 订阅或游戏时间已经覆盖基础 Forever。" },
+        "base-nosub": { "name": "先准备订阅或游戏时间", "body": "基础 Forever 不是单独买断。你仍需要有效订阅或游戏时间才能游玩。" },
+        "heroic": { "name": "Skyborne Heroic Pack", "body": "这是解锁 Skyborne、起始体验与提前角色名预留的最低礼包，但不含 Beta。" },
+        "epic": { "name": "Skyborne Epic Pack", "body": "这是同时包含 Skyborne、Beta Access 与上线时 30 天游戏时间的最低礼包。" },
+        "collection": { "name": "Warcraft Forever Collection", "body": "需要 Warcraft III: Reforged、Forsaken Kingdom 或收藏档独占内容时选择这一档。" }
+      },
+      "compareTitle": "三档权益差异",
+      "columns": ["Heroic", "Epic", "Collection"],
+      "rows": [
+        { "label": "Skyborne 与起始体验", "values": [true, true, true] },
+        { "label": "提前角色名预留", "values": [true, true, true] },
+        { "label": "Beta Access", "values": [false, true, true] },
+        { "label": "30 天 WoW 游戏时间", "values": [false, true, true] },
+        { "label": "Warcraft III: Reforged", "values": [false, false, true] },
+        { "label": "Forsaken Kingdom 战役", "values": [false, false, true] },
+        { "label": "好友开服邀请码", "values": [1, 3, 3] }
+      ],
+      "packs": [
+        { "name": "Heroic", "tag": "只要 Skyborne", "image": "/images/forever/heroic.webp", "body": "Skyborne、起始体验、通用道具、角色名预留。没有 Beta Access 与 30 天时间。" },
+        { "name": "Epic", "tag": "最低 Beta 档", "image": "/images/forever/epic.webp", "body": "Heroic 全部内容，再加 Beta Access、30 天时间与额外 Forever 道具。" },
+        { "name": "Collection", "tag": "Warcraft 收藏档", "image": "/images/forever/collection.webp", "body": "Epic 全部内容，再加 Warcraft III: Reforged、Forsaken Kingdom 与收藏装饰。" }
+      ],
+      "finePrint": "Epic 与 Collection 的 30 天游戏时间会在 Forever 上线时加入账号；用完后继续游玩仍需订阅或额外游戏时间。Collection 官方标注销售至 2027 年 1 月 11 日。",
+      "official": "查看官方礼包页",
+      "beta": "核对 Beta 资格"
+    },
+    "dates": {
+      "metaTitle": "WoW Forever 上线与 Beta 地区日期",
+      "metaDescription": "分开查看 WoW Forever 英文官方、台湾商店和中国大陆待确认的 Beta、角色名预留与上线日期。",
+      "eyebrow": "地区日期",
+      "title": "先选地区，再看日期",
+      "lede": "同一全球节点可能因为时区显示成不同日历日。本站只展示已经明确出现过的日期，不做伪精确倒计时。",
+      "answerLabel": "当前状态",
+      "answer": "英文官方排期已进入 Beta 窗口，但本站尚未验证服务器实际开放、维护或热修状态。",
+      "regionTitle": "选择你查看的地区口径",
+      "regions": [
+        { "id": "global", "label": "英文官方" },
+        { "id": "taiwan", "label": "台湾商店" },
+        { "id": "china", "label": "中国大陆" }
+      ],
+      "regionData": {
+        "global": {
+          "status": "官方英文日期",
+          "note": "用于美服/欧洲官网口径参考，具体维护时间仍以登录器为准。",
+          "events": [
+            { "label": "Beta", "date": "2026.09.17 — 10.21", "state": "排期窗口内" },
+            { "label": "角色名预留", "date": "2026.10.27 — 11.03", "state": "礼包权益" },
+            { "label": "正式上线", "date": "2026.11.04", "state": "官方日期" }
+          ]
+        },
+        "taiwan": {
+          "status": "台湾 Battle.net 商店日期",
+          "note": "商店展示比英文官方晚一个日历日，属于地区与时区展示差异。",
+          "events": [
+            { "label": "Beta", "date": "2026.09.18 — 10.22", "state": "商店日期" },
+            { "label": "角色名预留", "date": "待商店单独确认", "state": "不推算" },
+            { "label": "正式上线", "date": "2026.11.05", "state": "商店日期" }
+          ]
+        },
+        "china": {
+          "status": "尚无可核验大陆安排",
+          "note": "不能把英文官网或台湾商店日期直接写成中国大陆服务器时间。",
+          "events": [
+            { "label": "Beta", "date": "待官方确认", "state": "未确认" },
+            { "label": "角色名预留", "date": "待官方确认", "state": "未确认" },
+            { "label": "正式上线", "date": "待官方确认", "state": "未确认" }
+          ]
+        }
+      },
+      "timezoneTitle": "为什么会差一天？",
+      "timezoneBody": "全球游戏事件常以同一个绝对时刻发生，但商店会按访问地区换算成本地日历日。没有明确小时与时区时，直接做倒计时会制造错误精度，所以这里只保留日期级别。",
+      "prepareTitle": "开服前准备清单",
+      "prepare": [
+        "确认 Battle.net 账号地区与购买账号一致",
+        "提前更新 Battle.net 桌面应用与游戏客户端",
+        "准备多个角色名备选，预留仍按先到先得",
+        "上线当天以登录器公告确认维护与开放状态"
+      ],
+      "save": "保存准备进度",
+      "saved": "已保存在此浏览器",
+      "official": "打开官方 Forever 页面",
+      "share": "分享本页"
+    }
+  }
+}

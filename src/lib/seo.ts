@@ -7,7 +7,7 @@
 
 import { siteUrl } from '~/config/site';
 import { site } from '~/config/site';
-import { defaultLocale, type Locale } from '~/i18n/routing';
+import { defaultLocale, HTML_LANG_MAP, type Locale } from '~/i18n/routing';
 import { detailPath, listPath } from './url';
 
 /** Organization JSON-LD — injected globally in BaseLayout. */
@@ -34,7 +34,7 @@ export function websiteJsonLd(locale: Locale = defaultLocale) {
     name: site.name,
     url: siteUrl,
     description: site.description,
-    inLanguage: site.language || locale,
+    inLanguage: HTML_LANG_MAP[locale],
   };
 }
 

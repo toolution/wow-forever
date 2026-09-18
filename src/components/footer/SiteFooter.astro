@@ -10,6 +10,10 @@ const { locale } = Astro.props;
 const ui = getUi(locale) as any;
 const footer = ui.footer as Record<string, string>;
 const forever = ui.forever;
+const localizedSite = ui.site as Record<string, string>;
+const officialUrl = locale === 'zh'
+  ? site.social.official
+  : 'https://worldofwarcraft.blizzard.com/en-us/forever';
 const legalLinks = [
   ['about', footer.about],
   ['privacy-policy', footer.privacyPolicy],
@@ -26,14 +30,14 @@ const legalLinks = [
         <img src="/logo-mark.svg" alt="" width="28" height="28" class="h-7 w-7" />
         <span>{site.name}</span>
       </div>
-      <p class="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">{site.tagline}</p>
+      <p class="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">{localizedSite.tagline}</p>
       <p class="mt-3 text-xs text-muted-foreground">{forever.verified}</p>
     </div>
 
     <div>
       <h2 class="text-sm font-semibold">{footer.community}</h2>
       <a
-        href={site.social.official}
+        href={officialUrl}
         target="_blank"
         rel="noopener noreferrer"
         data-event="official_link_click"
@@ -56,7 +60,7 @@ const legalLinks = [
   <div class="border-t border-border">
     <div class="forever-shell space-y-1 py-5 text-xs text-muted-foreground">
       <p>{footer.copyrightText}</p>
-      <p>{site.legalNotice}</p>
+      <p>{localizedSite.legalNotice}</p>
     </div>
   </div>
 </footer>
