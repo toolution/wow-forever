@@ -8,6 +8,7 @@ import * as path from 'node:path';
 
 import { locales, defaultLocale, hreflangFor } from './src/i18n/routing';
 import { CONTENT_TYPES } from './src/config/navigation';
+import { siteUrl } from './src/config/site';
 
 /**
  * Build a map of page path → lastmod ISO date, read from MDX frontmatter
@@ -149,7 +150,7 @@ function buildLastmodMap(
   return map;
 }
 
-const siteOrigin = process.env.SITE_URL || 'https://wowforever-guide.pages.dev';
+const siteOrigin = siteUrl;
 
 // trailingSlash:'always' makes every generated URL end with "/", but the
 // lookup tables above (lastmodMap / noindexPaths / coverage keys) are built
@@ -204,7 +205,7 @@ function alternatesFor(pagePath: string): Array<{ lang: string; url: string }> |
 
 // https://astro.build/config
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://wowforever-guide.pages.dev',
+  site: siteUrl,
   output: 'static',
   // Cloudflare Pages serves directory builds at /path/ — with 'never' every
   // canonical/sitemap/internal link said /path, so each page 308'd once and

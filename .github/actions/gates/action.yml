@@ -1,14 +1,14 @@
 name: 'AnvilWiki quality gates'
 description: >-
-  The eight validation gates shared by CI and the content pipeline. Every gate
+  The nine validation gates shared by CI and the content pipeline. Every gate
   can fail the run — a draft PR from the pipeline is only created after all
-  eight pass, and CI blocks on the same definition, so the two paths verify
+  nine pass, and CI blocks on the same definition, so the two paths verify
   content with the exact same standard — no drift between the workflows.
 inputs:
   site-url:
-    description: 'SITE_URL for the build step (CI passes vars.SITE_URL; falls back to the demo domain).'
+    description: 'SITE_URL for config validation and build.'
     required: false
-    default: 'https://anvilwiki.pages.dev'
+    default: 'https://wowforeverhub.wiki'
 
 runs:
   using: 'composite'
@@ -28,6 +28,8 @@ runs:
     - name: Config consistency (nav/locale 3-place check)
       run: pnpm check-config
       shell: bash
+      env:
+        SITE_URL: ${{ inputs.site-url }}
 
     - name: Build
       run: pnpm build
@@ -46,6 +48,10 @@ runs:
 
     - name: Internal link audit (dist/)
       run: pnpm check-links
+      shell: bash
+
+    - name: Published SEO origin audit (dist/)
+      run: pnpm check-site-origin
       shell: bash
 
     - name: i18n UI key coverage (gate)

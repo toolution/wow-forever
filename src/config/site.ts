@@ -68,7 +68,7 @@ export const site: SiteConfig = {
   shortName: 'Forever',
   description:
     'A concise, unofficial decision guide for WoW Forever beta access, editions, regional dates, and returning players.',
-  domain: 'wowforever-guide.pages.dev',
+  domain: 'wowforeverhub.wiki',
   tagline: '少买一档，也别错过关键日期',
   legalNotice:
     '本站为非官方玩家工具，与 Blizzard Entertainment 无隶属或背书关系。World of Warcraft 及相关素材归其权利人所有。',

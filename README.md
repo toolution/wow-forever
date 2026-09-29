@@ -43,7 +43,7 @@ pnpm check-config
 - 输出目录：`dist`
 - Node.js：`22`
 
-默认站点地址配置为 `https://wowforever-guide.pages.dev`，可在 `src/config/site.ts` 与 `wrangler.toml` 中修改。
+正式站点地址为 `https://wowforeverhub.wiki`，在 `src/config/site.ts` 与 `wrangler.toml` 中配置。
 
 ## 声明
 

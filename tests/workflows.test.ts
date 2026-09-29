@@ -3,7 +3,7 @@
  *
  * The safety contract of the v2.0 pipeline lives in YAML, which no compiler
  * checks. These tests pin the load-bearing parts:
- *   1. The shared gates composite action runs EXACTLY the eight gate
+ *   1. The shared gates composite action runs EXACTLY the nine gate
  *      commands as separate ordered steps — no more, no fewer.
  *   2. ci.yml and auto-content.yml share ONE gates definition (composite
  *      action); ci.yml also runs the ops-toolkit gates (tools/ is excluded
@@ -36,7 +36,7 @@ const RELEASE_OPS = '.github/workflows/release-ops.yml';
 const SETUP = '.github/workflows/setup.yml';
 const ALL_WORKFLOWS = [CI, AUTO, AUDIT, RELEASE_OPS, SETUP];
 
-const EIGHT_GATES = [
+const NINE_GATES = [
   'pnpm lint',
   'pnpm typecheck',
   'pnpm test',
@@ -44,6 +44,7 @@ const EIGHT_GATES = [
   'pnpm build',
   'pnpm check-content',
   'pnpm check-links',
+  'pnpm check-site-origin',
   'pnpm check-i18n --strict-ui',
 ];
 
@@ -62,7 +63,7 @@ type Workflow = {
 };
 
 describe('shared gates composite action', () => {
-  test('runs EXACTLY the eight gate commands, each as its own step, in order', () => {
+  test('runs EXACTLY the nine gate commands, each as its own step, in order', () => {
     // Parsing the YAML (not raw-text contains) means a gate hidden in a
     // comment, a description, or several commands collapsed into one run
     // step no longer satisfies the contract.
@@ -70,19 +71,20 @@ describe('shared gates composite action', () => {
     const runs = (action.runs?.steps ?? [])
       .map((s) => (s.run ?? '').trim())
       .filter((r) => r.length > 0);
-    expect(runs).toEqual(EIGHT_GATES);
+    expect(runs).toEqual(NINE_GATES);
   });
 
   test('the i18n gate can actually fail (strict-ui, not report-only)', () => {
-    // The eighth gate was report-only at v2.0.0 — "eight gates" must mean
-    // eight gates that can go red.
-    expect(EIGHT_GATES[7]).toBe('pnpm check-i18n --strict-ui');
+    // This gate was report-only at v2.0.0; it must still be able to fail.
+    expect(NINE_GATES[8]).toBe('pnpm check-i18n --strict-ui');
   });
 
-  test('build step forwards the site-url input', () => {
+  test('config and build steps forward the site-url input', () => {
     const action = readWorkflow(GATES) as { runs?: { steps?: Step[] } };
-    const build = action.runs?.steps?.find((s) => s.env?.SITE_URL !== undefined);
-    expect(build?.env?.SITE_URL).toBe('${{ inputs.site-url }}');
+    for (const command of ['pnpm check-config', 'pnpm build']) {
+      const step = action.runs?.steps?.find((s) => s.run === command);
+      expect(step?.env?.SITE_URL).toBe('${{ inputs.site-url }}');
+    }
   });
 });
 
